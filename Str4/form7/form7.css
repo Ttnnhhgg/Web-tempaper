@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e8edf2;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Точный размер 774×592, разделен на левую и правую части */
+.form-card {
+    width: 774px;
+    height: 592px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Кнопка закрытия 40x40 вверху справа */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 32px;
+    font-weight: 300;
+    color: #999;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.2s ease;
+    border-radius: 0;
+}
+
+.close-button:hover {
+    color: #e34f4f;
+    background-color: transparent;
+}
+
+/* Левая часть с изображением */
+.form-left {
+    width: 280px;
+    background-color: #f5f7f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #e0e5ea;
+}
+
+.side-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Правая часть с формой */
+.form-right {
+    flex: 1;
+    padding: 25px 30px 25px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Заголовки выровнены по левому краю */
+.form-header {
+    text-align: left;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.main-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a2c3e;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.sub-text {
+    font-size: 13px;
+    color: #6b7a8a;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.expert-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.field-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1f2f3e;
+    margin-bottom: 4px;
+}
+
+.required-star {
+    color: #e34f4f;
+}
+
+/* Поля ввода - острые углы */
+.field-input,
+.field-textarea {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-family: inherit;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 0;
+    outline: none;
+}
+
+.field-textarea {
+    height: 70px;
+    min-height: 70px;
+    resize: vertical;
+    line-height: 1.4;
+}
+
+/* Контейнер кнопки */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 12px 0;
+}
+
+/* Кнопка 320×52, цвет #EFA35A - острые углы */
+.submit-button {
+    width: 320px;
+    height: 52px;
+    background-color: #EFA35A;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    color: #FFFFFF;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #e8923a;
+}
+
+/* Чекбокс */
+.checkbox-group {
+    margin: 0 0 5px 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.consent-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkmark-custom {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 0;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.consent-checkbox:checked + .checkmark-custom {
+    background-color: #2d7f6e;
+    border-color: #2d7f6e;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M20 6L9 17l-5-5 1.41-1.41L9 14.17 18.59 5 20 6z'/%3E%3C/svg%3E");
+    background-size: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.consent-text {
+    font-weight: 400;
+    font-size: 12px;
+    color: #2c3f4f;
+    line-height: 1.3;
+}
+
+.error-message {
+    color: #e25c5c;
+    font-size: 10px;
+    margin-top: 3px;
+    min-height: 14px;
+}
+
+.field-input.error-field,
+.field-textarea.error-field {
+    border-color: #e25c5c;
+}
+
+.checkbox-group .error-message {
+    margin-left: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    width: 320px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    position: relative;
+}
+
+.modal-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+    color: #EFA35A;
+}
+
+.modal-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #1e3b31;
+}
+
+.modal-content p {
+    color: #6b7a8a;
+    font-size: 13px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #EFA35A;
+}
+
+.shake-animation {
+    animation: shake 0.3s ease-in-out 0s 2;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+/* АДАПТИВНОСТЬ: при ширине экрана МЕНЕЕ 836px изображение исчезает */
+@media (max-width: 835px) {
+    .form-card {
+        width: 100%;
+        max-width: 774px;
+        height: auto;
+        min-height: 592px;
+        flex-direction: column;
+    }
+    
+    /* Скрываем левую часть с изображением */
+    .form-left {
+        display: none;
+    }
+    
+    /* Правая часть занимает всю ширину */
+    .form-right {
+        width: 100%;
+        padding: 25px 30px;
+    }
+    
+    /* Центрируем заголовки */
+    .form-header {
+        text-align: center;
+    }
+    
+    .main-title {
+        text-align: center;
+    }
+    
+    .sub-text {
+        text-align: center;
+    }
+    
+    /* Центрируем чекбокс */
+    .checkbox-group {
+        justify-content: center;
+    }
+    
+    .checkbox-label {
+        justify-content: center;
+    }
+    
+    /* Крестик остается на своем месте */
+    .close-button {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* При ширине 836px и больше - изображение видно, форма как обычно */
+@media (min-width: 836px) {
+    .form-left {
+        display: flex;
+    }
+    
+    .form-card {
+        width: 774px;
+        height: 592px;
+        flex-direction: row;
+    }
+    
+    .form-right {
+        padding: 25px 30px 25px 30px;
+    }
+}
+
+/* Адаптив для очень маленьких экранов (до 600px) */
+@media (max-width: 600px) {
+    .form-right {
+        padding: 20px 20px;
+    }
+    
+    .submit-button {
+        width: 280px;
+        height: 48px;
+        font-size: 14px;
+    }
+    
+    .consent-text {
+        font-size: 11px;
+    }
+    
+    .main-title {
+        font-size: 20px;
+    }
+    
+    .sub-text {
+        font-size: 12px;
+    }
+    
+    .close-button {
+        width: 40px;
+        height: 40px;
+        font-size: 32px;
+        top: 8px;
+        right: 8px;
+    }
+}

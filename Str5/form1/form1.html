@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма Заказать звонок ПК</title>
+    <link rel="stylesheet" href="form1.css">
+</head>
+<body>
+    <div class="callback-card">
+        <div class="form-header">
+            <button class="close-icon" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="form-content">
+            <div class="title-text">
+                <div class="line1">Оставьте свои данные и наш</div>
+                <div class="line2">менеджер перезвонит вам в</div>
+                <div class="line3">течении 30 минут</div>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label">Имя *</label>
+                <div class="input-field">
+                    <input type="text" placeholder="Введите ваше имя">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label">Телефон *</label>
+                <div class="input-field">
+                    <input type="tel" placeholder="+7 (999) 123-45-67">
+                </div>
+            </div>
+
+            <button class="order-btn">Заказать звонок</button>
+
+            <label class="checkbox-wrapper">
+                <input type="checkbox">
+                <span class="agree-text">
+                    Я согласен с политикой обработки персональных данных
+                </span>
+            </label>
+        </div>
+    </div>
+
+    <script src="form1.js"></script>
+</body>
+</html>
