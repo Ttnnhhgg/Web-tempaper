@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи - Консультация</title>
+    <link rel="stylesheet" href="form10.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="contact-card">
+            <div class="image-side">
+                <img src="im10.png" alt="Contact illustration" class="side-image">
+            </div>
+            <div class="form-side">
+                <div class="card-header">
+                    <h1>Укажите контакты для связи</h1>
+                    <p class="subtitle-line1">Наш менеджер свяжется с вами</p>
+                    <p class="subtitle-line2">в ближайшее время</p>
+                </div>
+                
+                <form id="contactForm">
+                    <div class="field">
+                        <label for="name">Имя *</label>
+                        <input type="text" id="name" name="name" placeholder=" " title="Введите ваше имя">
+                        <div class="error" id="nameError"></div>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" placeholder=" " title="Введите ваш телефон">
+                        <div class="error" id="phoneError"></div>
+                    </div>
+                    
+                    <div class="btn-wrapper">
+                        <button type="submit" class="submit-btn">Получить консультацию</button>
+                    </div>
+                    
+                    <div class="consent">
+                        <input type="checkbox" id="privacyCheck">
+                        <label for="privacyCheck">Я согласен с политикой обработки персональных данных</label>
+                        <div class="error" id="consentError"></div>
+                    </div>
+                    
+                    <div class="required-note">* - обязательное поле</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="form10.js"></script>
+</body>
+</html>

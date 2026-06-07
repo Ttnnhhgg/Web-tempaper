@@ -1,0 +1,260 @@
+<!-- Str2.html — РАБОЧАЯ ВЕРСИЯ С БУРГЕР-МЕНЮ -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Win Dom - Центральный офис продаж</title>
+    <link rel="stylesheet" href="Str2.css">
+    <link rel="stylesheet" href="../auth.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+     <header class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="im1.png" alt="Фото дома" class="logo-house-img" width="65" height="56">
+            </div>
+            
+            <!-- ДЕСКТОПНАЯ НАВИГАЦИЯ -->
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">Наши проекты ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                            <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                            <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                            <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                            <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">Дома ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str8/Str8.html">Одноэтажные</a></li>
+                            <li><a href="../Str9/Str9.html">Двухэтажные</a></li>
+                            <li><a href="../Str7/Str7.html">Все дома</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="../Str6/Str6.html">Ипотека</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">О компании ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str5/Str5.html">Команда</a></li>
+                            <li><a href="../Str3/Str3.html">СМИ о нас</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="Str2.html">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-phone">
+                <img src="im2.png" alt="Иконка телефона" class="phone-icon-img" width="35" height="35">
+                <a href="tel:+79625552525" class="phone-number">+7 (962) 555-25-25</a>
+            </div>
+            
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            
+            <!-- КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ (СВЕТЛАЯ/ТЕМНАЯ) -->
+            <button class="theme-switch-btn" id="themeSwitchBtn" aria-label="Переключить тему">🌙 Тёмная</button>
+            <div class="accessibility-toolbar">
+    
+    <button class="accessibility-btn vision-toggle-btn" id="visionBtn" aria-label="Версия для слабовидящих">👁️ Версия для слабовидящих</button>
+</div>
+            <button class="callback-btn" id="callbackBtn" data-key="callback_btn">Заказать звонок</button>
+            
+            <!-- БУРГЕР-КНОПКА (только для мобильных) -->
+            <div class="burger-menu-toggle" id="burgerToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Кнопка возврата на главную -->
+    <a href="C:\temp2\temp1\Str1\Str1.html" class="home-button" id="homeButton" title="На главную">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9L12 3L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>На главную</span>
+    </a>
+    
+    <!-- Основной блок -->
+    <section class="main-info-section">
+        <div class="info-wrapper">
+            <div class="info-left">
+                <div class="part-1">
+                    <h2 class="title-line1" data-key="office_title1">ЦЕНТРАЛЬНЫЙ ОФИС</h2>
+                    <h2 class="title-line2">ПРОДАЖ <span class="orange-text" data-key="win_dom">WIN DOM</span></h2>
+                </div>
+                <div class="part-2">
+                    <p class="address-text" data-key="address">Республика Татарстан, г. Казань ул. Яркая, д.31Б</p>
+                </div>
+                <div class="part-3">
+                    <div class="phone-item">
+                        <img src="im2.png" alt="телефон" class="phone-item-icon" width="35" height="35">
+                        <a href="tel:+79625552525" class="phone-link">+7 (962) 555-25-25</a>
+                    </div>
+                    <div class="phone-item">
+                        <img src="im2.png" alt="телефон" class="phone-item-icon" width="35" height="35">
+                        <a href="tel:+79625917960" class="phone-link">+7 (962) 591-79-60</a>
+                    </div>
+                </div>
+                <div class="part-4">
+                    <img src="im3.png" alt="Социальные сети" class="social-icons-img" width="255" height="45">
+                </div>
+                <div class="part-5">
+                    <div class="email-frame">
+                        <img src="im4.png" alt="Почта" class="email-icon" width="24" height="24">
+                        <a href="mailto:window.kazan@gmail.com" class="email-link">window.kazan@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="info-right">
+                <div class="consultation-card">
+                    <h2 class="consultation-title" data-key="consultation_title">Консультация</h2>
+                    <p class="consultation-subtitle-line1" data-key="consultation_sub1">Наш менеджер свяжется с вами</p>
+                    <p class="consultation-subtitle-line2" data-key="consultation_sub2">в ближайшее время</p>
+                    <form id="consultForm" class="consultation-form-fields">
+                        <input type="text" placeholder="Ваше имя" id="userName" data-key="name_placeholder" required>
+                        <input type="tel" placeholder="Телефон" id="userPhone" data-key="phone_placeholder" required>
+                        <button type="submit" class="submit-btn" data-key="submit_btn">Получить консультацию</button>
+                    </form>
+                    <p class="consent-text" data-key="consent_text">
+                        Нажимая кнопку «Получить консультацию», вы подтверждаете
+                        <span class="consent-line2">свое <span class="orange-word" data-key="consent">согласие</span> на <span class="orange-word" data-key="personal_data">обработку персональных данных</span></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК С КАРТОЙ -->
+    <section class="map-block">
+        <div class="map-outer">
+            <div id="yandexMap" class="yandex-map"></div>
+            <div class="map-overlay-block">
+                <h3 class="overlay-title" data-key="map_title">Вы можете обратиться к нашим менеджерам по любому вопросу</h3>
+                <div class="overlay-contact-items">
+                    <div class="overlay-contact-item">
+                        <img src="im5.png" alt="Адрес" class="overlay-icon" width="20" height="20">
+                        <span class="overlay-contact-text" data-key="map_address">г.Казань, ул.Яркая 31 Б</span>
+                    </div>
+                    <div class="overlay-contact-item">
+                        <img src="im6.png" alt="Режим работы" class="overlay-icon" width="20" height="20">
+                        <span class="overlay-contact-text" data-key="map_hours">Пн-Сб: с 9:00 до 18:00</span>
+                    </div>
+                    <div class="overlay-contact-item">
+                        <img src="im7.png" alt="Телефон" class="overlay-icon" width="20" height="20">
+                        <span class="overlay-contact-text" data-key="map_phone">+7 (962) 555-25-25</span>
+                    </div>
+                </div>
+                <button class="overlay-route-btn" id="routeBtn" data-key="route_btn">Проложить маршрут</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- НИЖНИЙ БЛОК -->
+    <section class="footer-info">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title" data-key="footer_about">О КОМПАНИИ</h3>
+                <ul class="footer-menu">
+                    <li><a href="C:\temp2\temp1\Str1\Str1.html" data-key="footer_home">Главная</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str5\Str5.html" data-key="footer_team">Наша команда</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str3\Str3.html" data-key="footer_media">СМИ о нас</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str6\Str6.html" data-key="footer_reviews">Отзывы</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str3\Str3.html" data-key="footer_news">Новости</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str2\Str2.html" data-key="footer_contacts">Контакты</a></li>
+                </ul>
+                <a href="#" class="footer-policy" data-key="footer_policy">Политика конфиденциальности</a>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title" data-key="footer_projects">ПРОЕКТЫ</h3>
+                <ul class="footer-menu">
+                    <li><a href="C:\temp2\temp1\Str1\Str7\Str7.html" data-key="project1">Изумрудный Village</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str7\Str7.html" data-key="project2">Зимняя горка</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str7\Str7.html" data-key="project3">Константиновка</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str7\Str7.html" data-key="project4">Усады Village</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str7\Str7.html" data-key="project5">IQ-CLUB</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title" data-key="footer_mortgage">ИПОТЕКА</h3>
+                <ul class="footer-menu">
+                    <li><a href="C:\temp2\temp1\Str1\Str6\Str6.html" data-key="mortgage1">Ипотечные кредиты</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str6\Str6.html" data-key="mortgage2">Для семей с детьми</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str6\Str6.html" data-key="mortgage3">Военная ипотека</a></li>
+                    <li><a href="C:\temp2\temp1\Str1\Str6\Str6.html" data-key="mortgage4">Господдержка 2023</a></li>
+                </ul>
+            </div>
+            <div class="footer-brand">
+                <img src="im8.png" alt="Windom" class="footer-logo-img">
+                <div class="footer-slogan" data-key="footer_slogan">ДОМА ДЛЯ ПОБЕДИТЕЛЕЙ</div>
+                <img src="im9.png" alt="Социальные сети" class="footer-social-img">
+                <div>
+                    <a href="mailto:window.kazan@gmail.com" class="footer-email-link">window.kazan@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- МОБИЛЬНОЕ МЕНЮ (БУРГЕР) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="im8.png" alt="Windom logo" class="mobile-logo">
+            <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item has-submenu">
+                <span>Наши проекты <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                    <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                    <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                    <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                    <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item has-submenu">
+                <span>Дома <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str8/Str8.html">Одноэтажные</a></li>
+                    <li><a href="../Str9/Str9.html">Двухэтажные</a></li>
+                    <li><a href="../Str7/Str7.html">Все дома</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="../Str6/Str6.html">Ипотека</a>
+            </li>
+            <li class="mobile-nav-item has-submenu">
+                <span>О компании <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str5/Str5.html">Команда</a></li>
+                    <li><a href="../Str3/Str3.html">СМИ о нас</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="Str2.html">Контакты</a>
+            </li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="tel:+79625552525" class="mobile-phone">+7 (962) 555-25-25</a>
+            <button class="mobile-callback-btn" id="mobileCallbackBtn">Заказать звонок</button>
+            <div class="mobile-language">
+                <button class="lang-btn-mobile active" data-lang="ru">RU</button>
+                <button class="lang-btn-mobile" data-lang="en">EN</button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+<script src="../auth.js"></script>
+    <script src="Str2.js"></script>
+</body>
+</html>

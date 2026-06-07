@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Шапка сайта | 1280x100</title>
+    <link rel="stylesheet" href="Str3.css">
+    <link rel="stylesheet" href="../auth.css">
+    <script src="../auth.js"></script>
+    <script src="Str3.js" defer></script>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+     <header class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="im1.png" alt="Фото дома" class="logo-house-img" width="65" height="56">
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">Наши проекты ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                            <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                            <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                            <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                            <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">Дома ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str8/Str8.html">Одноэтажные</a></li>
+                            <li><a href="../Str9/Str9.html">Двухэтажные</a></li>
+                            <li><a href="../Str7/Str7.html">Все дома</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="../Str6/Str6.html">Ипотека</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">О компании ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str5/Str5.html">Команда</a></li>
+                            <li><a href="../Str3/Str3.html">СМИ о нас</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="Str2.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-phone">
+                <img src="im2.png" alt="Иконка телефона" class="phone-icon-img" width="35" height="35">
+                <a href="tel:+79625552525" class="phone-number">+7 (962) 555-25-25</a>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            
+            <!-- КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ -->
+            <button class="theme-switch-btn" id="themeSwitchBtn" aria-label="Переключить тему">🌙 Тёмная</button>
+            <div class="accessibility-toolbar">
+    
+    <button class="accessibility-btn vision-toggle-btn" id="visionBtn" aria-label="Версия для слабовидящих">👁️ Версия для слабовидящих</button>
+</div>
+            <button class="callback-btn" id="callbackBtn" data-key="callback_btn">Заказать звонок</button>
+            
+            <!-- БУРГЕР-КНОПКА -->
+            <div class="burger-menu-toggle" id="burgerToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Кнопка возврата на главную -->
+    <a href="C:\temp2\temp1\Str1\Str1.html" class="home-button" id="homeButton" title="На главную">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9L12 3L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>На главную</span>
+    </a>
+
+    <!-- Заголовок перед блоком СМИ -->
+    <div class="smi-header">
+        <h2 class="smi-header-title">
+            <span class="smi-header-italic" data-ru="СМИ" data-en="MEDIA">СМИ</span>
+            <span class="smi-header-normal" data-ru=" О НАС" data-en=" ABOUT US"> О НАС</span>
+        </h2>
+    </div>
+
+    <!-- Блок с наложением фотографий и текстом -->
+    <div class="overlay-section">
+        <div class="overlay-container">
+            <img src="im23.png" alt="Фоновое изображение" class="bg-image-right">
+            <img src="im22.png" alt="Изображение переднего плана" class="fg-image-left">
+            
+            <div class="media-overlay">
+                <div class="media-content">
+                    <p class="media-subtitle-line1" data-ru="Деловая электронная газета" data-en="Business electronic newspaper">Деловая электронная газета</p>
+                    <p class="media-subtitle-line2" data-ru="«Бизнес Online»" data-en="«Business Online»">«Бизнес Online»</p>
+                    <p class="media-text" data-ru="“По-прежнему актуально предложение застройщиков “дом по цене казанской квартиры” в 20-30 км от границ Казани. Стоимость дома в границах нашего города, конечно будет дороже, но все же имеется возможность значительно улучшить жилищные условия, обменяя квартиру на дом”" data-en="“The offer of developers 'a house at the price of a Kazan apartment' 20-30 km from the borders of Kazan is still relevant. The cost of a house within our city will certainly be higher, but there is still an opportunity to significantly improve living conditions by exchanging an apartment for a house”">
+                        “По-прежнему актуально предложение застройщиков “дом по цене<br>
+                        казанской квартиры” в 20-30 км от границ Казани. Стоимость дома<br>
+                        в границах нашего города, конечно будет дороже, но все же имеется<br>
+                        возможность значительно улучшить жилищные условия, обменяя<br>
+                        квартиру на дом”
+                    </p>
+                    <a href="../Str4/Str4.html"><button class="media-button" title="Читать статью Бизнес Online" data-ru="Читать статью" data-en="Read article">Читать статью</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Остальные блоки новостей (без изменений) -->
+    <div class="news-section">
+        <div class="news-container">
+            <div class="news-image-wrapper">
+                <img src="im3.png" alt="Ключи от рая" class="news-image">
+            </div>
+            <div class="news-content">
+                <h3 class="news-title" data-ru="Где лежат ключи от «рая»?" data-en="Where are the keys to 'paradise'?">Где лежат ключи от «рая»?</h3>
+                <p class="news-text-full" data-ru="Тенденции в загородной недвижимости Казани устремляются в цивилизованное русло: времена «Шанхая» с хаотичной застройкой прошли, отмечают эксперты. И сегодня покупатель готов переплатить и 30% выше рынка, лишь бы поселиться в коттеджном поселке со своей философией, строго выдержанной концепцией и развитой инфраструктурой." data-en="Trends in suburban real estate in Kazan are moving in a civilized direction: the times of 'Shanghai' with chaotic development are gone, experts say. And today the buyer is ready to overpay 30% above the market, just to settle in a cottage village with its own philosophy, strictly maintained concept and developed infrastructure.">
+                    Тенденции в загородной недвижимости Казани устремляются в цивилизованное русло: времена «Шанхая» с хаотичной застройкой прошли, отмечают эксперты. И сегодня покупатель готов переплатить и 30% выше рынка, лишь бы поселиться в коттеджном поселке со своей философией, строго выдержанной концепцией и развитой инфраструктурой.
+                </p>
+                <a href="../Str4/Str4.html"><button class="news-button" title="Читать статью" data-ru="Читать статью" data-en="Read article">Читать статью</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-section">
+        <div class="news-container">
+            <div class="news-image-wrapper">
+                <img src="im4.png" alt="Дом в черте города" class="news-image">
+            </div>
+            <div class="news-content">
+                <h3 class="news-title" data-ru="На рынке новый тренд – свой дом в черте города" data-en="New trend on the market – your own house within the city">На рынке новый тренд – свой дом в черте города</h3>
+                <p class="news-text-full" data-ru="Тенденции в загородной недвижимости Казани устремляются в цивилизованное русло: времена «Шанхая» с хаотичной застройкой прошли, отмечают эксперты. И сегодня покупатель готов переплатить и 30% выше рынка, лишь бы поселиться в коттеджном поселке со своей философией, строго выдержанной концепцией и развитой инфраструктурой." data-en="Trends in suburban real estate in Kazan are moving in a civilized direction: the times of 'Shanghai' with chaotic development are gone, experts say. And today the buyer is ready to overpay 30% above the market, just to settle in a cottage village with its own philosophy, strictly maintained concept and developed infrastructure.">
+                    Тенденции в загородной недвижимости Казани устремляются в цивилизованное русло: времена «Шанхая» с хаотичной застройкой прошли, отмечают эксперты. И сегодня покупатель готов переплатить и 30% выше рынка, лишь бы поселиться в коттеджном поселке со своей философией, строго выдержанной концепцией и развитой инфраструктурой.
+                </p>
+                <a href="../Str4/Str4.html"><button class="news-button" title="Читать статью" data-ru="Читать статью" data-en="Read article">Читать статью</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-section">
+        <div class="news-container">
+            <div class="news-image-wrapper">
+                <img src="im5.png" alt="Развитие субурбии" class="news-image">
+            </div>
+            <div class="news-content">
+                <h3 class="news-title" data-ru="На пути к расцвету субурбии: что ждет рынок ИЖС в 2021 году?" data-en="On the path to the flourishing of suburbia: what awaits the individual housing construction market in 2021?">На пути к расцвету субурбии: что ждет рынок ИЖС в 2021 году?</h3>
+                <p class="news-text-full" data-ru="Продажи земельных участков и домов в пригороде без господдержки, доступной ипотеки и программ комплексного развития — курс в никуда. Правительство РТ сдерживает перевод сельхозземель под ИЖС, но наращивает его долю в общем объеме ввода жилья." data-en="Sales of land plots and houses in the suburbs without state support, affordable mortgages and integrated development programs are a road to nowhere. The Government of the Republic of Tatarstan restrains the transfer of agricultural land for individual housing construction, but increases its share in the total volume of housing commissioning.">
+                    Продажи земельных участков и домов в пригороде без господдержки, доступной ипотеки и программ комплексного развития — курс в никуда. Правительство РТ сдерживает перевод сельхозземель под ИЖС, но наращивает его долю в общем объеме ввода жилья.
+                </p>
+                <a href="../Str4/Str4.html"><button class="news-button" title="Читать статью" data-ru="Читать статью" data-en="Read article">Читать статью</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-section">
+        <div class="news-container">
+            <div class="news-image-wrapper">
+                <img src="im6.png" alt="Счастливая жизнь" class="news-image">
+            </div>
+            <div class="news-content">
+                <h3 class="news-title" data-ru="Жилье для счастливой жизни: успех кроется в мелочах" data-en="Housing for a happy life: success lies in the details">Жилье для счастливой жизни: успех кроется в мелочах</h3>
+                <p class="news-text-full" data-ru="Комфортная среда и развитая инфраструктура — одно из главных отличий современного жилья от «вторички» прошлого века. Сегодня человек выбирает не просто квадратные метры, а новый стиль жизни." data-en="Comfortable environment and developed infrastructure are one of the main differences between modern housing and the 'secondary' of the last century. Today, a person chooses not just square meters, but a new lifestyle.">
+                    Комфортная среда и развитая инфраструктура — одно из главных отличий современного жилья от «вторички» прошлого века. Сегодня человек выбирает не просто квадратные метры, а новый стиль жизни.
+                </p>
+                <a href="../Str4/Str4.html"><button class="news-button" title="Читать статью" data-ru="Читать статью" data-en="Read article">Читать статью</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Золотая стрелка внизу страницы -->
+    <div class="scroll-top-container">
+        <a href="../Str4/Str4.html"><button class="scroll-top-btn" id="scrollTopBtn" title="Вперед">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 12L20 12M20 12L14 6M20 12L14 18" stroke="#EFA35A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button></a>
+    </div>
+
+    <!-- Нижний блок -->
+    <section class="footer-info">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title" data-ru="О КОМПАНИИ" data-en="ABOUT US">О КОМПАНИИ</h3>
+                <ul class="footer-menu">
+                    <li><a href="#" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="#" data-ru="Наша команда" data-en="Our team">Наша команда</a></li>
+                    <li><a href="#" data-ru="СМИ о нас" data-en="Media about us">СМИ о нас</a></li>
+                    <li><a href="#" data-ru="Отзывы" data-en="Reviews">Отзывы</a></li>
+                    <li><a href="#" data-ru="Новости" data-en="News">Новости</a></li>
+                    <li><a href="#" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                </ul>
+                <a href="#" class="footer-policy" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title" data-ru="ПРОЕКТЫ" data-en="PROJECTS">ПРОЕКТЫ</h3>
+                <ul class="footer-menu">
+                    <li><a href="#" data-ru="Изумрудный Village" data-en="Emerald Village">Изумрудный Village</a></li>
+                    <li><a href="#" data-ru="Зимняя горка" data-en="Winter Hill">Зимняя горка</a></li>
+                    <li><a href="#" data-ru="Константиновка" data-en="Konstantinovka">Константиновка</a></li>
+                    <li><a href="#" data-ru="Усады Village" data-en="Usady Village">Усады Village</a></li>
+                    <li><a href="#" data-ru="IQ-CLUB" data-en="IQ-CLUB">IQ-CLUB</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title" data-ru="ИПОТЕКА" data-en="MORTGAGE">ИПОТЕКА</h3>
+                <ul class="footer-menu">
+                    <li><a href="#" data-ru="Ипотечные кредиты" data-en="Mortgage loans">Ипотечные кредиты</a></li>
+                    <li><a href="#" data-ru="Для семей с детьми" data-en="For families with children">Для семей с детьми</a></li>
+                    <li><a href="#" data-ru="Военная ипотека" data-en="Military mortgage">Военная ипотека</a></li>
+                    <li><a href="#" data-ru="Господдержка 2023" data-en="State support 2023">Господдержка 2023</a></li>
+                </ul>
+            </div>
+            <div class="footer-brand">
+                <img src="im8.png" alt="Windom" class="footer-logo-img">
+                <div class="footer-slogan" data-ru="ДОМА ДЛЯ ПОБЕДИТЕЛЕЙ" data-en="HOUSES FOR WINNERS">ДОМА ДЛЯ ПОБЕДИТЕЛЕЙ</div>
+                <img src="im9.png" alt="Социальные сети" class="footer-social-img">
+                <div>
+                    <a href="mailto:window.kazan@gmail.com" class="footer-email-link">window.kazan@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- МОБИЛЬНОЕ МЕНЮ (БУРГЕР) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="im8.png" alt="Windom logo" class="mobile-logo">
+            <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item has-submenu">
+                <span>Наши проекты <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                    <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                    <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                    <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                    <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item has-submenu">
+                <span>Дома <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str8/Str8.html">Одноэтажные</a></li>
+                    <li><a href="../Str9/Str9.html">Двухэтажные</a></li>
+                    <li><a href="../Str7/Str7.html">Все дома</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="../Str6/Str6.html">Ипотека</a>
+            </li>
+            <li class="mobile-nav-item has-submenu">
+                <span>О компании <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str5/Str5.html">Команда</a></li>
+                    <li><a href="../Str3/Str3.html">СМИ о нас</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="Str2.html">Контакты</a>
+            </li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="tel:+79625552525" class="mobile-phone">+7 (962) 555-25-25</a>
+            <button class="mobile-callback-btn" id="mobileCallbackBtn">Заказать звонок</button>
+            <div class="mobile-language">
+                <button class="lang-btn-mobile active" data-lang="ru">RU</button>
+                <button class="lang-btn-mobile" data-lang="en">EN</button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Модальное окно для кнопки "Заказать звонок" -->
+    <div id="callbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" title="Закрыть">&times;</span>
+            <h3 data-ru="Заказать звонок" data-en="Request a call">Заказать звонок</h3>
+            <p data-ru="Оставьте ваш номер, и мы перезвоним в ближайшее время." data-en="Leave your number and we will call you back shortly.">Оставьте ваш номер, и мы перезвоним в ближайшее время.</p>
+            <form id="callbackForm">
+                <input type="tel" id="phoneInput" placeholder="+7 (___) ___-__-__" required>
+                <button type="submit" title="Отправить заявку" data-ru="Отправить" data-en="Send">Отправить</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

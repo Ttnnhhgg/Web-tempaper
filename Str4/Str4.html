@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Шапка сайта | СМИ О НАС | 1280x100</title>
+    <link rel="stylesheet" href="Str4.css">
+    <link rel="stylesheet" href="../auth.css">
+    <script src="../auth.js"></script>
+    <script src="Str4.js" defer></script>
+</head>
+<body data-lang="ru">
+    <!-- Плавающие кнопки перевода -->
+    <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">РУС</button>
+        <button class="lang-btn" data-lang="en">ENG</button>
+    </div>
+
+    <!-- Шапка сайта -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="im1.png" alt="Фото дома" class="logo-house-img" width="65" height="56">
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">Наши проекты ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                            <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                            <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                            <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                            <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">Дома ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str8/Str8.html">Одноэтажные</a></li>
+                            <li><a href="../Str9/Str9.html">Двухэтажные</a></li>
+                            <li><a href="../Str7/Str7.html">Все дома</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="../Str6/Str6.html">Ипотека</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">О компании ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str5/Str5.html">Команда</a></li>
+                            <li><a href="../Str3/Str3.html">СМИ о нас</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="C:\temp2\temp1\Str1\Str2\Str2.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-phone">
+                <img src="im2.png" alt="Иконка телефона" class="phone-icon-img" width="35" height="35">
+                <a href="tel:+79625552525" class="phone-number">+7 (962) 555-25-25</a>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <!-- КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ -->
+<button class="theme-switch-btn" id="themeSwitchBtn" aria-label="Переключить тему">🌙 Тёмная</button>
+
+<div class="accessibility-toolbar">
+    
+    <button class="accessibility-btn vision-toggle-btn" id="visionBtn" aria-label="Версия для слабовидящих">👁️ Версия для слабовидящих</button>
+</div>
+            <button class="callback-btn" id="callbackBtn" data-key="callback_btn">Заказать звонок</button>
+            
+            <!-- БУРГЕР-КНОПКА -->
+            <div class="burger-menu-toggle" id="burgerToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Кнопка возврата на главную -->
+    <a href="C:\temp2\temp1\Str1\Str1.html" class="home-button" id="homeButton" title="На главную">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9L12 3L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>На главную</span>
+    </a>
+
+    <!-- Блок СМИ О НАС -->
+    <div class="media-block">
+        <div class="media-block-container">
+            <h1 class="media-title">
+                <span class="media-title-smi lang-ru">СМИ</span>
+                <span class="media-title-smi lang-en">MEDIA</span>
+                <span class="media-title-onas lang-ru"> О НАС</span>
+                <span class="media-title-onas lang-en"> ABOUT US</span>
+            </h1>
+
+            <div class="media-bottom-row">
+                <div class="back-to-media-wrapper">
+                    <a href="../Str3/Str3.html" class="back-arrow-link">
+                        <span class="arrow-left">←</span>
+                    </a>
+                    <a href="../Str3/Str3.html" class="back-text-link">
+                        <span class="lang-ru">Назад к СМИ</span>
+                        <span class="lang-en">Back to media</span>
+                    </a>
+                </div>
+                <div class="other-news">
+                    <span class="other-news-dark lang-ru">ДРУГИЕ</span>
+                    <span class="other-news-dark lang-en">OTHER</span>
+                    <span class="other-news-orange-italic lang-ru"> НОВОСТИ</span>
+                    <span class="other-news-orange-italic lang-en"> NEWS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="main-layout">
+        <!-- ЛЕВЫЙ БОЛЬШОЙ БЛОК -->
+        <div class="left-block">
+            <div class="block-header">
+                <div class="header-left">
+                    <img src="im5.png" alt="часики" class="header-icon">
+                    <span class="header-date">18.05.2021</span>
+                </div>
+                <div class="header-right">
+                    <img src="im7.png" alt="БИЗНЕСОНЛАЙН" class="header-logo-img">
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="news-block">
+                    <h2 class="news-title">
+                        <span class="lang-ru">Где лежат ключи от «рая»?</span>
+                        <span class="lang-en">Where are the keys to "paradise"?</span>
+                    </h2>
+                    <p class="news-text">
+                        <span class="lang-ru">Тенденции в загородной недвижимости Казани устремляются в цивилизованное русло: времена «Шанхая» с хаотичной застройкой прошли, отмечают эксперты. И сегодня покупатель готов переплатить и 30% выше рынка, лишь бы поселиться в коттеджном поселке со своей философией, строго выдержанной концепцией и развитой инфраструктурой. Так где же находятся эти «райские» места, где комфорт и безопасность соседствуют с респектабельностью, — читайте в нашем обзоре коттеджных поселков Казани.</span>
+                        <span class="lang-en">Trends in Kazan suburban real estate are moving towards a civilized direction: the times of chaotic "Shanghai" development are over, experts say. Today, buyers are ready to overpay even 30% above market rate just to live in a cottage village with its own philosophy, strictly maintained concept, and developed infrastructure. So where are these "paradise" places where comfort and safety coexist with respectability? Read in our review of Kazan cottage villages.</span>
+                    </p>
+                    <div class="news-image">
+                        <img src="im3.png" alt="Ключи от рая">
+                    </div>
+                </div>
+
+                <div class="news-block">
+                    <h2 class="news-title">
+                        <span class="lang-ru">«Изумрудный village»: чужие здесь не ходят</span>
+                        <span class="lang-en">"Izumrudny Village": strangers don't walk here</span>
+                    </h2>
+                    <p class="news-text">
+                        <span class="lang-ru">В Казани практически нет мест с красивым видом на наш тысячелетний город, поэтому каждый, кто приезжает в поселок премиум-класса «Изумрудный village», изумляется панорамой, которая открывается перед ним. Помимо вида с возвышенности на город, вас встречает обособленная и круглосуточно охраняемая территория с видеонаблюдением на 40 частных домов в 25 минутах от центра татарстанской столицы.</span>
+                        <span class="lang-en">There are almost no places in Kazan with a beautiful view of our thousand-year-old city, so everyone who comes to the premium-class village "Izumrudny Village" is amazed by the panorama that opens before them. In addition to the view from the hill over the city, you are greeted by a secluded and 24/7 guarded area with video surveillance for 40 private homes, just 25 minutes from the center of the Tatarstan capital.</span>
+                    </p>
+                    <p class="news-text">
+                        <span class="lang-ru">Кроме абсолютной безопасности, жители поселка получают эксклюзивный комфорт: теннисный корт, многофункциональную спортивную площадку, тематические детские площадки и «тропу здоровья», где вы на утренней пробежке можно зарядиться энергией на весь день.</span>
+                        <span class="lang-en">In addition to absolute safety, village residents receive exclusive comfort: a tennis court, a multi-functional sports ground, themed children's playgrounds, and a "health trail" where you can recharge with energy for the whole day during your morning run.</span>
+                    </p>
+                    <p class="news-text">
+                        <strong><span class="lang-ru">Расположение:</span><span class="lang-en">Location:</span></strong>
+                        <span class="lang-ru"> в Приволжском районе Казани, по соседству с ЖК «Изумрудный» и поселком Салмачи.</span>
+                        <span class="lang-en"> in the Privolzhsky district of Kazan, next to the "Izumrudny" residential complex and the village of Salmachi.</span>
+                    </p>
+                    <div class="news-image">
+                        <img src="im4.png" alt="Изумрудный village">
+                    </div>
+                </div>
+
+                <div class="news-block">
+                    <h2 class="news-title">
+                        <span class="lang-ru">Застройщик: компания WIN DOM.</span>
+                        <span class="lang-en">Developer: WIN DOM company.</span>
+                    </h2>
+                    <p class="news-text">
+                        <strong><span class="lang-ru">Особенности:</span><span class="lang-en">Features:</span></strong>
+                        <span class="lang-ru"> Асфальтированная дорога до поселка и внутри него, централизованное электро-, водо-, газоснабжение, переливной индивидуальный септик 2 линии по три кольца, интернет, телефония 4G. Двухэтажные дома из керамического кирпича с базальтовым утеплением в стиле современной классики площадью от 100 «квадратов» строятся с учетом пожеланий будущих владельцев.</span>
+                        <span class="lang-en"> Paved road to the village and inside it, centralized electricity, water and gas supply, overflow individual septic tank with 2 lines of three rings each, internet, 4G telephony. Two-story houses made of ceramic bricks with basalt insulation in a modern classic style, starting from 100 sq.m., are built taking into account the wishes of future owners.</span>
+                    </p>
+                    <p class="news-text">
+                        <strong><span class="lang-ru">Чем привлекает:</span><span class="lang-en">What attracts:</span></strong>
+                        <span class="lang-ru"> Полная предчистовая отделка под ремонт делает процесс новоселья легким и приятным. В домах установлена система отопления с теплыми полами, радиаторами и газовым котлом, выполнена стяжка пола и штукатурка стен под обои. Останется только постелить ламинат или плитку, поклеить обои и натянуть потолок. Обитатели поселка смогут сами участвовать в благоустройстве территории и контролировать все расходы — застройщик поможет организовать собственное ТСЖ, которое займется вопросами уборки, поддержания порядка и оплаты коммунальных платежей.</span>
+                        <span class="lang-en"> Full pre-finishing makes the housewarming process easy and enjoyable. The houses have a heating system with heated floors, radiators and a gas boiler, floor screed and wall plastering for wallpaper have been completed. All that remains is to lay laminate or tiles, glue wallpaper and install a suspended ceiling. Village residents will be able to participate in landscaping and control all expenses — the developer will help organize their own HOA, which will handle cleaning, maintaining order, and paying utility bills.</span>
+                    </p>
+                </div>
+
+                <div class="bottom-row">
+                    <div class="share-wrapper">
+                        <div class="share-text">
+                            <span class="lang-ru">ПОДЕЛИТЬСЯ</span>
+                            <span class="lang-en">SHARE</span>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <img src="im6.png" alt="соцсети" class="social-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ПРАВАЯ КОЛОНКА -->
+        <div class="right-column">
+            <div class="right-block">
+                <div class="right-block-inner">
+                    <img src="im11.png" alt="тренд" class="right-img">
+                    <div class="right-title">
+                        <span class="lang-ru">На рынке новый тренд – свой дом в черте города</span>
+                        <span class="lang-en">New trend on the market – your own house within the city</span>
+                    </div>
+                    <div class="right-footer">
+                        <img src="im5.png" alt="часики" class="right-icon">
+                        <span class="right-date">01.06.2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-block">
+                <div class="right-block-inner">
+                    <img src="im12.png" alt="БИЗНЕСONLINE" class="right-img">
+                    <div class="right-title-compact">
+                        <span class="lang-ru">На пути к расцвету субурбии: что ждет рынок ИЖК в 2021 году?</span>
+                        <span class="lang-en">On the path to suburban flourishing: what awaits the individual housing market in 2021?</span>
+                    </div>
+                    <div class="right-footer">
+                        <img src="im5.png" alt="часики" class="right-icon">
+                        <span class="right-date">01.06.2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-block">
+                <div class="right-block-inner">
+                    <img src="im13.png" alt="Жилье для счастливой жизни" class="right-img">
+                    <div class="right-title">
+                        <span class="lang-ru">Жилье для счастливой жизни: успех кроется в мелочах</span>
+                        <span class="lang-en">Housing for a happy life: success lies in the details</span>
+                    </div>
+                    <div class="right-footer">
+                        <img src="im5.png" alt="часики" class="right-icon">
+                        <span class="right-date">01.06.2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок НАЗАД К СМИ -->
+    <div class="back-to-media-wrapper bottom">
+        <a href="../Str3/Str3.html" class="back-arrow-link">
+            <span class="arrow-left">←</span>
+        </a>
+        <a href="../Str3/Str3.html" class="back-text-link">
+            <span class="lang-ru">Назад к СМИ</span>
+            <span class="lang-en">Back to media</span>
+        </a>
+    </div>
+
+    <!-- Нижний блок -->
+    <section class="footer-info">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title">
+                    <span class="lang-ru">О КОМПАНИИ</span>
+                    <span class="lang-en">ABOUT US</span>
+                </h3>
+                <ul class="footer-menu">
+                    <li><a href="C:\temp2\temp1\Str1\Str1.html"><span class="lang-ru">Главная</span><span class="lang-en">Home</span></a></li>
+                    <li><a href="../Str5/Str5.html"><span class="lang-ru">Наша команда</span><span class="lang-en">Our team</span></a></li>
+                    <li><a href="../Str3/Str3.html"><span class="lang-ru">СМИ о нас</span><span class="lang-en">Media about us</span></a></li>
+                    <li><a href="../Str6/Str6.html"><span class="lang-ru">Отзывы</span><span class="lang-en">Reviews</span></a></li>
+                    <li><a href="../Str4/Str4.html"><span class="lang-ru">Новости</span><span class="lang-en">News</span></a></li>
+                    <li><a href="../Str2/Str2.html"><span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span></a></li>
+                </ul>
+                <a href="#" class="footer-policy">
+                    <span class="lang-ru">Политика конфиденциальности</span>
+                    <span class="lang-en">Privacy policy</span>
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">
+                    <span class="lang-ru">ПРОЕКТЫ</span>
+                    <span class="lang-en">PROJECTS</span>
+                </h3>
+                <ul class="footer-menu">
+                    <li><a href="../Str7/Str7.html"><span class="lang-ru">Изумрудный Village</span><span class="lang-en">Izumrudny Village</span></a></li>
+                    <li><a href="../Str7/Str7.html"><span class="lang-ru">Зимняя горка</span><span class="lang-en">Zimnyaya Gorka</span></a></li>
+                    <li><a href="../Str7/Str7.html"><span class="lang-ru">Константиновка</span><span class="lang-en">Konstantinovka</span></a></li>
+                    <li><a href="../Str7/Str7.html"><span class="lang-ru">Усады Village</span><span class="lang-en">Usady Village</span></a></li>
+                    <li><a href="../Str7/Str7.html"><span class="lang-ru">IQ-CLUB</span><span class="lang-en">IQ-CLUB</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">
+                    <span class="lang-ru">ИПОТЕКА</span>
+                    <span class="lang-en">MORTGAGE</span>
+                </h3>
+                <ul class="footer-menu">
+                    <li><a href="../Str6/Str6.html"><span class="lang-ru">Ипотечные кредиты</span><span class="lang-en">Mortgage loans</span></a></li>
+                    <li><a href="../Str6/Str6.html"><span class="lang-ru">Для семей с детьми</span><span class="lang-en">For families with children</span></a></li>
+                    <li><a href="../Str6/Str6.html"><span class="lang-ru">Военная ипотека</span><span class="lang-en">Military mortgage</span></a></li>
+                    <li><a href="../Str6/Str6.html"><span class="lang-ru">Господдержка 2023</span><span class="lang-en">State support 2023</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-brand">
+                <img src="im8.png" alt="Windom" class="footer-logo-img">
+                <div class="footer-slogan">
+                    <span class="lang-ru">ДОМА ДЛЯ ПОБЕДИТЕЛЕЙ</span>
+                    <span class="lang-en">HOMES FOR WINNERS</span>
+                </div>
+                <img src="im9.png" alt="Социальные сети" class="footer-social-img">
+                <div>
+                    <a href="mailto:window.kazan@gmail.com" class="footer-email-link">window.kazan@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- МОБИЛЬНОЕ МЕНЮ (БУРГЕР) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="im8.png" alt="Windom logo" class="mobile-logo">
+            <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item has-submenu">
+                <span>Наши проекты <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                    <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                    <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                    <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                    <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item has-submenu">
+                <span>Дома <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str8/Str8.html">Одноэтажные</a></li>
+                    <li><a href="../Str9/Str9.html">Двухэтажные</a></li>
+                    <li><a href="../Str7/Str7.html">Все дома</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="../Str6/Str6.html">Ипотека</a>
+            </li>
+            <li class="mobile-nav-item has-submenu">
+                <span>О компании <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str5/Str5.html">Команда</a></li>
+                    <li><a href="../Str3/Str3.html">СМИ о нас</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="Str2.html">Контакты</a>
+            </li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="tel:+79625552525" class="mobile-phone">+7 (962) 555-25-25</a>
+            <button class="mobile-callback-btn" id="mobileCallbackBtn">Заказать звонок</button>
+            <div class="mobile-language">
+                <button class="lang-btn-mobile active" data-lang="ru">RU</button>
+                <button class="lang-btn-mobile" data-lang="en">EN</button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+</body>
+</html>
