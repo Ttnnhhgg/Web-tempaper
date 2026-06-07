@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windom — Строительная компания | Дома, коттеджи, таунхаусы в Казани</title>
+    <link rel="stylesheet" href="Str1.css">
+    <link rel="stylesheet" href="auth.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="site-wrapper">
+        <header class="hero" id="heroSection">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="top-bar">        
+                    <div class="logo-area">
+                        <img src="im36.png" alt="Windom logo" class="logo-img">
+                    </div>
+                    
+                    <nav class="main-nav">
+                        <ul class="nav-list">
+                            <li class="nav-item" onclick="document.getElementById('projects-section').scrollIntoView({ behavior: 'smooth' }); return false;">
+                                Наши проекты <span class="arrow-down">▼</span>
+                            </li>
+                            <li class="nav-item dropdown">
+                                Дома <span class="arrow-down">▼</span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="Str8/Str8.html">Одноэтажные</a></li>
+                                    <li><a href="Str8/tr9.html">Двухэтажные</a></li>
+                                    <li><a href="Str7/Str7.html">Все дома</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item" onclick="window.location.href='Str6/Str6.html'; return false;">
+                                Ипотека <span class="arrow-down">▼</span>
+                            </li>
+                            <li class="nav-item dropdown">
+                                О компании <span class="arrow-down">▼</span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="Str5/Str5.html">Команда</a></li>
+                                    <li><a href="Str3/Str3.html">СМИ о нас</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item" onclick="document.getElementById('officeSection')?.scrollIntoView({ behavior: 'smooth' });"><a href="Str2/Str2.html">
+                                Контакты <span class="arrow-down">▼</span>
+                            </a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-contacts">
+                        <a href="tel:+79625552525" class="phone-link">+7 (962) 555-25-25</a>
+                        <button class="callback-btn" id="callbackBtnHeader">Заказать звонок</button>
+                        <button class="theme-switch-btn" id="themeSwitchBtn" aria-label="Переключить тему">🌓 Тема</button>
+                    </div>
+                    
+                    <div class="accessibility-toolbar">
+                        <button class="accessibility-btn vision-toggle-btn" id="visionBtn" aria-label="Версия для слабовидящих">👁️ Версия для слабовидящих</button>
+                    </div>
+                    
+                    <!-- Кнопки входа/регистрации -->
+                    <div class="auth-buttons">
+                        <button class="auth-btn" id="loginBtn">Вход</button>
+                        <button class="auth-btn" id="registerBtn">Регистрация</button>
+                    </div>
+                    <div class="user-info" style="display: none;">
+                        <span class="user-name"></span>
+                        <span class="user-role"></span>
+                        <button class="logout-btn" id="logoutBtn">Выйти</button>
+                    </div>
+                    
+                    <div class="mobile-menu-toggle" id="mobileToggle">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+                
+                <div class="under-menu-line">
+                    <div class="under-menu-left">
+                        <div class="language-switcher">
+                            <button class="lang-btn active" data-lang="ru">RU</button>
+                            <button class="lang-btn" data-lang="en">EN</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-dropdown" id="mobileDropdown">
+                    <ul>
+                        <li data-link="projects">Наши проекты</li>
+                        <li data-link="homes">Дома</li>
+                        <li data-link="ipoteka">Ипотека</li>
+                        <li data-link="company">О компании</li>
+                        <li data-link="team">Команда</li>
+                        <li data-link="media">СМИ о нас</li>
+                        <li data-link="contacts">Контакты</li>
+                        <li class="phone"><a href="tel:+79625552525">+7 (962) 555-25-25</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-overlay" id="mobileOverlay"></div>
+                
+                <div class="hero-content-wrapper">
+                    <div class="hero-text-block">
+                        <span class="pre-title" data-translate="СТРОИТЕЛЬНАЯ КОМПАНИЯ">СТРОИТЕЛЬНАЯ КОМПАНИЯ</span>
+                        <h1 class="hero-title">
+                            <span class="win-color">WIN</span><span class="dom-color">DOM</span>
+                        </h1>
+                        <p class="hero-description" data-translate="Мы строим дома, коттеджные поселки и таунхаусы в Казани">
+                            Мы строим дома, коттеджные поселки<br>
+                            и таунхаусы в Казани
+                        </p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" id="detailsBtn" data-translate="Подробнее о проектах" onclick="window.location.href='Str7/Str7.html'">Подробнее о проектах</button>
+                            <button class="btn btn-secondary" id="askQuestionBtn" data-translate="Задать вопрос">Задать вопрос</button>
+                        </div>
+                    </div>
+                    <div class="video-preview-card" id="videoPreviewCard">
+                        <div class="video-inner">
+                            <span class="video-text" data-translate="СМОТРЕТЬ ВИДЕО">СМОТРЕТЬ ВИДЕО</span>
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="white-slide">
+            <div class="achievements-section">
+                <div class="achievements-container">
+                    <div class="achievement-item">
+                        <div class="achievement-number">10</div>
+                        <div class="achievement-line"></div>
+                        <div class="achievement-text">
+                            Лет успешного опыта<br>
+                            продаж загородной<br>
+                            недвижимости
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-number">1051</div>
+                        <div class="achievement-line"></div>
+                        <div class="achievement-text">
+                            Га - площадь наших<br>
+                            комфортных посёлков<br>
+                            европейского класса
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-number">5063</div>
+                        <div class="achievement-line"></div>
+                        <div class="achievement-text">
+                            Счастливых владельцев<br>
+                            загородных домов
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="about-company-section">
+            <div class="about-company-wrapper">
+                <div class="about-company-left">
+                    <h2 class="about-company-title">О КОМПАНИИ</h2>
+                    <div class="about-company-text-block">
+                        <p class="about-company-text">Компания <strong>Win Dom</strong> основана в 2012 году.</p>
+                        <p class="about-company-text">Основным направлением девелопера является строительство загородных домов и таунхаусов "под ключ".</p>
+                        <p class="about-company-text">Более 11 лет Win Dom работает на строительном рынке недвижимости Казани и Республики Татарстан и как подрядная организация и, как самостоятельный застройщик.</p>
+                    </div>
+                </div>
+                
+                <div class="about-company-right">
+                    <div class="golden-frame"></div>
+                    <img src="im2.png" alt="Строительство" class="about-company-img">
+                </div>
+            </div>
+            <div class="about-company-icons">
+                <img src="im3.png" alt="Иконки" class="about-icons-img">
+            </div>
+        </div>
+
+        <div class="architecture-section">
+            <div class="architecture-wrapper">
+                <div class="architecture-header">
+                    <span class="architecture-word-1">УНИКАЛЬНАЯ</span>
+                    <span class="architecture-word-2">АРХИТЕКТУРА</span>
+                </div>
+                <div class="architecture-content">
+                    <div class="architecture-image-container">
+                        <img src="im4.png" alt="Архитектура" class="architecture-img">
+                    </div>
+                    <div class="architecture-text-container">
+                        <div class="architecture-description">
+                            Мы не строим однотипных коробочных решений: дома из желтого<br>
+                            или красного кирпича. Мы создаём <span class="yellow-text">уникальные</span>, ни на что не<br>
+                            похожие, <span class="yellow-text">запоминающиеся проекты</span>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slideshow-section">
+            <div class="slideshow-container">
+                <div class="slide-item slide-left">
+                    <div class="slide-overlay"></div>
+                    <img src="im5.png" alt="Слайд 1" class="slide-img">
+                </div>
+                <div class="slide-item slide-center">
+                    <img src="im10.png" alt="Слайд 2" class="slide-img-center">
+                </div>
+                <div class="slide-item slide-right">
+                    <div class="slide-overlay"></div>
+                    <img src="im11.png" alt="Слайд 3" class="slide-img">
+                </div>
+            </div>
+            
+            <div class="slideshow-pagination">
+                <div class="pagination-track">
+                    <span class="pagination-bar" data-slide="0"></span>
+                    <span class="pagination-bar active" data-slide="1"></span>
+                    <span class="pagination-bar" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-section" id="projects-section">
+            <div class="projects-container">
+                <h2 class="projects-title">
+                    <span class="projects-word-1">НАШИ</span>
+                    <span class="projects-word-2">ПРОЕКТЫ</span>
+                </h2>
+                <div class="projects-filters">
+                    <button class="filter-btn" onclick="window.location.href='Str8/Str8.html'">1 этажные</button>
+                    <button class="filter-btn" onclick="window.location.href='Str9/Str9.html'">2-х этажные</button>
+                    <button class="filter-btn" onclick="alert('Проект в разработке. Скоро появится!')">Таунхаусы</button>
+                    <button class="filter-btn" onclick="alert('Проект в разработке. Скоро появится!')">На карте</button>
+                    <button class="filter-btn" onclick="window.location.href='Str7/Str7.html'">Все дома</button>
+                </div>
+                <p class="projects-subtitle">
+                    <span class="subtitle-bold">Коттеджные поселки и дома</span> в Казани
+                </p>
+            </div>
+        </div>
+
+        <div class="projects-showcase">
+            <div class="projects-showcase-container">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-name">Изумрудный Village</h3>
+                        <p class="project-location">
+                            <img src="im8.png" alt="иконка" class="project-icon">
+                            <span class="location-text">8 минут от метро Дубравная.</span>
+                            <span class="location-highlight"> Дома сдаются</span>
+                        </p>
+                    </div>
+                    <div class="project-image">
+                        <img src="im9.png" alt="Изумрудный Village">
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-name">IQ CLUB</h3>
+                        <p class="project-date">
+                            <img src="im8.png" alt="иконка" class="project-icon">
+                            <span class="date-text">Начало строительства -</span>
+                            <span class="date-highlight"> I квартал 2024 года</span>
+                        </p>
+                    </div>
+                    <div class="project-image">
+                        <img src="im10.png" alt="IQ CLUB">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-showcase second-row">
+            <div class="projects-showcase-container">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-name">Дома в Зимней Горке</h3>
+                        <p class="project-location">
+                            <img src="im8.png" alt="иконка" class="project-icon">
+                            <span class="location-text">10 минут от Казанского аэропорта.</span>
+                            <span class="location-highlight"> Все дома сданы</span>
+                        </p>
+                    </div>
+                    <div class="project-image">
+                        <img src="im11.png" alt="Дома в Зимней Горке">
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-name">Усады Village</h3>
+                        <p class="project-location">
+                            <img src="im8.png" alt="иконка" class="project-icon">
+                            <span class="location-text">Посёлок в черте города.</span>
+                            <span class="location-highlight"> Все дома сданы</span>
+                        </p>
+                    </div>
+                    <div class="project-image">
+                        <img src="im12.png" alt="Усады Village">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-all-button">
+            <button class="view-all-btn" onclick="window.location.href='Str7/Str7.html'">смотреть все</button>
+        </div>
+
+        <div class="mortgage-section">
+            <div class="mortgage-container">
+                <h2 class="mortgage-title">
+                    <span class="mortgage-title-normal">ПОДБЕРЁМ РЕШЕНИЯ</span>
+                    <span class="mortgage-title-highlight">ПО</span>
+                    <span class="mortgage-title-highlight">ИПОТЕКЕ</span>
+                    <span class="mortgage-title-normal">УЖЕ СЕГОДНЯ</span>
+                </h2>
+                <p class="mortgage-subtitle">Выберите подходящий вариант и наши специалисты подготовят для вас актуальные предложения</p>
+            </div>
+        </div>
+
+        <div class="mortgage-programs">
+            <div class="mortgage-programs-container">
+                <div class="mortgage-card">
+                    <div class="mortgage-card-content">
+                        <h3 class="mortgage-card-title">ИПОТЕЧНЫЕ КРЕДИТЫ</h3>
+                        <p class="mortgage-card-desc">Бесплатно подберём базовую ипотечную программу</p>
+                        <div class="mortgage-card-rates">
+                            <div class="rate-item">
+                                <span class="rate-value">от 13,7%</span>
+                                <span class="rate-label">Ставка по ипотеке</span>
+                            </div>
+                            <div class="rate-item">
+                                <span class="rate-value">от 10%</span>
+                                <span class="rate-label">Первоначальный взнос</span>
+                            </div>
+                        </div>
+                        <button class="mortgage-card-btn get-calc-btn" data-form="form10">Получить расчёт</button>
+                    </div>
+                    <div class="mortgage-card-image">
+                        <img src="im14.png" alt="Ипотечные кредиты">
+                    </div>
+                </div>
+
+                <div class="mortgage-card">
+                    <div class="mortgage-card-content">
+                        <h3 class="mortgage-card-title">СЕМЕЙНАЯ ИПОТЕКА</h3>
+                        <p class="mortgage-card-desc">Используем материнский капитал в качестве первоначального взноса</p>
+                        <div class="mortgage-card-rates">
+                            <div class="rate-item">
+                                <span class="rate-value">от 4%</span>
+                                <span class="rate-label">Ставка по ипотеке</span>
+                            </div>
+                            <div class="rate-item">
+                                <span class="rate-value">от 15%</span>
+                                <span class="rate-label">Первоначальный взнос</span>
+                            </div>
+                        </div>
+                        <button class="mortgage-card-btn get-calc-btn" data-form="form10">Получить расчёт</button>
+                    </div>
+                    <div class="mortgage-card-image">
+                        <img src="im15.png" alt="Семейная ипотека">
+                    </div>
+                </div>
+
+                <div class="mortgage-card">
+                    <div class="mortgage-card-content">
+                        <h3 class="mortgage-card-title">IT СПЕЦИАЛИСТАМ</h3>
+                        <p class="mortgage-card-desc">В рамках данной программы сотрудники IT-компаний могут построить частный дом в ипотеку по льготной ставке.</p>
+                        <div class="mortgage-card-rates">
+                            <div class="rate-item">
+                                <span class="rate-value">от 4%</span>
+                                <span class="rate-label">Ставка по ипотеке</span>
+                            </div>
+                            <div class="rate-item">
+                                <span class="rate-value">от 15%</span>
+                                <span class="rate-label">Первоначальный взнос</span>
+                            </div>
+                        </div>
+                        <button class="mortgage-card-btn get-calc-btn" data-form="form10">Получить расчёт</button>
+                    </div>
+                    <div class="mortgage-card-image">
+                        <img src="im16.png" alt="IT специалистам">
+                    </div>
+                </div>
+
+                <div class="mortgage-card">
+                    <div class="mortgage-card-content">
+                        <h3 class="mortgage-card-title">ГОСПОДДЕРЖКА 2023</h3>
+                        <p class="mortgage-card-desc">Используем материнский капитал в качестве первоначального взноса</p>
+                        <div class="mortgage-card-rates">
+                            <div class="rate-item">
+                                <span class="rate-value">от 6%</span>
+                                <span class="rate-label">Ставка по ипотеке</span>
+                            </div>
+                            <div class="rate-item">
+                                <span class="rate-value">от 15%</span>
+                                <span class="rate-label">Первоначальный взнос</span>
+                            </div>
+                        </div>
+                        <button class="mortgage-card-btn get-calc-btn" data-form="form10">Получить расчёт</button>
+                    </div>
+                    <div class="mortgage-card-image">
+                        <img src="im17.png" alt="Господдержка 2023">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <div class="team-header">
+                <h2 class="team-title">
+                    <span class="team-title-normal">НАША</span>
+                    <span class="team-title-highlight">КОМАНДА</span>
+                </h2>
+                <div class="team-arrow">
+                    <svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="12" x2="50" y2="12" stroke="#EFA35A" stroke-width="2"/>
+                        <path d="M50 12L42 6M50 12L42 18" stroke="#EFA35A" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="team-row">
+                <div class="team-col-left">
+                    <p>Сотрудники WinDom - это профессионалы,</p>
+                    <p>сочетающие в себе энтузиазм и опыт,</p>
+                    <p>энергичные, творческие и увлеченные люди.</p>
+                </div>
+                <div class="team-col-right">
+                    <p>Наша команда состоит из молодых профессионалов, готовых</p>
+                    <p>преодолевать сложности любого уровня. Успех отдельно взятого</p>
+                    <p>сотрудника - это составляющая часть успеха всей компании.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-members-grid">
+            <div class="team-member-card">
+                <div class="member-photo">
+                    <img src="im18.png" alt="Игорь Захаров">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Игорь Захаров</div>
+                    <div class="member-position">Руководитель проекта</div>
+                </div>
+            </div>
+            <div class="team-member-card">
+                <div class="member-photo">
+                    <img src="im19.png" alt="Луиза Назипова">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Луиза Назипова</div>
+                    <div class="member-position">Главный архитектор</div>
+                </div>
+            </div>
+            <div class="team-member-card">
+                <div class="member-photo">
+                    <img src="im20.png" alt="Мухарямов Расул">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Мухарямов Расул</div>
+                    <div class="member-position">Заместитель руководителя проекта</div>
+                </div>
+            </div>
+            <div class="team-member-card">
+                <div class="member-photo">
+                    <img src="im21.png" alt="Ваганов Дмитрий">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Ваганов Дмитрий</div>
+                    <div class="member-position">Заместитель руководителя проекта</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay-section">
+            <div class="overlay-container">
+                <img src="im23.png" alt="Фон" class="bg-image-right">
+                <img src="im22.png" alt="Передний план" class="fg-image-left">
+                <div class="media-overlay">
+                    <h2 class="media-title">
+                        <span class="media-title-italic">СМИ</span>
+                        <span class="media-title-normal"> О НАС</span>
+                    </h2>
+                    <div class="media-content">
+                        <p class="media-subtitle-line1">Деловая электронная газета</p>
+                        <p class="media-subtitle-line2">«Бизнес Online»</p>
+                        <p class="media-text">
+                            “По-прежнему актуально предложение застройщиков “дом по цене<br>
+                            казанской квартиры” в 20-30 км от границ Казани. Стоимость дома<br>
+                            в границах нашего города, конечно будет дороже, но все же имеется<br>
+                            возможность значительно улучшить жилищные условия, обменяя<br>
+                            квартиру на дом”
+                        </p>
+                        <button class="media-button" onclick="window.location.href='Str3/Str3.html'">Читать статью</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="reviews-section">
+    <div class="reviews-header">
+        <h2 class="reviews-title">
+            <span class="reviews-title-normal">ОТЗЫВЫ</span>
+            <span class="reviews-title-highlight">КЛИЕНТОВ</span>
+        </h2>
+    </div>
+    
+    <div class="reviews-slider-wrapper">
+        <button class="reviews-arrow reviews-arrow-left" id="reviewsPrev" aria-label="Предыдущий отзыв">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="#EFA35A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+        <div class="reviews-container">
+            <div class="reviews-track" id="reviewsTrack">
+                <div class="review-card">
+                    <div class="review-top">
+                        <img src="im24.png" alt="Максим Иванов" class="review-photo">
+                        <div class="review-heading">
+                            <h3 class="review-name">Максим Иванов</h3>
+                            <p class="review-house">Приобрел дом 150кв м</p>
+                        </div>
+                    </div>
+                    <p class="review-text">Заказывал в этой компании постройку загородного дома, но уж не по готовой планировке. Могу сказать что в этой компании очень опытные инженеры и профессиональные строители. Сделали все качественно и как было задумано изначально, были не большие изменения в планировке, но они их изначально согласовали со мной а потом уже делали.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-top">
+                        <img src="im25.png" alt="Семья Петровых" class="review-photo">
+                        <div class="review-heading">
+                            <h3 class="review-name">Семья Петровых</h3>
+                            <p class="review-house">Приобрели двухэтажный дом 300кв м</p>
+                        </div>
+                    </div>
+                    <p class="review-text">Мы в восторге от нашего нового дома! Мы долго выбирали квартиру в городе, но когда решили завести второго ребенка поняли, что в квартире нам всем будет тесно. Дом выбирали вместе с родителями - папа особенно оценил изоляцию стен.....</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-top">
+                        <img src="im26.png" alt="Семья Муратовых" class="review-photo">
+                        <div class="review-heading">
+                            <h3 class="review-name">Семья Муратовых</h3>
+                            <p class="review-house">Приобрели двухэтажный дом 240кв м</p>
+                        </div>
+                    </div>
+                    <p class="review-text">Поскольку семья у нас из 4-х человек, то дом мы себе смотрели сразу просторный и под ключ. В этом плане мне понравилось, что в данном проекте просторные комнаты и у каждого есть свое личное пространство.</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="reviews-arrow reviews-arrow-right" id="reviewsNext" aria-label="Следующий отзыв">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="#EFA35A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+        <div class="news-section">
+            <div class="news-header">
+                <h2 class="news-title">
+                    <span class="news-title-bold">НОВОСТИ</span>
+                    <span class="news-title-light">КОМПАНИИ</span>
+                </h2>
+                <button class="news-all-btn" onclick="window.location.href='Str3/Str3.html'">
+                    Все новости
+                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8H13M13 8L10 5M13 8L10 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="news-layout">
+                <div class="news-left">
+                    <div class="news-card-big">
+                        <img src="im27.png" alt="Новость">
+                        <div class="news-overlay">
+                            <h3>Последние несколько предложений<br>в коттеджном поселке<br>Изумрудный Village</h3>
+                            <p>26.05.2023</p>
+                        </div>
+                    </div>
+                    <div class="news-small-row">
+                        <div class="news-card-small">
+                            <img src="im29.png" alt="Новость">
+                            <div class="news-overlay">
+                                <h3>Таун 150 м2 по цене<br>двушки - это реально!</h3>
+                                <p>21.05.2023</p>
+                            </div>
+                        </div>
+                        <div class="news-card-small">
+                            <img src="im30.png" alt="Новость">
+                            <div class="news-overlay">
+                                <h3>Карта поселка<br>Изумрудный Village</h3>
+                                <p>12.05.2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-right">
+                    <div class="news-card-big">
+                        <img src="im28.png" alt="Новость">
+                        <div class="news-overlay">
+                            <h3>Интерьерные решения<br>от наших дизайнеров</h3>
+                            <p>01.06.2023</p>
+                        </div>
+                    </div>
+                    <div class="news-card-small">
+                        <img src="im31.png" alt="Новость">
+                        <div class="news-overlay">
+                            <h3>Открытие теннисного корта<br>в коттеджном поселке<br>Изумрудный Village</h3>
+                            <p>02.05.2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="office-section">
+            <div class="office-header">
+                <h2 class="office-title">
+                    <span class="office-title-orange">ОФИС</span>
+                    <span class="office-title-black">ПРОДАЖ</span>
+                </h2>
+            </div>
+            <div class="office-container">
+                <div class="office-map">
+                    <iframe 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=49.0824%2C55.6731%2C49.2024%2C55.7331&layer=mapnik&marker=55.7031%2C49.1424" 
+                        width="100%" 
+                        height="780" 
+                        frameborder="0"
+                        allowfullscreen
+                        title="Карта офиса продаж компании WinDom">
+                    </iframe>
+                    <div class="office-info-card">
+                        <h3 class="office-subtitle">Центральный офис</h3>
+                        <p class="office-desc">Вы можете обратиться к нашим менеджерам по любому вопросу</p>
+                        <ul class="office-contacts">
+                            <li>📍 г.Казань, ул.Яркая 31 Б</li>
+                            <li>🕐 Пн-Сб: с 9:00 до 18:00</li>
+                            <li>📞 +7 (962) 555-25-25</li>
+                        </ul>
+                        <button class="office-route-btn">Проложить маршрут</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <div class="footer-columns">
+                        <div class="footer-column">
+                            <h3 class="footer-title">О КОМПАНИИ</h3>
+                            <ul class="footer-links">
+                                <li><a href="Str1/Str1.html">Главная</a></li>
+                                <li><a href="Str5/Str5.html">Наша команда</a></li>
+                                <li><a href="Str3/Str3.html">СМИ о нас</a></li>
+                                <li><a href="Str6/Str6.html">Отзывы</a></li>
+                                <li><a href="Str3/Str3.html">Новости</a></li>
+                                <li><a href="Str2/Str2.html">Контакты</a></li>
+                            </ul>
+                            <a href="#" class="footer-privacy">Политика конфиденциальности</a>
+                        </div>
+                        <div class="footer-column">
+                            <h3 class="footer-title">ПРОЕКТЫ</h3>
+                            <ul class="footer-links">
+                                <li><a href="Str7/Str7.html">Изумрудный Village</a></li>
+                                <li><a href="Str7/Str7.html">IQ-CLUB</a></li>
+                                <li><a href="Str7/Str7.html">Все проекты</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3 class="footer-title">ИПОТЕКА</h3>
+                            <ul class="footer-links">
+                                <li><a href="Str6/Str6.html">Ипотечные кредиты</a></li>
+                                <li><a href="Str6/Str6.html">Для семей с детьми</a></li>
+                                <li><a href="Str6/Str6.html">Военная ипотека</a></li>
+                                <li><a href="Str6/Str6.html">Господдержка 2023</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <img src="im34.png" alt="WINDOM" class="footer-image">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="modalForm1" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Заказать звонок</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form class="callback-form">
+                <div class="form-group">
+                    <label>Ваше имя</label>
+                    <input type="text" placeholder="Алексей" required>
+                </div>
+                <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label>Комментарий (необязательно)</label>
+                    <textarea rows="2" placeholder="Удобное время для звонка..."></textarea>
+                </div>
+                <button type="submit" class="submit-modal-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalForm3" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Задать вопрос</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form class="callback-form">
+                <div class="form-group">
+                    <label>Ваше имя</label>
+                    <input type="text" placeholder="Алексей" required>
+                </div>
+                <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label>Ваш вопрос</label>
+                    <textarea rows="3" placeholder="Опишите ваш вопрос..."></textarea>
+                </div>
+                <button type="submit" class="submit-modal-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalForm10" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Получить расчёт</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form class="callback-form">
+                <div class="form-group">
+                    <label>Ваше имя</label>
+                    <input type="text" placeholder="Алексей" required>
+                </div>
+                <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label>Желаемый объект</label>
+                    <input type="text" placeholder="Коттеджный посёлок или дом">
+                </div>
+                <div class="form-group">
+                    <label>Комментарий (необязательно)</label>
+                    <textarea rows="2" placeholder="Дополнительная информация..."></textarea>
+                </div>
+                <button type="submit" class="submit-modal-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+<div id="modalVideo" class="modal-overlay">
+    <div class="modal-video-container">
+        <button class="modal-close video-close" aria-label="Закрыть видео">&times;</button>
+        <iframe id="videoIframe" width="100%" height="500" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div id="loginModal" class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3>Вход</h3>
+            <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Логин</label>
+                <input type="text" id="loginUsername" placeholder="Введите логин" required title="Введите ваш логин">
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="loginPassword" placeholder="Введите пароль" required title="Введите ваш пароль">
+            </div>
+            <button type="submit" class="submit-modal-btn">Войти</button>
+        </form>
+    </div>
+</div>
+
+<div id="registerModal" class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3>Регистрация</h3>
+            <button class="modal-close" onclick="closeRegisterModal()">&times;</button>
+        </div>
+        <form id="registerForm">
+            <div class="form-group">
+                <label>Логин</label>
+                <input type="text" id="regUsername" placeholder="Придумайте логин" required title="Введите желаемый логин">
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="regPassword" placeholder="Придумайте пароль" required title="Введите желаемый пароль">
+            </div>
+            <button type="submit" class="submit-modal-btn">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+ <script src="auth.js"></script>
+    <script src="Str1.js"></script>
+</body>
+</html>
