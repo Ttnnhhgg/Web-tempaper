@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Ипотека от 4% | Дом вашей мечты</title>
+    <link rel="stylesheet" href="Str6.css">
+    <link rel="stylesheet" href="../auth.css">
+    
+</head>
+<body data-lang="ru">
+<!-- Плавающие кнопки перевода -->
+<div class="lang-switch">
+    <button class="lang-btn active" data-lang="ru">РУС</button>
+    <button class="lang-btn" data-lang="en">ENG</button>
+</div>
+<div class="page-wrapper">
+
+   <!-- Шапка сайта -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="im11.png" alt="Фото дома" class="logo-house-img" width="65" height="56">
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">
+                            <span class="lang-ru">Наши проекты</span><span class="lang-en">Our Projects</span> ▼
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                            <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                            <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                            <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                            <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">
+                            <span class="lang-ru">Дома</span><span class="lang-en">Houses</span> ▼
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str8/Str8.html">Одноэтажные</a></li>
+                            <li><a href="../Str9/Str9.html">Двухэтажные</a></li>
+                            <li><a href="../Str7/Str7.html">Все дома</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../Str6/Str6.html">
+                            <span class="lang-ru">Ипотека</span><span class="lang-en">Mortgage</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">
+                            <span class="lang-ru">О компании</span><span class="lang-en">About Us</span> ▼
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str5/Str5.html">Команда</a></li>
+                            <li><a href="../Str3/Str3.html">СМИ о нас</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../Str2/Str2.html">
+                            <span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-phone">
+                <a href="tel:+79625552525" class="phone-number">+7 (962) 555-25-25</a>
+            </div>
+            <!-- КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ -->
+<button class="theme-switch-btn" id="themeSwitchBtn" aria-label="Переключить тему">🌙 Тёмная</button>
+
+<!-- Панель управления для слабовидящих -->
+<div class="accessibility-toolbar">
+    
+    <button class="accessibility-btn vision-toggle-btn" id="visionBtn" aria-label="Версия для слабовидящих">👁️ Версия для слабовидящих</button>
+</div>
+            <button class="callback-btn" id="callbackBtn">
+                <span class="lang-ru">Заказать звонок</span>
+                <span class="lang-en">Request a Call</span>
+            </button>
+            
+            <!-- БУРГЕР-КНОПКА - ТЕПЕРЬ ТОЧНО ЕСТЬ -->
+            <div class="burger-menu-toggle" id="burgerToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Кнопка возврата на главную -->
+    <a href="../Str1.html" class="home-button" id="homeButton" title="На главную">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9L12 3L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="lang-ru">На главную</span>
+        <span class="lang-en">To Home</span>
+    </a>
+
+    <!-- Модальные окна -->
+    <div id="callbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><span class="lang-ru">Заказать звонок</span><span class="lang-en">Request a Call</span></h3>
+            <p><span class="lang-ru">Оставьте ваш номер, и мы перезвоним в ближайшее время.</span><span class="lang-en">Leave your number and we will call you back soon.</span></p>
+            <form id="callbackForm">
+                <input type="tel" id="phoneInput" placeholder="+7 (___) ___-__-__" required>
+                <button type="submit"><span class="lang-ru">Отправить</span><span class="lang-en">Send</span></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ОСТАЛЬНОЙ КОНТЕНТ (все ваши блоки) -->
+    <div class="mortgage-card">
+        <div class="card-overlay"></div>
+        <div class="headline-wrapper">
+            <div class="headline-left"><span data-ru="ИПОТЕКА" data-en="MORTGAGE">ИПОТЕКА</span> <span class="headline-ot" data-ru="ОТ" data-en="FROM">ОТ</span></div>
+            <div class="percent-block">4%</div>
+        </div>
+        <div class="card-content">
+            <div class="description" data-ru="Уникальные ипотечные программы на специальных условиях." data-en="Unique mortgage programs on special terms.">Уникальные ипотечные программы на специальных условиях.</div>
+            <div class="text-line" data-ru="Просто заполните анкету и получите одобрение." data-en="Just fill out the form and get approval.">Просто заполните анкету и получите одобрение.</div>
+            <div class="highlight-step" data-ru="Всего шаг — до дома вашей мечты!" data-en="Just one step to your dream home!">Всего шаг — до дома вашей мечты!</div>
+            <button class="calculate-btn" id="calcBtn" data-ru="Рассчитать стоимость" data-en="Calculate cost">Рассчитать стоимость</button>
+        </div>
+    </div>
+
+    <!-- Остальные блоки (оставляем как есть) -->
+    <div class="white-background">
+        <div class="bottom-white-block">
+            <div class="left-column">
+                <div class="ipoteka-text" data-ru="Ипотека" data-en="Mortgage">Ипотека</div>
+                <div class="form-block">
+                    <div class="form-field-row">
+                        <div class="field-label-black" data-ru="Вид недвижимости" data-en="Property type">Вид недвижимости</div>
+                        <div class="field-value-inline" data-ru="Проект" data-en="Project">Проект</div>
+                    </div>
+                    <div class="double-select-row">
+                        <div class="gray-select-box box-283"><span class="select-text" data-ru="ВСЕ" data-en="ALL">ВСЕ</span><span class="select-arrow-black">▼</span></div>
+                        <div class="gray-select-box box-242"><span class="select-text" data-ru="ВСЕ" data-en="ALL">ВСЕ</span><span class="select-arrow-black">▼</span></div>
+                    </div>
+                    <div class="field-with-gray"><div class="field-label-outside" data-ru="Вид ипотеки" data-en="Mortgage type">Вид ипотеки</div><div class="gray-field-box"><span class="gray-field-value" data-ru="Все" data-en="All">Все</span></div></div>
+                    <div class="field-with-gray"><div class="field-label-outside" data-ru="Стоимость" data-en="Cost">Стоимость</div><div class="gray-field-box"><span class="gray-field-value">3 000 000 ₽</span></div></div>
+                    <div class="field-with-gray"><div class="field-label-outside" data-ru="Первоначальный взнос" data-en="Down payment">Первоначальный взнос</div><div class="gray-field-box"><span class="gray-field-value">2 000 000 ₽</span></div></div>
+                    <div class="field-with-gray"><div class="field-label-outside" data-ru="Ежемесячный платёж" data-en="Monthly payment">Ежемесячный платёж</div><div class="gray-field-box"><span class="gray-field-value">60 000 ₽</span></div></div>
+                    <button class="form-calculate-btn" data-ru="Рассчитать платёж" data-en="Calculate payment">Рассчитать платёж</button>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="banks-row">
+                    <div class="bank-card">
+                        <div class="bank-header"><img src="im2.png" alt="Логотип" class="logo-img"><div class="bank-name">АО "АЛЬФА БАНК"</div></div>
+                        <div class="bank-label" data-ru="Ставка" data-en="Rate">Ставка</div>
+                        <div class="bank-rate">4,1 %</div>
+                        <div class="bank-payment">от 4 000 ₽ / <span data-ru="мес" data-en="month">мес</span></div>
+                        <div class="bank-label" data-ru="Программа" data-en="Program">Программа</div>
+                        <div class="bank-program" data-ru="Семейная" data-en="Family">Семейная</div>
+                    </div>
+                    <div class="bank-card">
+                        <div class="bank-header"><img src="im2.png" alt="Логотип" class="logo-img"><div class="bank-name">БАНК ВТБ (ПАО)</div></div>
+                        <div class="bank-label" data-ru="Ставка" data-en="Rate">Ставка</div>
+                        <div class="bank-rate">4,1 %</div>
+                        <div class="bank-payment">от 4 000 ₽ / <span data-ru="мес" data-en="month">мес</span></div>
+                        <div class="bank-label" data-ru="Программа" data-en="Program">Программа</div>
+                        <div class="bank-program" data-ru="Семейная" data-en="Family">Семейная</div>
+                    </div>
+                </div>
+                <div class="banks-row">
+                    <div class="bank-card">
+                        <div class="bank-header"><img src="im2.png" alt="Логотип" class="logo-img"><div class="bank-name">ПАО СБЕРБАНК</div></div>
+                        <div class="bank-label" data-ru="Ставка" data-en="Rate">Ставка</div>
+                        <div class="bank-rate">4,1 %</div>
+                        <div class="bank-payment">от 4 000 ₽ / <span data-ru="мес" data-en="month">мес</span></div>
+                        <div class="bank-label" data-ru="Программа" data-en="Program">Программа</div>
+                        <div class="bank-program" data-ru="Семейная" data-en="Family">Семейная</div>
+                    </div>
+                    <div class="bank-card">
+                        <div class="bank-header"><img src="im2.png" alt="Логотип" class="logo-img"><div class="bank-name">ПАО "СОВКОМБАНК"</div></div>
+                        <div class="bank-label" data-ru="Ставка" data-en="Rate">Ставка</div>
+                        <div class="bank-rate">4,1 %</div>
+                        <div class="bank-payment">от 4 000 ₽ / <span data-ru="мес" data-en="month">мес</span></div>
+                        <div class="bank-label" data-ru="Программа" data-en="Program">Программа</div>
+                        <div class="bank-program" data-ru="Семейная" data-en="Family">Семейная</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grey-promo-block">
+            <div class="promo-content">
+                <div class="promo-text-block">
+                    <h2 class="promo-title"><span data-ru="ИПОТЕЧНЫЕ КРЕДИТЫ" data-en="MORTGAGE LOANS">ИПОТЕЧНЫЕ КРЕДИТЫ</span></h2>
+                    <p class="promo-description" data-ru="Выгодная ипотечная программа и специальные условия. Просто заполните анкету и получите одобрение. Всего один шаг, и дом — ваш. Ставка действует весь срок до 30 лет при сумме кредита до 100 млн рублей и первом взносе от 13,7%." data-en="A profitable mortgage program and special conditions. Just fill out the form and get approved. Just one step, and the house is yours. The rate is valid for the entire term up to 30 years with a loan amount of up to 100 million rubles and a down payment from 13.7%.">Выгодная ипотечная программа и специальные условия. Просто заполните анкету и получите одобрение. Всего один шаг, и дом — ваш. Ставка действует весь срок до 30 лет при сумме кредита до 100 млн рублей и первом взносе от 13,7%.</p>
+                    <button class="promo-btn" data-ru="Рассчитать платёж" data-en="Calculate payment">Рассчитать платёж</button>
+                </div>
+                <div class="promo-image"><img src="im3.png" alt="Ипотека" class="promo-img"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="two-blocks-wrapper">
+        <div class="small-promo-block">
+            <div class="small-promo-content">
+                <div class="small-promo-text-block">
+                    <h2 class="small-promo-title" data-ru="СЕМЕЙНАЯ ИПОТЕКА" data-en="FAMILY MORTGAGE">СЕМЕЙНАЯ ИПОТЕКА</h2>
+                    <p class="small-promo-description" data-ru="Воспользоваться программой «Семейная ипотека» возможно до 1 июля 2024 года при рождении первого ребенка или последующих детей." data-en="You can use the Family Mortgage program until July 1, 2024, upon the birth of your first child or subsequent children.">Воспользоваться программой «Семейная ипотека» возможно до 1 июля 2024 года при рождении первого ребенка или последующих детей.</p>
+                    <button class="small-promo-btn" data-ru="Рассчитать платёж" data-en="Calculate payment">Рассчитать платёж</button>
+                </div>
+                <div class="small-promo-image"><img src="im3.png" alt="Семейная ипотека" class="small-promo-img"></div>
+            </div>
+        </div>
+        <div class="small-promo-block">
+            <div class="small-promo-content">
+                <div class="small-promo-text-block">
+                    <h2 class="small-promo-title" data-ru="ГОСПОДДЕРЖКА 2023" data-en="STATE SUPPORT 2023">ГОСПОДДЕРЖКА 2023</h2>
+                    <p class="small-promo-description" data-ru="Ипотеку с господдержкой могут получить граждане России, у которых есть постоянная регистрация, официальная работа и стабильный доход." data-en="Mortgage with state support can be obtained by Russian citizens who have permanent registration, official employment and stable income.">Ипотеку с господдержкой могут получить граждане России, у которых есть постоянная регистрация, официальная работа и стабильный доход.</p>
+                    <button class="small-promo-btn" data-ru="Рассчитать платёж" data-en="Calculate payment">Рассчитать платёж</button>
+                </div>
+                <div class="small-promo-image"><img src="im3.png" alt="Господдержка" class="small-promo-img"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grey-promo-block">
+        <div class="promo-content">
+            <div class="promo-text-block">
+                <h2 class="promo-title" data-ru="IT СПЕЦИАЛИСТАМ" data-en="IT SPECIALISTS">IT СПЕЦИАЛИСТАМ</h2>
+                <p class="promo-description" data-ru="Оформить ипотеку по сниженной ставке может гражданин России, трудоустроенный в компании, которая работает в сфере информационных технологий. Возраст — от 18 до 50 лет включительно. Стаж — не менее 3 месяцев на текущем месте работы." data-en="A mortgage at a reduced rate can be issued to a Russian citizen employed in a company operating in the field of information technology. Age — from 18 to 50 years inclusive. Work experience — at least 3 months at the current place of work.">Оформить ипотеку по сниженной ставке может гражданин России, трудоустроенный в компании, которая работает в сфере информационных технологий. Возраст — от 18 до 50 лет включительно. Стаж — не менее 3 месяцев на текущем месте работы.</p>
+                <button class="promo-btn" data-ru="Рассчитать платёж" data-en="Calculate payment">Рассчитать платёж</button>
+            </div>
+            <div class="promo-image"><img src="im3.png" alt="IT специалистам" class="promo-img"></div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <div class="faq-header">
+            <h2 class="faq-title">
+                <span class="faq-title-black" data-ru="ОТВЕТЫ НА" data-en="ANSWERS TO">ОТВЕТЫ НА</span>
+                <span class="faq-title-orange" data-ru="ВОПРОСЫ" data-en="QUESTIONS">ВОПРОСЫ</span>
+            </h2>
+            <button class="faq-callback-btn" data-ru="Перезвоните мне" data-en="Call me back">Перезвоните мне</button>
+        </div>
+        <div class="faq-block">
+            <div class="faq-circle"><svg width="30" height="30" viewBox="-15 -15 30 30"><line x1="0" y1="8" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/><line x1="-6" y1="-2" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/><line x1="6" y1="-2" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/></svg></div>
+            <div class="faq-content">
+                <div class="faq-question"><span class="faq-question-text" data-ru="Можно ли использовать материнский капитал для первоначального взноса?" data-en="Can I use maternity capital for a down payment?">Можно ли использовать материнский капитал для первоначального взноса?</span></div>
+                <p class="faq-answer" data-ru="Да, возможно. Если средств материнского капитала не хватает для первоначального взноса, то вы можете добавить собственные средства." data-en="Yes, it is possible. If maternity capital funds are not enough for a down payment, you can add your own funds.">Да, возможно. Если средств материнского капитала не хватает для первоначального взноса, то вы можете добавить собственные средства.</p>
+                <p class="faq-answer" data-ru="После рассмотрения пакета документов банк рассчитывает сумму кредита, который он может выдать на данных условиях. После этого возможны два варианта:" data-en="After reviewing the package of documents, the bank calculates the loan amount that it can issue under these conditions. After that, two options are possible:">После рассмотрения пакета документов банк рассчитывает сумму кредита, который он может выдать на данных условиях. После этого возможны два варианта:</p>
+                <ul class="faq-list">
+                    <li data-ru="увеличение максимальной суммы кредита на величину материнского капитала с автоматическим уменьшением первоначального взноса;" data-en="increasing the maximum loan amount by the amount of maternity capital with an automatic reduction of the down payment;">увеличение максимальной суммы кредита на величину материнского капитала с автоматическим уменьшением первоначального взноса;</li>
+                    <li data-ru="использование материнского капитала для первоначального взноса без увеличения суммы кредита." data-en="using maternity capital for a down payment without increasing the loan amount.">использование материнского капитала для первоначального взноса без увеличения суммы кредита.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <div class="faq-small-block" style="height: 222px;">
+            <div class="faq-small-circle"><svg width="30" height="30" viewBox="-15 -15 30 30"><line x1="0" y1="8" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/><line x1="-6" y1="-2" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/><line x1="6" y1="-2" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/></svg></div>
+            <div class="faq-small-content">
+                <div class="faq-small-question" data-ru="Нужно ли привозить бумажные документы или все можно отправить электронно?" data-en="Do I need to bring paper documents or can everything be sent electronically?">Нужно ли привозить бумажные документы или все можно отправить электронно?</div>
+                <p class="faq-small-answer" data-ru="Для подачи заявки на ипотеку достаточно сканов или фото всех документов. Анкету на кредит также можно подписать дистанционно." data-en="To apply for a mortgage, it is enough to have scans or photos of all documents. The loan application can also be signed remotely.">Для подачи заявки на ипотеку достаточно сканов или фото всех документов. Анкету на кредит также можно подписать дистанционно.</p>
+            </div>
+        </div>
+        <div class="faq-small-block" style="height: 184px;">
+            <div class="faq-small-circle"><svg width="30" height="30" viewBox="-15 -15 30 30"><line x1="0" y1="8" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/><line x1="-6" y1="-2" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/><line x1="6" y1="-2" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/></svg></div>
+            <div class="faq-small-content">
+                <div class="faq-small-question" data-ru="Есть ли требование к гражданству?" data-en="Is there a citizenship requirement?">Есть ли требование к гражданству?</div>
+                <p class="faq-small-answer" data-ru="По стандартным программам требования к гражданству нет. Ипотека с Господдержкой и Семейная ипотека распространяется только на граждан РФ." data-en="There is no citizenship requirement for standard programs. Mortgage with State Support and Family Mortgage applies only to citizens of the Russian Federation.">По стандартным программам требования к гражданству нет. Ипотека с Господдержкой и Семейная ипотека распространяется только на граждан РФ.</p>
+            </div>
+        </div>
+        <div class="faq-small-block" style="height: 245px;">
+            <div class="faq-small-circle"><svg width="30" height="30" viewBox="-15 -15 30 30"><line x1="0" y1="8" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/><line x1="-6" y1="-2" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/><line x1="6" y1="-2" x2="0" y2="-8" stroke="#FF8C00" stroke-width="2"/></svg></div>
+            <div class="faq-small-content">
+                <div class="faq-small-question" data-ru="Я работаю неофициально. У меня есть шанс получить ипотеку?" data-en="I work unofficially. Do I have a chance to get a mortgage?">Я работаю неофициально. У меня есть шанс получить ипотеку?</div>
+                <p class="faq-small-answer" data-ru="Да, ипотеку получить возможно. Практические все наши банки-партнеры могут рассмотреть заявку на ипотечный кредит по двум документам, без предоставления документов о трудоустройстве. Для этого необходимо заполнить анкету, паспорт и СНИЛС." data-en="Yes, it is possible to get a mortgage. Almost all of our partner banks can consider an application for a mortgage loan based on two documents, without providing employment documents. To do this, you need to fill out a form, passport and SNILS.">Да, ипотеку получить возможно. Практические все наши банки-партнеры могут рассмотреть заявку на ипотечный кредит по двум документам, без предоставления документов о трудоустройстве. Для этого необходимо заполнить анкету, паспорт и СНИЛС.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ФУТЕР -->
+    <section class="footer-info">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title" data-ru="О КОМПАНИИ" data-en="ABOUT THE COMPANY">О КОМПАНИИ</h3>
+                <ul class="footer-menu">
+                    <li><a href="#" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="#" data-ru="Наша команда" data-en="Our team">Наша команда</a></li>
+                    <li><a href="#" data-ru="СМИ о нас" data-en="Media about us">СМИ о нас</a></li>
+                    <li><a href="#" data-ru="Отзывы" data-en="Reviews">Отзывы</a></li>
+                    <li><a href="#" data-ru="Новости" data-en="News">Новости</a></li>
+                    <li><a href="#" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                </ul>
+                <a href="#" class="footer-policy" data-ru="Политика конфиденциальности" data-en="Privacy policy">Политика конфиденциальности</a>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title" data-ru="ПРОЕКТЫ" data-en="PROJECTS">ПРОЕКТЫ</h3>
+                <ul class="footer-menu">
+                    <li><a href="#">Изумрудный Village</a></li>
+                    <li><a href="#">Зимняя горка</a></li>
+                    <li><a href="#">Константиновка</a></li>
+                    <li><a href="#">Усады Village</a></li>
+                    <li><a href="#">IQ-CLUB</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title" data-ru="ИПОТЕКА" data-en="MORTGAGE">ИПОТЕКА</h3>
+                <ul class="footer-menu">
+                    <li><a href="#" data-ru="Ипотечные кредиты" data-en="Mortgage loans">Ипотечные кредиты</a></li>
+                    <li><a href="#" data-ru="Для семей с детьми" data-en="For families with children">Для семей с детьми</a></li>
+                    <li><a href="#" data-ru="Военная ипотека" data-en="Military mortgage">Военная ипотека</a></li>
+                    <li><a href="#" data-ru="Господдержка 2023" data-en="State support 2023">Господдержка 2023</a></li>
+                </ul>
+            </div>
+            <div class="footer-brand">
+                <img src="im8.png" alt="Windom" class="footer-logo-img">
+                <div class="footer-slogan" data-ru="ДОМА ДЛЯ ПОБЕДИТЕЛЕЙ" data-en="HOUSES FOR WINNERS">ДОМА ДЛЯ ПОБЕДИТЕЛЕЙ</div>
+                <img src="im9.png" alt="Социальные сети" class="footer-social-img">
+                <div><a href="mailto:window.kazan@gmail.com" class="footer-email-link">window.kazan@gmail.com</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- МОБИЛЬНОЕ МЕНЮ (БУРГЕР) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="im8.png" alt="Windom logo" class="mobile-logo">
+            <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item has-submenu">
+                <span><span class="lang-ru">Наши проекты</span><span class="lang-en">Our Projects</span> <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                    <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                    <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                    <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                    <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item has-submenu">
+                <span><span class="lang-ru">Дома</span><span class="lang-en">Houses</span> <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str8/Str8.html"><span class="lang-ru">Одноэтажные</span><span class="lang-en">One-story</span></a></li>
+                    <li><a href="../Str9/Str9.html"><span class="lang-ru">Двухэтажные</span><span class="lang-en">Two-story</span></a></li>
+                    <li><a href="../Str7/Str7.html"><span class="lang-ru">Все дома</span><span class="lang-en">All houses</span></a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="../Str6/Str6.html"><span class="lang-ru">Ипотека</span><span class="lang-en">Mortgage</span></a>
+            </li>
+            <li class="mobile-nav-item has-submenu">
+                <span><span class="lang-ru">О компании</span><span class="lang-en">About Us</span> <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str5/Str5.html"><span class="lang-ru">Команда</span><span class="lang-en">Team</span></a></li>
+                    <li><a href="../Str3/Str3.html"><span class="lang-ru">СМИ о нас</span><span class="lang-en">Media</span></a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="../Str2/Str2.html"><span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span></a>
+            </li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="tel:+79625552525" class="mobile-phone">+7 (962) 555-25-25</a>
+            <button class="mobile-callback-btn" id="mobileCallbackBtn">
+                <span class="lang-ru">Заказать звонок</span>
+                <span class="lang-en">Request a Call</span>
+            </button>
+            <div class="mobile-language">
+                <button class="lang-btn-mobile active" data-lang="ru">RU</button>
+                <button class="lang-btn-mobile" data-lang="en">EN</button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Модальное окно для "Рассчитать платёж" (FORM 9) -->
+    <div id="modalForm9" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-modal9">&times;</span>
+            <h3><span class="lang-ru">Рассчитать платёж</span><span class="lang-en">Calculate Payment</span></h3>
+            <p><span class="lang-ru">Заполните форму, и мы рассчитаем для вас ежемесячный платёж.</span><span class="lang-en">Fill out the form and we will calculate your monthly payment.</span></p>
+            <form id="form9">
+                <input type="text" id="form9Name" placeholder="Ваше имя" required>
+                <input type="tel" id="form9Phone" placeholder="Телефон" required>
+                <input type="number" id="form9Amount" placeholder="Сумма кредита (₽)" required>
+                <input type="number" id="form9DownPayment" placeholder="Первоначальный взнос (₽)">
+                <button type="submit"><span class="lang-ru">Рассчитать</span><span class="lang-en">Calculate</span></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для "Рассчитать стоимость" (FORM 11) -->
+    <div id="modalForm11" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-modal11">&times;</span>
+            <h3><span class="lang-ru">Рассчитать стоимость</span><span class="lang-en">Calculate Cost</span></h3>
+            <p><span class="lang-ru">Заполните форму, и мы рассчитаем стоимость дома.</span><span class="lang-en">Fill out the form and we will calculate the cost of the house.</span></p>
+            <form id="form11">
+                <input type="text" id="form11Name" placeholder="Ваше имя" required>
+                <input type="tel" id="form11Phone" placeholder="Телефон" required>
+                <input type="text" id="form11HouseType" placeholder="Тип дома / Площадь">
+                <button type="submit"><span class="lang-ru">Рассчитать</span><span class="lang-en">Calculate</span></button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    <script src="../auth.js"></script>
+<script src="Str6.js"></script>
+
+</body>
+</html>

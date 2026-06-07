@@ -1,0 +1,2202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    padding: 20px;
+}
+
+/* ===== ПЛАВАЮЩИЕ КНОПКИ ПЕРЕВОДА ===== */
+.lang-switch {
+    position: fixed;
+    top: 110px;
+    right: 20px;
+    z-index: 9999;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+    border: 1px solid #e5e7eb;
+}
+
+.lang-btn {
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.lang-btn.active {
+    background: #EFA359;
+    color: white;
+}
+
+.lang-btn:not(.active):hover {
+    background: #f3f4f6;
+}
+
+/* ===== ПЕРЕКЛЮЧЕНИЕ ЯЗЫКОВ ===== */
+[data-lang="ru"] .lang-en {
+    display: none !important;
+}
+
+[data-lang="en"] .lang-ru {
+    display: none !important;
+}
+
+/* ===== СТИЛИ ДЛЯ ВЫПАДАЮЩИХ МЕНЮ ===== */
+.nav-item {
+    position: relative;
+}
+
+.nav-item.dropdown {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: -15px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 220px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: visibility 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.nav-item.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 24px;
+    color: #2c3e4e;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    background: #ff8c00;
+    color: #ffffff;
+}
+
+.nav-menu li:last-child .dropdown-menu,
+.nav-menu li:nth-last-child(2) .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+/* Мобильная версия выпадающих меню */
+@media (max-width: 1098px) {
+    .nav-item.dropdown {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        visibility: hidden;
+        opacity: 0;
+        transform: none;
+        box-shadow: none;
+        background: #f0f0f0;
+        padding-left: 20px;
+        margin-top: 5px;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+        pointer-events: none;
+        display: block !important;
+    }
+    
+    .nav-item.dropdown.active .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        max-height: 300px;
+        pointer-events: auto;
+    }
+}
+
+/* Кнопка возврата на главную */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: rgba(239, 163, 90, 0.95);
+    border-radius: 40px;
+    color: #1a2a3a;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.home-button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.home-button:hover {
+    background: #EFA35A;
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.home-button:hover svg {
+    transform: translateX(-3px);
+}
+
+/* Шапка сайта */
+.main-header {
+    width: 1680px;
+    height: 105px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #eaeef2;
+}
+
+.header-container {
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo { flex-shrink: 0; }
+.logo-house-img { width: 65px; height: 56px; object-fit: cover; }
+
+.header-nav { flex-shrink: 0; }
+.nav-menu { display: flex; list-style: none; gap: 32px; }
+.nav-item a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: #2c3e4e;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+.nav-item a:hover { color: #ff8c00; }
+
+.header-phone { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.phone-number {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a3a4a;
+}
+.phone-number:hover { color: #ff8c00; }
+
+.callback-btn {
+    width: 202px;
+    height: 53px;
+    background: transparent;
+    border: 1.5px solid #ff8c00;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.callback-btn:hover { background: #ff8c00; color: #ffffff; }
+
+/* ========== БУРГЕР-МЕНЮ ========== */
+.burger-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 10002;
+    margin-left: 15px;
+    background: #1a2a3a;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.burger-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.burger-menu-toggle:hover {
+    background: #FF8C00;
+}
+
+.burger-menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Мобильное меню */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 380px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+    z-index: 2000;
+    transition: right 0.35s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 2px solid #FF8C00;
+    background: #ffffff;
+}
+
+.mobile-logo {
+    height: 40px;
+    width: auto;
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #1a2a3a;
+    line-height: 1;
+    padding: 0;
+}
+
+.mobile-menu-close:hover {
+    color: #FF8C00;
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.mobile-nav-item {
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a2a3a;
+    border-bottom: 1px solid #f0f3f6;
+    cursor: pointer;
+}
+
+.mobile-nav-item > span,
+.mobile-nav-item > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #1a2a3a;
+    width: 100%;
+}
+
+.submenu-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    color: #FF8C00;
+}
+
+.mobile-nav-item.active .submenu-arrow {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-nav-item.active .mobile-submenu {
+    max-height: 300px;
+}
+
+.mobile-submenu li {
+    padding: 10px 0;
+}
+
+.mobile-submenu li a {
+    text-decoration: none;
+    color: #5a6e7c;
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
+}
+
+.mobile-submenu li a:hover {
+    color: #FF8C00;
+}
+
+.mobile-menu-footer {
+    padding: 24px;
+    border-top: 1px solid #eef2f5;
+    background: #fafcfd;
+    margin-top: auto;
+}
+
+.mobile-phone {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800;
+    color: #1a2a3a;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.mobile-callback-btn {
+    width: 100%;
+    padding: 14px;
+    background: #FF8C00;
+    border: none;
+    font-weight: 700;
+    font-size: 15px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.mobile-callback-btn:hover {
+    background: #e07e00;
+}
+
+.mobile-language {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.lang-btn-mobile {
+    background: transparent;
+    border: 1px solid #cfdfed;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.lang-btn-mobile.active {
+    background: #FF8C00;
+    border-color: #FF8C00;
+    color: white;
+}
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== БУРГЕР ПОЯВЛЯЕТСЯ ПРИ ШИРИНЕ 1098px И МЕНЬШЕ ===== */
+@media (max-width: 1098px) {
+    .burger-menu-toggle {
+        display: flex !important;
+    }
+    
+    .header-nav {
+        display: none !important;
+    }
+    
+    .header-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .callback-btn {
+        width: 140px;
+        height: 40px;
+        font-size: 11px;
+    }
+    
+    .header-phone .phone-number {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 650px) {
+    .header-phone .phone-number {
+        display: none;
+    }
+    
+    .callback-btn {
+        width: 120px;
+        height: 38px;
+        font-size: 10px;
+    }
+    
+    .lang-switch {
+        top: 100px;
+        right: 10px;
+    }
+    
+    .lang-switch .lang-btn {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 1099px) {
+    .burger-menu-toggle {
+        display: none !important;
+    }
+    
+    .mobile-menu,
+    .mobile-overlay {
+        display: none !important;
+    }
+}
+
+/* ===== СТИЛИ ДЛЯ МОДАЛЬНЫХ ОКОН ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 35px 40px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeInUp 0.3s ease;
+}
+
+.modal-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a2a3a;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    font-family: inherit;
+    font-size: 15px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+    outline: none;
+    border-color: #FF8C00;
+}
+
+.modal-content button[type="submit"] {
+    background: #FF8C00;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-content button[type="submit"]:hover {
+    background: #e07e00;
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 20px;
+    margin-top: -15px;
+    margin-right: -15px;
+}
+
+.close-modal:hover {
+    color: #FF8C00;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== ВСЕ ОСТАЛЬНЫЕ СТИЛИ ВАШЕЙ СТРАНИЦЫ (оставляем без изменений) ===== */
+.mortgage-card {
+    width: 1280px;
+    height: 802px;
+    background-image: url('im1.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.headline-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 80px;
+}
+
+.headline-left {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.headline-ot {
+    font-size: 72px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.percent-block {
+    width: 212px;
+    height: 143px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 88px;
+    font-weight: 800;
+    color: #FF8C00;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+    width: 100%;
+}
+
+.description {
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    margin-bottom: 16px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.text-line {
+    font-size: 22px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 16px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.highlight-step {
+    font-size: 22px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 48px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.calculate-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF8C00;
+    border: none;
+    width: 245px;
+    height: 51px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: inherit;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.calculate-btn:hover {
+    background: #e07e00;
+    transform: translateY(-1px);
+}
+
+.bottom-white-block {
+    width: 1280px;
+    background: #FFFFFF;
+    padding: 30px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.left-column {
+    width: 539px;
+    flex-shrink: 0;
+}
+
+.ipoteka-text {
+    text-align: left;
+    font-size: 42px;
+    font-weight: 600;
+    color: #1a2a2a;
+    margin-bottom: 30px;
+}
+
+.form-block {
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field-row {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.field-label-black {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.field-value-inline {
+    font-size: 16px;
+    font-weight: 400;
+    color: #1a2a2a;
+    position: absolute;
+    left: 303px;
+}
+
+.double-select-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.gray-select-box {
+    background: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    cursor: pointer;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.gray-select-box:hover {
+    background: #EBEBEB;
+}
+
+.box-283 { width: 283px; }
+.box-242 { width: 242px; }
+
+.select-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.select-arrow-black {
+    font-size: 16px;
+    color: #000000;
+}
+
+.field-with-gray {
+    margin-bottom: 20px;
+}
+
+.field-label-outside {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.gray-field-box {
+    background: #F5F5F5;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.gray-field-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.form-calculate-btn {
+    width: 100%;
+    height: 51px;
+    background: #FF8C00;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+}
+
+.form-calculate-btn:hover {
+    background: #e07e00;
+    transform: translateY(-1px);
+}
+
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.banks-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.bank-card {
+    width: 289px;
+    height: 491px;
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.bank-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.logo-img {
+    width: 20px;
+    height: 25px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.bank-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a2a2a;
+    line-height: 1.3;
+}
+
+.bank-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888888;
+    margin-bottom: 8px;
+}
+
+.bank-rate {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a2a2a;
+    margin-bottom: 8px;
+}
+
+.bank-payment {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888888;
+    margin-bottom: 24px;
+}
+
+.bank-program {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a2a2a;
+}
+
+.grey-promo-block {
+    width: 1160px;
+    height: 452px;
+    background: #B0B0B0;
+    margin: 30px auto;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.promo-text-block {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.promo-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a2a2a;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.promo-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.promo-btn {
+    width: 246px;
+    height: 61px;
+    background: #B0B0B0;
+    border: 2px solid #FF8C00;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: inherit;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+}
+
+.promo-btn:hover {
+    background: #A0A0A0;
+    transform: translateY(-1px);
+}
+
+.promo-image {
+    width: 503px;
+    height: 452px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.two-blocks-wrapper {
+    width: 1160px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 30px auto;
+    justify-content: center;
+    clear: both;
+    position: relative;
+    left: 0;
+    right: auto;
+}
+
+.small-promo-block {
+    width: 575px;
+    height: 539px;
+    background: #D9D9D9;
+    border: 1px solid #C0C0C0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.small-promo-content {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+}
+
+.small-promo-text-block {
+    flex: 1;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.small-promo-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a2a2a;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.small-promo-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.small-promo-btn {
+    width: 246px;
+    height: 61px;
+    background: #D9D9D9;
+    border: 2px solid #FF8C00;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: inherit;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+}
+
+.small-promo-btn:hover {
+    background: #C9C9C9;
+    transform: translateY(-1px);
+}
+
+.small-promo-image {
+    width: 247px;
+    height: 539px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.small-promo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.faq-section {
+    width: 1164px;
+    margin: 30px auto;
+}
+
+.faq-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.faq-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.faq-title-black {
+    color: #1a2a2a;
+}
+
+.faq-title-orange {
+    color: #FF8C00;
+}
+
+.faq-callback-btn {
+    width: 238px;
+    height: 63px;
+    background: #FF8C00;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+}
+
+.faq-callback-btn:hover {
+    background: #e07e00;
+    transform: translateY(-1px);
+}
+
+.faq-block {
+    width: 1164px;
+    background: #F5F5F5;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    padding: 40px;
+    position: relative;
+}
+
+.faq-circle {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-content {
+    width: calc(100% - 80px);
+    padding-right: 20px;
+}
+
+.faq-question {
+    margin-bottom: 20px;
+}
+
+.faq-question-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2a2a;
+    line-height: 1.4;
+}
+
+.faq-answer {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.faq-list {
+    margin: 16px 0 0 0;
+    padding-left: 20px;
+}
+
+.faq-list li {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.faq-small-block {
+    width: 1164px;
+    background: #F5F5F5;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    padding: 25px 40px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.faq-small-circle {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-small-content {
+    width: calc(100% - 100px);
+    padding-right: 20px;
+}
+
+.faq-small-question {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2a2a;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.faq-small-answer {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.footer-info {
+    width: 1680px;
+    margin: 0 auto;
+    background: #323232;
+    padding: 100px 40px 40px 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 8px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #b0b0b0;
+}
+
+.footer-menu a:hover {
+    color: #ff8c00;
+}
+
+.footer-policy {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    color: #b0b0b0;
+    margin-top: 15px;
+}
+
+.footer-policy:hover {
+    color: #ff8c00;
+}
+
+.footer-brand {
+    text-align: right;
+    width: 160px;
+    flex-shrink: 0;
+}
+
+.footer-logo-img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-slogan {
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer-social-img {
+    width: 100%;
+    max-width: 90px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-email-link {
+    text-decoration: none;
+    font-size: 11px;
+    color: #ffc107;
+}
+
+.footer-email-link:hover {
+    color: #fff;
+}
+
+@media (max-width: 1680px) {
+    .main-header, .footer-info {
+        width: 100%;
+        max-width: 1680px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .mortgage-card, .bottom-white-block {
+        width: 100%;
+        max-width: 1280px;
+    }
+    
+    .grey-promo-block, .two-blocks-wrapper, .faq-section, .faq-block, .faq-small-block {
+        width: 100%;
+        max-width: 1160px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .footer-container {
+        flex-wrap: wrap;
+    }
+    
+    .footer-brand {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .footer-logo-img {
+        max-width: 100px;
+    }
+    
+    .footer-social-img {
+        max-width: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .headline-left, .headline-ot {
+        font-size: 48px;
+    }
+    
+    .percent-block {
+        width: 150px;
+        height: 100px;
+        font-size: 60px;
+    }
+    
+    .description, .text-line, .highlight-step {
+        white-space: normal;
+        font-size: 18px;
+        padding: 0 20px;
+    }
+    
+    .bottom-white-block {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left-column {
+        width: 100%;
+        max-width: 539px;
+    }
+    
+    .right-column {
+        width: 100%;
+    }
+    
+    .banks-row {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .grey-promo-block, .small-promo-block {
+        height: auto;
+        min-height: 452px;
+    }
+    
+    .promo-content, .small-promo-content {
+        flex-direction: column;
+    }
+    
+    .promo-image, .small-promo-image {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .two-blocks-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .faq-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .faq-circle, .faq-small-circle {
+        display: none;
+    }
+    
+    .faq-content, .faq-small-content {
+        width: 100%;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .modal-content {
+        padding: 25px 20px;
+    }
+    
+    .modal-content h3 {
+        font-size: 22px;
+    }
+    
+    .promo-title, .small-promo-title {
+        font-size: 24px;
+    }
+    
+    .promo-btn, .small-promo-btn, .form-calculate-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .headline-left, .headline-ot {
+        font-size: 32px;
+    }
+    
+    .percent-block {
+        width: 100px;
+        height: 70px;
+        font-size: 40px;
+    }
+    
+    .ipoteka-text {
+        font-size: 32px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========== ПЕРЕМЕННЫЕ И СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ ========== */
+/* Копируйте этот блок в САМЫЙ КОНЕЦ вашего файла Str6.css */
+
+:root {
+    --dark-bg-body: #121212;
+    --dark-bg-header: #1e1e2e;
+    --dark-bg-card: #1e1e2e;
+    --dark-bg-footer: #0a0a0f;
+    --dark-bg-form: #1e1e2e;
+    --dark-bg-grey: #2a2a3a;
+    --dark-bg-light: #3a3a4a;
+    --dark-text-primary: #e0e0e0;
+    --dark-text-secondary: #b0b0c0;
+    --dark-text-muted: #8a8a9a;
+    --dark-text-dark: #e0e0e0;
+    --dark-border: #2a2a3a;
+    --dark-border-light: #3a3a4a;
+    --dark-shadow: rgba(0, 0, 0, 0.3);
+}
+
+body.dark {
+    background-color: var(--dark-bg-body);
+    color: var(--dark-text-primary);
+}
+
+/* ===== ШАПКА ===== */
+body.dark .main-header {
+    background: var(--dark-bg-header);
+    border-bottom-color: var(--dark-border);
+}
+
+body.dark .nav-item a,
+body.dark .phone-number {
+    color: var(--dark-text-secondary);
+}
+
+body.dark .nav-item a:hover,
+body.dark .phone-number:hover {
+    color: #ff8c00;
+}
+
+body.dark .callback-btn {
+    color: var(--dark-text-primary);
+    border-color: #ff8c00;
+}
+
+body.dark .callback-btn:hover {
+    background: #ff8c00;
+    color: #ffffff;
+}
+
+/* ===== КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ===== */
+.theme-switch-btn {
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary, #1a2a3a);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+body.dark .theme-switch-btn {
+    border-color: var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.dark .theme-switch-btn:hover {
+    background: #EFA359;
+    border-color: #EFA359;
+    color: #ffffff;
+}
+
+/* ===== ПЛАВАЮЩИЕ КНОПКИ ПЕРЕВОДА ===== */
+body.dark .lang-switch {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+body.dark .lang-btn {
+    color: var(--dark-text-primary);
+}
+
+body.dark .lang-btn.active {
+    background: #EFA359;
+    color: white;
+}
+
+body.dark .lang-btn:not(.active):hover {
+    background: var(--dark-border-light);
+}
+
+/* ===== КНОПКА НА ГЛАВНУЮ ===== */
+body.dark .home-button {
+    background: rgba(239, 163, 90, 0.95);
+    color: #1a2a3a;
+}
+
+body.dark .home-button:hover {
+    background: #EFA359;
+    color: #ffffff;
+}
+
+/* ===== ОСНОВНОЙ БЛОК С ПРОЦЕНТАМИ ===== */
+body.dark .mortgage-card {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('im1.png');
+}
+
+/* ===== БЕЛЫЙ БЛОК (ФОРМА И БАНКИ) ===== */
+body.dark .bottom-white-block {
+    background: var(--dark-bg-card);
+}
+
+body.dark .ipoteka-text {
+    color: var(--dark-text-primary);
+}
+
+body.dark .field-label-black,
+body.dark .field-value-inline,
+body.dark .field-label-outside {
+    color: var(--dark-text-primary);
+}
+
+body.dark .gray-select-box,
+body.dark .gray-field-box {
+    background: var(--dark-bg-grey);
+}
+
+body.dark .select-text,
+body.dark .select-arrow-black,
+body.dark .gray-field-value {
+    color: var(--dark-text-primary);
+}
+
+body.dark .bank-card {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+body.dark .bank-name,
+body.dark .bank-rate,
+body.dark .bank-program {
+    color: var(--dark-text-primary);
+}
+
+body.dark .bank-label,
+body.dark .bank-payment {
+    color: var(--dark-text-muted);
+}
+
+/* ===== СЕРЫЕ ПРОМО-БЛОКИ ===== */
+body.dark .grey-promo-block {
+    background: var(--dark-bg-grey);
+    border-color: var(--dark-border);
+}
+
+body.dark .promo-title,
+body.dark .small-promo-title {
+    color: var(--dark-text-primary);
+}
+
+body.dark .promo-description,
+body.dark .small-promo-description {
+    color: var(--dark-text-secondary);
+}
+
+body.dark .promo-btn,
+body.dark .small-promo-btn {
+    background: var(--dark-bg-grey);
+    color: var(--dark-text-primary);
+    border-color: #FF8C00;
+}
+
+body.dark .small-promo-block {
+    background: var(--dark-bg-grey);
+    border-color: var(--dark-border);
+}
+
+/* ===== FAQ БЛОКИ ===== */
+body.dark .faq-block,
+body.dark .faq-small-block {
+    background: var(--dark-bg-grey);
+    border-color: var(--dark-border);
+}
+
+body.dark .faq-title-black {
+    color: var(--dark-text-primary);
+}
+
+body.dark .faq-title-orange {
+    color: #FF8C00;
+}
+
+body.dark .faq-question-text,
+body.dark .faq-small-question {
+    color: var(--dark-text-primary);
+}
+
+body.dark .faq-answer,
+body.dark .faq-small-answer,
+body.dark .faq-list li {
+    color: var(--dark-text-secondary);
+}
+
+body.dark .faq-circle,
+body.dark .faq-small-circle {
+    background: var(--dark-bg-card);
+}
+
+body.dark .faq-callback-btn {
+    background: #FF8C00;
+    color: #000000;
+}
+
+body.dark .faq-callback-btn:hover {
+    background: #e07e00;
+}
+
+/* ===== ФУТЕР ===== */
+body.dark .footer-info {
+    background: var(--dark-bg-footer);
+}
+
+body.dark .footer-menu a {
+    color: var(--dark-text-muted);
+}
+
+body.dark .footer-menu a:hover {
+    color: #ff8c00;
+}
+
+body.dark .footer-policy {
+    color: var(--dark-text-muted);
+}
+
+/* ===== ВЫПАДАЮЩИЕ МЕНЮ ===== */
+body.dark .dropdown-menu {
+    background: var(--dark-bg-card);
+    box-shadow: 0 15px 30px var(--dark-shadow);
+}
+
+body.dark .dropdown-menu li a {
+    color: var(--dark-text-primary);
+}
+
+body.dark .dropdown-menu li a:hover {
+    background: #ff8c00;
+    color: #ffffff;
+}
+
+/* ===== БУРГЕР-МЕНЮ ===== */
+body.dark .burger-menu-toggle {
+    background: var(--dark-text-primary);
+}
+
+body.dark .burger-menu-toggle span {
+    background-color: var(--dark-bg-header);
+}
+
+body.dark .mobile-menu,
+body.dark .mobile-menu-header,
+body.dark .mobile-menu-footer {
+    background: var(--dark-bg-card);
+}
+
+body.dark .mobile-menu-header {
+    border-bottom-color: #FF8C00;
+}
+
+body.dark .mobile-nav-item {
+    color: var(--dark-text-primary);
+    border-bottom-color: var(--dark-border);
+}
+
+body.dark .mobile-nav-item > span,
+body.dark .mobile-nav-item > a {
+    color: var(--dark-text-primary);
+}
+
+body.dark .mobile-menu-close {
+    color: var(--dark-text-primary);
+}
+
+body.dark .mobile-menu-close:hover {
+    color: #FF8C00;
+}
+
+body.dark .mobile-submenu li a {
+    color: var(--dark-text-secondary);
+}
+
+body.dark .mobile-submenu li a:hover {
+    color: #FF8C00;
+}
+
+body.dark .mobile-callback-btn {
+    background: #FF8C00;
+    color: #ffffff;
+}
+
+body.dark .mobile-callback-btn:hover {
+    background: #e07e00;
+}
+
+body.dark .lang-btn-mobile {
+    border-color: var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.dark .lang-btn-mobile.active {
+    background: #FF8C00;
+    color: white;
+}
+
+body.dark .mobile-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* ===== МОДАЛЬНЫЕ ОКНА ===== */
+body.dark .modal-content {
+    background-color: var(--dark-bg-card);
+}
+
+body.dark .modal-content h3 {
+    color: var(--dark-text-primary);
+}
+
+body.dark .modal-content p {
+    color: var(--dark-text-muted);
+}
+
+body.dark .modal-content input,
+body.dark .modal-content textarea,
+body.dark .modal-content select {
+    background-color: var(--dark-bg-body);
+    border-color: var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.dark .modal-content input:focus,
+body.dark .modal-content textarea:focus {
+    border-color: #FF8C00;
+}
+
+body.dark .modal-content button[type="submit"] {
+    background: #FF8C00;
+    color: #ffffff;
+}
+
+body.dark .modal-content button[type="submit"]:hover {
+    background: #e07e00;
+}
+
+body.dark .close-modal {
+    color: var(--dark-text-muted);
+}
+
+body.dark .close-modal:hover {
+    color: #FF8C00;
+}
+
+
+/* ========== ПАНЕЛЬ УПРАВЛЕНИЯ ДЛЯ СЛАБОВИДЯЩИХ ========== */
+.accessibility-toolbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    display: flex;
+    gap: 10px;
+    background: var(--bg-primary, #ffffff);
+    padding: 8px 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-light, #eaeef2);
+}
+
+.accessibility-btn {
+    background: transparent;
+    border: 1px solid var(--accent, #EFA35A);
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary, #1a2a3a);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.accessibility-btn:hover {
+    background: var(--accent, #EFA35A);
+    color: #ffffff;
+}
+
+/* ========== РЕЖИМ ДЛЯ СЛАБОВИДЯЩИХ ========== */
+/* Версия для слабовидящих - убираем все фоновые изображения */
+body.vision-mode {
+    background-color: #000000 !important;
+    color: #FFFF00 !important;
+}
+
+body.vision-mode .main-header,
+body.vision-mode .hero,
+body.vision-mode .top-bar,
+body.vision-mode .container,
+body.vision-mode .under-menu-line,
+body.vision-mode .white-slide,
+body.vision-mode .about-company-section,
+body.vision-mode .architecture-section,
+body.vision-mode .slideshow-section,
+body.vision-mode .projects-section,
+body.vision-mode .mortgage-section,
+body.vision-mode .team-section,
+body.vision-mode .overlay-section,
+body.vision-mode .reviews-section,
+body.vision-mode .news-section,
+body.vision-mode .office-section,
+body.vision-mode .footer-info,
+body.vision-mode .mobile-menu,
+body.vision-mode .mobile-menu-header,
+body.vision-mode .mobile-menu-footer,
+body.vision-mode .dropdown-menu {
+    background-color: #000000 !important;
+    background-image: none !important;
+    border-color: #FFFF00 !important;
+}
+
+/* Убираем все фоновые изображения */
+body.vision-mode .hero {
+    background-image: none !important;
+    background-color: #000000 !important;
+}
+
+body.vision-mode .hero-overlay {
+    display: none !important;
+}
+
+body.vision-mode .booking-section {
+    background-image: none !important;
+    background-color: #000000 !important;
+}
+
+body.vision-mode .booking-overlay {
+    display: none !important;
+}
+
+/* Скрываем все изображения и иконки */
+body.vision-mode img:not(.visually-hidden-img),
+body.vision-mode .video-preview-card,
+body.vision-mode .play-icon,
+body.vision-mode .project-icon,
+body.vision-mode .feature-icon,
+body.vision-mode .office-icon,
+body.vision-mode .social-icons,
+body.vision-mode .social-img,
+body.vision-mode .footer-social-img,
+body.vision-mode .about-company-icons,
+body.vision-mode .team-arrow svg,
+body.vision-mode .review-photo,
+body.vision-mode .news-card-big img,
+body.vision-mode .news-card-small img,
+body.vision-mode .map-iframe,
+body.vision-mode iframe {
+    display: none !important;
+}
+
+/* Но оставляем важные изображения с альтернативным текстом */
+body.vision-mode .logo-img {
+    display: block !important;
+    filter: brightness(0) invert(1);
+}
+
+/* Увеличиваем размер шрифта */
+body.vision-mode * {
+    font-size: 18px !important;
+}
+
+body.vision-mode h1,
+body.vision-mode .hero-title {
+    font-size: 48px !important;
+}
+
+body.vision-mode h2 {
+    font-size: 36px !important;
+}
+
+body.vision-mode h3 {
+    font-size: 28px !important;
+}
+
+body.vision-mode p,
+body.vision-mode li,
+body.vision-mode span {
+    font-size: 18px !important;
+}
+
+/* Увеличиваем межстрочный интервал */
+body.vision-mode p,
+body.vision-mode li {
+    line-height: 1.8 !important;
+}
+
+/* Увеличиваем отступы */
+body.vision-mode .container,
+body.vision-mode .section {
+    padding: 30px !important;
+}
+
+/* Убираем градиенты и тени */
+body.vision-mode * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Белый текст на черном фоне */
+body.vision-mode * {
+    color: #FFFF00 !important;
+}
+
+body.vision-mode a {
+    color: #FFFF00 !important;
+    text-decoration: underline !important;
+}
+
+body.vision-mode a:hover {
+    color: #FFFFFF !important;
+}
+
+/* Кнопки в режиме слабовидящих */
+body.vision-mode button,
+body.vision-mode .btn,
+body.vision-mode .callback-btn,
+body.vision-mode .theme-switch-btn,
+body.vision-mode .vision-toggle-btn {
+    background: transparent !important;
+    border: 2px solid #FFFF00 !important;
+    color: #FFFF00 !important;
+}
+
+body.vision-mode button:hover,
+body.vision-mode .btn:hover {
+    background: #FFFF00 !important;
+    color: #000000 !important;
+}
+
+/* Оранжевые элементы становятся желтыми */
+body.vision-mode .win-color,
+body.vision-mode .orange-text,
+body.vision-mode .yellow-text,
+body.vision-mode .mortgage-title-highlight,
+body.vision-mode .team-title-highlight,
+body.vision-mode .reviews-title-highlight,
+body.vision-mode .office-title-orange,
+body.vision-mode .other-news-orange-italic,
+body.vision-mode .booking-subtitle,
+body.vision-mode .booking-count span {
+    color: #FFFF00 !important;
+}
+
+/* Убираем прозрачность */
+body.vision-mode .booking-overlay,
+body.vision-mode .hero-overlay {
+    display: none !important;
+}
+
+/* Увеличиваем указатель мыши */
+body.vision-mode * {
+    cursor: pointer !important;
+}
+
+/* Для видео - показываем текстовую ссылку */
+body.vision-mode .video-preview-card {
+    display: flex !important;
+    background: #000000 !important;
+    border: 2px solid #FFFF00 !important;
+    min-height: 60px;
+}
+
+body.vision-mode .video-text {
+    color: #FFFF00 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+}
+
+body.vision-mode .play-icon {
+    display: none !important;
+}
+
+/* Для модальных окон */
+body.vision-mode .modal-content {
+    background: #000000 !important;
+    border: 2px solid #FFFF00 !important;
+}
+
+body.vision-mode .modal-content input,
+body.vision-mode .modal-content textarea {
+    background: #000000 !important;
+    border: 1px solid #FFFF00 !important;
+    color: #FFFF00 !important;
+}
+
+body.vision-mode .close-modal {
+    color: #FFFF00 !important;
+}
+
+/* Карточки домов */
+body.vision-mode .house-card,
+body.vision-mode .project-card,
+body.vision-mode .mortgage-card,
+body.vision-mode .review-card {
+    background: #000000 !important;
+    border: 2px solid #FFFF00 !important;
+}
+
+/* Пагинация */
+body.vision-mode .pagination-prev,
+body.vision-mode .pagination-num,
+body.vision-mode .pagination-next {
+    background: #000000 !important;
+    border: 2px solid #FFFF00 !important;
+    color: #FFFF00 !important;
+}
+
+body.vision-mode .pagination-num.active {
+    background: #FFFF00 !important;
+    color: #000000 !important;
+}
