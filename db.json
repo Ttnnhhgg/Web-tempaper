@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "cart": [],
+      "favorites": []
+    },
+    {
+      "id": 2,
+      "username": "designer",
+      "password": "designer123",
+      "role": "designer",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "cart": [],
+      "favorites": []
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Изумрудный Village",
+      "location": "8 минут от метро Дубравная",
+      "description": "Дома сдаются",
+      "price": "от 8 500 000 ₽",
+      "area": "120-180 м²",
+      "image": "im9.png",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "createdBy": "admin"
+    },
+    {
+      "id": 2,
+      "name": "IQ CLUB",
+      "location": "I квартал 2024 года",
+      "description": "Начало строительства",
+      "price": "от 12 500 000 ₽",
+      "area": "150-250 м²",
+      "image": "im10.png",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "createdBy": "admin"
+    },
+    {
+      "id": 3,
+      "name": "Дома в Зимней Горке",
+      "location": "10 минут от Казанского аэропорта",
+      "description": "Все дома сданы",
+      "price": "от 6 900 000 ₽",
+      "area": "90-150 м²",
+      "image": "im11.png",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "createdBy": "admin"
+    },
+    {
+      "id": 4,
+      "name": "Усады Village",
+      "location": "Посёлок в черте города",
+      "description": "Все дома сданы",
+      "price": "от 15 000 000 ₽",
+      "area": "180-300 м²",
+      "image": "im12.png",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "createdBy": "admin"
+    }
+  ],
+  "orders": []
+}

@@ -1,0 +1,597 @@
+/* auth.css - глобальные стили для авторизации */
+
+/* ========== ОСНОВНЫЕ СТИЛИ ========== */
+
+/* Кнопки входа/регистрации */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.auth-btn {
+    background: transparent;
+    border: 1px solid var(--accent, #EFA35A);
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--text-primary, #1a2a3a);
+    transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+    background: var(--accent, #EFA35A);
+    color: #fff;
+}
+
+/* Информация о пользователе */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--accent, #EFA35A);
+}
+
+.user-role {
+    font-size: 12px;
+    color: var(--text-muted, #8a9aaa);
+}
+
+.logout-btn {
+    background: #dc3545;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 11px;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #c82333;
+}
+
+/* ========== МОДАЛЬНЫЕ ОКНА ========== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    background: var(--modal-bg, #fff);
+    max-width: 480px;
+    width: 90%;
+    padding: 32px 28px;
+    border-radius: 12px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary, #1f2c3c);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #6c7a8a;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary, #1e2a3a);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--input-border, #cfdfed);
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    border-radius: 6px;
+    background: var(--bg-primary, #fff);
+    color: var(--text-primary, #1e2a3a);
+}
+
+.submit-modal-btn {
+    background: #EFA35A;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    font-weight: 800;
+    font-size: 16px;
+    color: #1f2c3c;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.submit-modal-btn:hover {
+    background: #e08e3a;
+}
+
+/* ========== ПАНЕЛИ АДМИНА И ДИЗАЙНЕРА ========== */
+.admin-panel,
+.designer-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    max-width: 90%;
+    max-height: 85vh;
+    background: var(--bg-primary, #fff);
+    border: 2px solid var(--accent, #EFA35A);
+    border-radius: 16px;
+    z-index: 20000;
+    display: none;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.admin-panel.active,
+.designer-panel.active {
+    display: block;
+}
+
+/* Заголовки панелей */
+.admin-panel-header,
+.designer-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: var(--accent, #EFA35A);
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.admin-panel-header button,
+.designer-panel-header button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.admin-panel-header button:hover,
+.designer-panel-header button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Контент панелей */
+.admin-panel-content,
+.designer-panel-content {
+    padding: 20px;
+    max-height: calc(85vh - 60px);
+    overflow-y: auto;
+}
+
+/* Секции внутри панелей */
+.admin-section,
+.designer-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-light, #eee);
+}
+
+.admin-section:last-child,
+.designer-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.admin-section h4,
+.designer-section h4 {
+    margin-bottom: 15px;
+    color: var(--text-primary, #1a2a3a);
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Кнопки внутри панелей */
+.designer-section button,
+.admin-section button {
+    background: var(--accent, #EFA35A);
+    border: none;
+    padding: 8px 16px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    color: #1a2a3a;
+}
+
+.designer-section button:hover,
+.admin-section button:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+/* Поля ввода в панелях */
+.admin-section input,
+.admin-section select,
+.designer-section input,
+.designer-section select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-dark, #ddd);
+    border-radius: 6px;
+    background: var(--bg-primary, #fff);
+    color: var(--text-primary, #1a2a3a);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+}
+
+.admin-section input:focus,
+.admin-section select:focus,
+.designer-section input:focus,
+.designer-section select:focus {
+    outline: none;
+    border-color: var(--accent, #EFA35A);
+    box-shadow: 0 0 0 2px rgba(239, 163, 90, 0.2);
+}
+
+/* Color picker */
+.designer-section input[type="color"],
+.admin-section input[type="color"] {
+    width: 60px;
+    height: 40px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+/* Список пользователей */
+#globalUsersList {
+    list-style: none;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding: 0;
+    border: 1px solid var(--border-light, #eee);
+    border-radius: 8px;
+}
+
+#globalUsersList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-light, #eee);
+    background: var(--bg-secondary, #fafafa);
+}
+
+#globalUsersList li:last-child {
+    border-bottom: none;
+}
+
+#globalUsersList li strong {
+    color: var(--text-primary, #1a2a3a);
+}
+
+/* Кнопки управления пользователями */
+.edit-user-btn {
+    background: #ffc107;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.edit-user-btn:hover {
+    background: #e0a800;
+    transform: scale(1.02);
+}
+
+.delete-user-btn {
+    background: #dc3545;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.delete-user-btn:hover {
+    background: #c82333;
+    transform: scale(1.02);
+}
+
+/* Стили для списка проектов в модалке */
+#projectsListModal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#projectsListModal li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid var(--border-light, #eee);
+    background: var(--bg-secondary, #fafafa);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+#projectsListModal li:last-child {
+    margin-bottom: 0;
+}
+
+#projectsListModal li strong {
+    font-size: 16px;
+    color: var(--text-primary, #1a2a3a);
+}
+
+#projectsListModal li small {
+    font-size: 12px;
+    color: var(--text-muted, #8a9aaa);
+}
+
+/* Кнопки проектов */
+.edit-project-btn {
+    background: #ffc107;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.delete-project-btn {
+    background: #dc3545;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+}
+
+/* Полоса прокрутки */
+.admin-panel-content::-webkit-scrollbar,
+.designer-panel-content::-webkit-scrollbar,
+#globalUsersList::-webkit-scrollbar,
+#projectsListModal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.admin-panel-content::-webkit-scrollbar-track,
+.designer-panel-content::-webkit-scrollbar-track,
+#globalUsersList::-webkit-scrollbar-track,
+#projectsListModal::-webkit-scrollbar-track {
+    background: var(--border-light, #f1f1f1);
+    border-radius: 3px;
+}
+
+.admin-panel-content::-webkit-scrollbar-thumb,
+.designer-panel-content::-webkit-scrollbar-thumb,
+#globalUsersList::-webkit-scrollbar-thumb,
+#projectsListModal::-webkit-scrollbar-thumb {
+    background: var(--accent, #EFA35A);
+    border-radius: 3px;
+}
+
+/* Стили для уведомлений */
+.global-notification {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ========== ТЕМНАЯ ТЕМА ДЛЯ МОДАЛОК И ПАНЕЛЕЙ ========== */
+body.dark .modal-container {
+    background: #1e1e2e;
+}
+
+body.dark .form-group label {
+    color: #e0e0e0;
+}
+
+body.dark .form-group input,
+body.dark .form-group textarea {
+    background: #2a2a3a;
+    border-color: #3a3a4a;
+    color: #e0e0e0;
+}
+
+body.dark .admin-panel,
+body.dark .designer-panel {
+    background: #1e1e2e;
+    border-color: var(--accent, #EFA35A);
+}
+
+body.dark .admin-section,
+body.dark .designer-section {
+    border-bottom-color: #3a3a4a;
+}
+
+body.dark .admin-section h4,
+body.dark .designer-section h4 {
+    color: #e0e0e0;
+}
+
+body.dark .admin-section input,
+body.dark .admin-section select,
+body.dark .designer-section input,
+body.dark .designer-section select {
+    background: #2a2a3a;
+    border-color: #3a3a4a;
+    color: #e0e0e0;
+}
+
+body.dark #globalUsersList li {
+    background: #2a2a3a;
+    border-bottom-color: #3a3a4a;
+}
+
+body.dark #globalUsersList li strong {
+    color: #e0e0e0;
+}
+
+body.dark #projectsListModal li {
+    background: #2a2a3a;
+    border-bottom-color: #3a3a4a;
+}
+
+body.dark #projectsListModal li strong {
+    color: #e0e0e0;
+}
+
+body.dark .modal-header h3 {
+    color: #e0e0e0;
+}
+
+/* ========== АДАПТИВ ДЛЯ МОБИЛЬНЫХ ========== */
+@media (max-width: 768px) {
+    .auth-buttons {
+        margin-left: 10px;
+        gap: 5px;
+    }
+    
+    .auth-btn {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    
+    .user-info {
+        margin-left: 10px;
+        gap: 5px;
+        font-size: 11px;
+    }
+    
+    .user-name {
+        font-size: 11px;
+    }
+    
+    .user-role {
+        font-size: 9px;
+    }
+    
+    .logout-btn {
+        padding: 3px 8px;
+        font-size: 9px;
+    }
+    
+    .admin-panel,
+    .designer-panel {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .admin-panel-content,
+    .designer-panel-content {
+        padding: 15px;
+    }
+    
+    .designer-section button,
+    .admin-section button {
+        padding: 6px 12px;
+        font-size: 11px;
+        width: calc(50% - 8px);
+    }
+    
+    .admin-section h4,
+    .designer-section h4 {
+        font-size: 14px;
+    }
+}
+
+/* ========== АНИМАЦИИ ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -48%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.admin-panel.active,
+.designer-panel.active {
+    animation: fadeIn 0.2s ease;
+}
+
+/* Режим редактирования контента */
+[contenteditable="true"] {
+    transition: all 0.2s ease;
+}
+
+[contenteditable="true"]:hover {
+    background: rgba(239, 163, 90, 0.1);
+    cursor: text;
+}
+
+[contenteditable="true"]:focus {
+    background: rgba(239, 163, 90, 0.15);
+    outline: 2px solid var(--accent, #EFA35A);
+}
