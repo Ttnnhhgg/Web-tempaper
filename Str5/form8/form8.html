@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оставить отзыв | Специалисты ПК</title>
+    <link rel="stylesheet" href="form8.css">
+    <script src="form8.js" defer></script>
+</head>
+<body>
+    <div class="page-container">
+        <div class="form-card">
+            <!-- Кнопка закрытия 40x40 вверху справа -->
+            <button class="close-button" id="closeFormBtn" title="Закрыть">×</button>
+            
+            <!-- Левая часть с изображением -->
+            <div class="form-left">
+                <img src="im8.png" alt="Специалист" class="side-image">
+            </div>
+            
+            <!-- Правая часть с формой -->
+            <div class="form-right">
+                <div class="form-header">
+                    <h1 class="main-title">
+                        Оставьте отзыв о работе<br>
+                        наших специалистов
+                    </h1>
+                    <div class="sub-text">
+                        Нам очень важно знать<br>
+                        ваше мнение
+                    </div>
+                </div>
+
+                <form id="expertQuestionForm" class="expert-form" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="field-label">Имя <span class="required-star">*</span></label>
+                        <input type="text" id="name" name="name" class="field-input" title="Введите ваше имя" placeholder=" ">
+                        <div class="error-message" id="nameError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="field-label">Телефон <span class="required-star">*</span></label>
+                        <input type="tel" id="phone" name="phone" class="field-input" title="Введите ваш телефон" placeholder=" ">
+                        <div class="error-message" id="phoneError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="field-label">Сообщение <span class="required-star">*</span></label>
+                        <textarea id="message" name="message" class="field-textarea" rows="3" title="Введите ваш отзыв" placeholder=" "></textarea>
+                        <div class="error-message" id="messageError"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button" id="submitBtn">Отправить отзыв</button>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="consentCheckbox" class="consent-checkbox" title="Согласие">
+                            <span class="checkmark-custom"></span>
+                            <span class="consent-text">Я согласен с политикой обработки персональных данных</span>
+                        </label>
+                        <div class="error-message" id="consentError"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" title="Закрыть">&times;</span>
+            <div class="modal-icon">✓</div>
+            <h3>Отзыв отправлен</h3>
+            <p>Спасибо за ваш отзыв! Нам очень важно ваше мнение.</p>
+        </div>
+    </div>
+</body>
+</html>

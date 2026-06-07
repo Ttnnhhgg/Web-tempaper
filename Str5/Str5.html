@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>WIN DOM | Строительная компания</title>
+    <link rel="stylesheet" href="Str5.css">
+    <link rel="stylesheet" href="../auth.css">
+   
+</head>
+<body data-lang="ru">
+    <!-- Плавающие кнопки перевода -->
+    <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">РУС</button>
+        <button class="lang-btn" data-lang="en">ENG</button>
+    </div>
+
+    <!-- Шапка сайта -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="im1.png" alt="Фото дома" class="logo-house-img" width="65" height="56">
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">
+                            <span class="lang-ru">Наши проекты</span><span class="lang-en">Our Projects</span> ▼
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                            <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                            <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                            <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                            <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">
+                            <span class="lang-ru">Дома</span><span class="lang-en">Houses</span> ▼
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str8/Str8.html">Одноэтажные</a></li>
+                            <li><a href="../Str9/Str9.html">Двухэтажные</a></li>
+                            <li><a href="../Str7/Str7.html">Все дома</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../Str6/Str6.html">
+                            <span class="lang-ru">Ипотека</span><span class="lang-en">Mortgage</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">
+                            <span class="lang-ru">О компании</span><span class="lang-en">About Us</span> ▼
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str5/Str5.html">Команда</a></li>
+                            <li><a href="../Str3/Str3.html">СМИ о нас</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../Str2/Str2.html">
+                            <span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-phone">
+                <img src="im2.png" alt="Иконка телефона" class="phone-icon-img" width="35" height="35">
+                <a href="tel:+79625552525" class="phone-number">+7 (962) 555-25-25</a>
+            </div>
+            <!-- КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ -->
+<button class="theme-switch-btn" id="themeSwitchBtn" aria-label="Переключить тему">🌙 Тёмная</button>
+
+<div class="accessibility-toolbar">
+    
+    <button class="accessibility-btn vision-toggle-btn" id="visionBtn" aria-label="Версия для слабовидящих">👁️ Версия для слабовидящих</button>
+</div>
+            <button class="callback-btn" id="callbackBtn">
+                <span class="lang-ru">Заказать звонок</span>
+                <span class="lang-en">Request a Call</span>
+            </button>
+            
+            <!-- БУРГЕР-КНОПКА -->
+            <div class="burger-menu-toggle" id="burgerToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Кнопка возврата на главную -->
+    <a href="../Str1.html" class="home-button" id="homeButton" title="На главную">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9L12 3L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="lang-ru">На главную</span>
+        <span class="lang-en">To Home</span>
+    </a>
+
+    <!-- Модальные окна -->
+    <div id="callbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><span class="lang-ru">Заказать звонок</span><span class="lang-en">Request a Call</span></h3>
+            <p><span class="lang-ru">Оставьте ваш номер, и мы перезвоним в ближайшее время.</span><span class="lang-en">Leave your number and we will call you back soon.</span></p>
+            <form id="callbackForm">
+                <input type="tel" id="phoneInput" placeholder="+7 (___) ___-__-__" required>
+                <button type="submit"><span class="lang-ru">Отправить</span><span class="lang-en">Send</span></button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalForm7" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-modal7">&times;</span>
+            <h3><span class="lang-ru">Написать сообщение</span><span class="lang-en">Write a message</span></h3>
+            <p><span class="lang-ru">Заполните форму, и мы ответим вам в ближайшее время.</span><span class="lang-en">Fill out the form and we will answer you shortly.</span></p>
+            <form id="form7">
+                <input type="text" id="form7Name" placeholder="Ваше имя" required>
+                <input type="tel" id="form7Phone" placeholder="Телефон" required>
+                <textarea id="form7Message" rows="3" placeholder="Ваше сообщение"></textarea>
+                <button type="submit"><span class="lang-ru">Отправить</span><span class="lang-en">Send</span></button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalForm8" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-modal8">&times;</span>
+            <h3><span class="lang-ru">Оставить отзыв</span><span class="lang-en">Leave a review</span></h3>
+            <p><span class="lang-ru">Поделитесь своим мнением о нашей работе.</span><span class="lang-en">Share your opinion about our work.</span></p>
+            <form id="form8">
+                <input type="text" id="form8Name" placeholder="Ваше имя" required>
+                <input type="tel" id="form8Phone" placeholder="Телефон" required>
+                <textarea id="form8Review" rows="4" placeholder="Ваш отзыв"></textarea>
+                <div class="rating">
+                    <span class="lang-ru">Оценка:</span><span class="lang-en">Rating:</span>
+                    <select id="form8Rating">
+                        <option value="5">5 ★</option>
+                        <option value="4">4 ★</option>
+                        <option value="3">3 ★</option>
+                        <option value="2">2 ★</option>
+                        <option value="1">1 ★</option>
+                    </select>
+                </div>
+                <button type="submit"><span class="lang-ru">Отправить отзыв</span><span class="lang-en">Send review</span></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Блок НАША КОМАНДА -->
+    <section class="team-block">
+        <div class="team-container">
+            <h1 class="team-title">
+                <span class="team-title-black lang-ru">НАША</span>
+                <span class="team-title-black lang-en">OUR</span>
+                <span class="team-title-orange lang-ru">КОМАНДА</span>
+                <span class="team-title-orange lang-en">TEAM</span>
+            </h1>
+            <div class="team-orange-bar">
+                <p class="orange-bar-text">
+                    <span class="win-dom-bold">WIN DOM</span>
+                    <span class="win-dom-light lang-ru"> — это люди, разделяющие красоту и комфорт загородной жизни.</span>
+                    <span class="win-dom-light lang-en"> — people who share the beauty and comfort of country life.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок с менеджерами -->
+    <section class="managers-block">
+        <div class="managers-container">
+            <div class="managers-left">
+                <div class="managers-description">
+                    <p class="managers-text">
+                        <span class="lang-ru">Наши менеджеры помогут разобраться, какой дом подойдет именно вам. Подберут технологию строительства и готовый типовой проект. Или разработают индивидуальное решение по вашему запросу.</span>
+                        <span class="lang-en">Our managers will help you figure out which house is right for you. They will select the construction technology and a ready-made standard project. Or they will develop an individual solution according to your request.</span>
+                    </p>
+                </div>
+                <div class="managers-cards">
+                    <div class="manager-card">
+                        <img src="im11.png" alt="Игорь Захаров" class="manager-photo">
+                        <div class="manager-right">
+                            <div class="manager-name-block">
+                                <span class="name-first lang-ru">ИГОРЬ</span>
+                                <span class="name-first lang-en">IGOR</span>
+                                <span class="name-last lang-ru">ЗАХАРОВ</span>
+                                <span class="name-last lang-en">ZAKHAROV</span>
+                            </div>
+                            <div class="manager-orange-block">
+                                <div class="manager-position">
+                                    <span class="pos-line1 lang-ru">Руководитель</span>
+                                    <span class="pos-line1 lang-en">Project</span>
+                                    <span class="pos-line2 lang-ru">проекта</span>
+                                    <span class="pos-line2 lang-en">Manager</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="manager-card">
+                        <img src="im12.png" alt="Луиза Назипова" class="manager-photo">
+                        <div class="manager-right">
+                            <div class="manager-name-block">
+                                <span class="name-first lang-ru">ЛУИЗА</span>
+                                <span class="name-first lang-en">LOUISE</span>
+                                <span class="name-last lang-ru">НАЗИПОВА</span>
+                                <span class="name-last lang-en">NAZIPOVA</span>
+                            </div>
+                            <div class="manager-orange-block">
+                                <div class="manager-position">
+                                    <span class="pos-line1 lang-ru">Главный</span>
+                                    <span class="pos-line1 lang-en">Chief</span>
+                                    <span class="pos-line2 lang-ru">архитектор</span>
+                                    <span class="pos-line2 lang-en">Architect</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="managers-right">
+                <img src="im13.png" alt="Дополнительное фото" class="extra-photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Оранжевый фон с белым блоком -->
+    <div class="orange-wrapper">
+        <div class="orange-background">
+            <div class="white-block">
+                <!-- Первая линия карточек -->
+                <div class="cards-section">
+                    <div class="cards-row">
+                        <div class="staff-card">
+                            <div class="staff-photo-wrapper">
+                                <img src="im14.png" alt="Анфиса Давыдова" class="staff-photo">
+                                <div class="staff-name-block">
+                                    <h3 class="staff-name"><span class="lang-ru">Анфиса Давыдова</span><span class="lang-en">Anfisa Davydova</span></h3>
+                                    <p class="staff-position"><span class="lang-ru">Руководитель отдела маркетинга</span><span class="lang-en">Head of Marketing</span></p>
+                                </div>
+                            </div>
+                            <div class="staff-buttons">
+                                <button class="staff-btn write-btn" data-modal="modalForm7"><span class="lang-ru">Написать</span><span class="lang-en">Write</span></button>
+                                <button class="staff-btn review-btn" data-modal="modalForm8"><span class="lang-ru">Оставить отзыв</span><span class="lang-en">Leave Review</span></button>
+                            </div>
+                        </div>
+                        <div class="staff-card">
+                            <div class="staff-photo-wrapper">
+                                <img src="im15.png" alt="Евгений Кабаков" class="staff-photo">
+                                <div class="staff-name-block">
+                                    <h3 class="staff-name"><span class="lang-ru">Евгений Кабаков</span><span class="lang-en">Evgeny Kabakov</span></h3>
+                                    <p class="staff-position"><span class="lang-ru">Руководитель отдела продаж</span><span class="lang-en">Head of Sales</span></p>
+                                </div>
+                            </div>
+                            <div class="staff-buttons">
+                                <button class="staff-btn write-btn" data-modal="modalForm7"><span class="lang-ru">Написать</span><span class="lang-en">Write</span></button>
+                                <button class="staff-btn review-btn" data-modal="modalForm8"><span class="lang-ru">Оставить отзыв</span><span class="lang-en">Leave Review</span></button>
+                            </div>
+                        </div>
+                        <div class="staff-card">
+                            <div class="staff-photo-wrapper">
+                                <img src="im16.png" alt="Эльвира Сергеева" class="staff-photo">
+                                <div class="staff-name-block">
+                                    <h3 class="staff-name"><span class="lang-ru">Эльвира Сергеева</span><span class="lang-en">Elvira Sergeeva</span></h3>
+                                    <p class="staff-position"><span class="lang-ru">Руководитель отдела ипотеки</span><span class="lang-en">Head of Mortgage</span></p>
+                                </div>
+                            </div>
+                            <div class="staff-buttons">
+                                <button class="staff-btn write-btn" data-modal="modalForm7"><span class="lang-ru">Написать</span><span class="lang-en">Write</span></button>
+                                <button class="staff-btn review-btn" data-modal="modalForm8"><span class="lang-ru">Оставить отзыв</span><span class="lang-en">Leave Review</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards-section">
+                    <div class="cards-row">
+                        <div class="staff-card">
+                            <div class="staff-photo-wrapper">
+                                <img src="im17.png" alt="Игорь Смирнов" class="staff-photo">
+                                <div class="staff-name-block">
+                                    <h3 class="staff-name"><span class="lang-ru">Игорь Смирнов</span><span class="lang-en">Igor Smirnov</span></h3>
+                                    <p class="staff-position"><span class="lang-ru">Менеджер по сопровождению</span><span class="lang-en">Support Manager</span></p>
+                                </div>
+                            </div>
+                            <div class="staff-buttons">
+                                <button class="staff-btn write-btn" data-modal="modalForm7"><span class="lang-ru">Написать</span><span class="lang-en">Write</span></button>
+                                <button class="staff-btn review-btn" data-modal="modalForm8"><span class="lang-ru">Оставить отзыв</span><span class="lang-en">Leave Review</span></button>
+                            </div>
+                        </div>
+                        <div class="staff-card">
+                            <div class="staff-photo-wrapper">
+                                <img src="im18.png" alt="Иван Иванов" class="staff-photo">
+                                <div class="staff-name-block">
+                                    <h3 class="staff-name"><span class="lang-ru">Иван Иванов</span><span class="lang-en">Ivan Ivanov</span></h3>
+                                    <p class="staff-position"><span class="lang-ru">Менеджер по сопровождению</span><span class="lang-en">Support Manager</span></p>
+                                </div>
+                            </div>
+                            <div class="staff-buttons">
+                                <button class="staff-btn write-btn" data-modal="modalForm7"><span class="lang-ru">Написать</span><span class="lang-en">Write</span></button>
+                                <button class="staff-btn review-btn" data-modal="modalForm8"><span class="lang-ru">Оставить отзыв</span><span class="lang-en">Leave Review</span></button>
+                            </div>
+                        </div>
+                        <div class="staff-card">
+                            <div class="staff-photo-wrapper">
+                                <img src="im19.png" alt="Лариса Федотова" class="staff-photo">
+                                <div class="staff-name-block">
+                                    <h3 class="staff-name"><span class="lang-ru">Лариса Федотова</span><span class="lang-en">Larisa Fedotova</span></h3>
+                                    <p class="staff-position"><span class="lang-ru">Ведущий Юрисконсульт</span><span class="lang-en">Legal Counsel</span></p>
+                                </div>
+                            </div>
+                            <div class="staff-buttons">
+                                <button class="staff-btn write-btn" data-modal="modalForm7"><span class="lang-ru">Написать</span><span class="lang-en">Write</span></button>
+                                <button class="staff-btn review-btn" data-modal="modalForm8"><span class="lang-ru">Оставить отзыв</span><span class="lang-en">Leave Review</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards-section">
+                    <div class="cards-row">
+                        <div class="staff-card">
+                            <div class="staff-photo-wrapper">
+                                <img src="im20.png" alt="Алексей Кузин" class="staff-photo">
+                                <div class="staff-name-block">
+                                    <h3 class="staff-name"><span class="lang-ru">Алексей Кузин</span><span class="lang-en">Alexey Kuzin</span></h3>
+                                    <p class="staff-position"><span class="lang-ru">Начальник участка</span><span class="lang-en">Site Manager</span></p>
+                                </div>
+                            </div>
+                            <div class="staff-buttons">
+                                <button class="staff-btn write-btn" data-modal="modalForm7"><span class="lang-ru">Написать</span><span class="lang-en">Write</span></button>
+                                <button class="staff-btn review-btn" data-modal="modalForm8"><span class="lang-ru">Оставить отзыв</span><span class="lang-en">Leave Review</span></button>
+                            </div>
+                        </div>
+                        <div class="staff-card">
+                            <div class="staff-photo-wrapper">
+                                <img src="im21.png" alt="Николай Елистратов" class="staff-photo">
+                                <div class="staff-name-block">
+                                    <h3 class="staff-name"><span class="lang-ru">Николай Елистратов</span><span class="lang-en">Nikolay Yelistratov</span></h3>
+                                    <p class="staff-position"><span class="lang-ru">Прораб</span><span class="lang-en">Foreman</span></p>
+                                </div>
+                            </div>
+                            <div class="staff-buttons">
+                                <button class="staff-btn write-btn" data-modal="modalForm7"><span class="lang-ru">Написать</span><span class="lang-en">Write</span></button>
+                                <button class="staff-btn review-btn" data-modal="modalForm8"><span class="lang-ru">Оставить отзыв</span><span class="lang-en">Leave Review</span></button>
+                            </div>
+                        </div>
+                        <div class="staff-card">
+                            <div class="staff-photo-wrapper">
+                                <img src="im22.png" alt="Фаниль Саляхиев" class="staff-photo">
+                                <div class="staff-name-block">
+                                    <h3 class="staff-name"><span class="lang-ru">Фаниль Саляхиев</span><span class="lang-en">Fanil Salyahiev</span></h3>
+                                    <p class="staff-position"><span class="lang-ru">Прораб</span><span class="lang-en">Foreman</span></p>
+                                </div>
+                            </div>
+                            <div class="staff-buttons">
+                                <button class="staff-btn write-btn" data-modal="modalForm7"><span class="lang-ru">Написать</span><span class="lang-en">Write</span></button>
+                                <button class="staff-btn review-btn" data-modal="modalForm8"><span class="lang-ru">Оставить отзыв</span><span class="lang-en">Leave Review</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <section class="new-managers-block">
+        <div class="new-layout">
+            <div class="new-photo-left">
+                <img src="im23.png" alt="Фото" class="new-photo-large">
+            </div>
+            <div class="new-right-part">
+                <div class="new-top-text">
+                    <p class="new-top-text-content">
+                        <span class="lang-ru">Обращаясь в строительную компанию Win Dom вы можете быть уверены в том, что все ваши пожелания будут учтены и реализованы точно в срок, на самых комфортных условиях.</span>
+                        <span class="lang-en">When contacting Win Dom construction company, you can be sure that all your wishes will be taken into account and fulfilled exactly on time, under the most comfortable conditions.</span>
+                    </p>
+                </div>
+                <div class="new-people-container">
+                    <div class="new-person-card">
+                        <img src="im24.png" alt="Расул Мухарямов" class="new-person-photo">
+                        <div class="new-person-info">
+                            <h3 class="new-person-name">
+                                <span class="name-first lang-ru">РАСУЛ</span>
+                                <span class="name-first lang-en">RASUL</span>
+                                <span class="name-last lang-ru">МУХАРЯМОВ</span>
+                                <span class="name-last lang-en">MUKHARYAMOV</span>
+                            </h3>
+                            <div class="new-person-orange">
+                                <span class="pos-line1 lang-ru">Заместитель</span>
+                                <span class="pos-line1 lang-en">Deputy</span>
+                                <span class="pos-line2 lang-ru">руководителя проекта</span>
+                                <span class="pos-line2 lang-en">Project Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-person-card">
+                        <img src="im25.png" alt="Дмитрий Ваганов" class="new-person-photo">
+                        <div class="new-person-info">
+                            <h3 class="new-person-name">
+                                <span class="name-first lang-ru">ДМИТРИЙ</span>
+                                <span class="name-first lang-en">DMITRY</span>
+                                <span class="name-last lang-ru">ВАГАНОВ</span>
+                                <span class="name-last lang-en">VAGANOV</span>
+                            </h3>
+                            <div class="new-person-orange">
+                                <span class="pos-line1 lang-ru">Заместитель</span>
+                                <span class="pos-line1 lang-en">Deputy</span>
+                                <span class="pos-line2 lang-ru">руководителя проекта</span>
+                                <span class="pos-line2 lang-en">Project Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="back-link">
+        <a href="../Str1.html" class="back-to-main">
+            <span class="lang-ru">&lt; На главную</span>
+            <span class="lang-en">&lt; Back to Home</span>
+        </a>
+    </div>
+
+    <section class="footer-info">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title"><span class="lang-ru">О КОМПАНИИ</span><span class="lang-en">ABOUT COMPANY</span></h3>
+                <ul class="footer-menu">
+                    <li><a href="../Str1.html"><span class="lang-ru">Главная</span><span class="lang-en">Home</span></a></li>
+                    <li><a href="../Str5/Str5.html"><span class="lang-ru">Наша команда</span><span class="lang-en">Our Team</span></a></li>
+                    <li><a href="../Str3/Str3.html"><span class="lang-ru">СМИ о нас</span><span class="lang-en">Media About Us</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Отзывы</span><span class="lang-en">Reviews</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Новости</span><span class="lang-en">News</span></a></li>
+                    <li><a href="../Str2/Str2.html"><span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span></a></li>
+                </ul>
+                <a href="#" class="footer-policy"><span class="lang-ru">Политика конфиденциальности</span><span class="lang-en">Privacy Policy</span></a>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title"><span class="lang-ru">ПРОЕКТЫ</span><span class="lang-en">PROJECTS</span></h3>
+                <ul class="footer-menu">
+                    <li><a href="#"><span class="lang-ru">Изумрудный Village</span><span class="lang-en">Emerald Village</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Зимняя горка</span><span class="lang-en">Winter Hill</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Константиновка</span><span class="lang-en">Konstantinovka</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Усады Village</span><span class="lang-en">Usady Village</span></a></li>
+                    <li><a href="#"><span class="lang-ru">IQ-CLUB</span><span class="lang-en">IQ-CLUB</span></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title"><span class="lang-ru">ИПОТЕКА</span><span class="lang-en">MORTGAGE</span></h3>
+                <ul class="footer-menu">
+                    <li><a href="#"><span class="lang-ru">Ипотечные кредиты</span><span class="lang-en">Mortgage Loans</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Для семей с детьми</span><span class="lang-en">For Families with Children</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Военная ипотека</span><span class="lang-en">Military Mortgage</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Господдержка 2023</span><span class="lang-en">State Support 2023</span></a></li>
+                </ul>
+            </div>
+            <div class="footer-brand">
+                <img src="im8.png" alt="Windom" class="footer-logo-img">
+                <div class="footer-slogan"><span class="lang-ru">ДОМА ДЛЯ ПОБЕДИТЕЛЕЙ</span><span class="lang-en">HOUSES FOR WINNERS</span></div>
+                <img src="im9.png" alt="Социальные сети" class="footer-social-img">
+                <div><a href="mailto:window.kazan@gmail.com" class="footer-email-link">window.kazan@gmail.com</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- МОБИЛЬНОЕ МЕНЮ (БУРГЕР) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="im8.png" alt="Windom logo" class="mobile-logo">
+            <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item has-submenu">
+                <span><span class="lang-ru">Наши проекты</span><span class="lang-en">Our Projects</span> <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                    <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                    <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                    <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                    <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item has-submenu">
+                <span><span class="lang-ru">Дома</span><span class="lang-en">Houses</span> <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str8/Str8.html"><span class="lang-ru">Одноэтажные</span><span class="lang-en">One-story</span></a></li>
+                    <li><a href="../Str9/Str9.html"><span class="lang-ru">Двухэтажные</span><span class="lang-en">Two-story</span></a></li>
+                    <li><a href="../Str7/Str7.html"><span class="lang-ru">Все дома</span><span class="lang-en">All houses</span></a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="../Str6/Str6.html"><span class="lang-ru">Ипотека</span><span class="lang-en">Mortgage</span></a>
+            </li>
+            <li class="mobile-nav-item has-submenu">
+                <span><span class="lang-ru">О компании</span><span class="lang-en">About Us</span> <span class="submenu-arrow">▼</span></span>
+                <ul class="mobile-submenu">
+                    <li><a href="../Str5/Str5.html"><span class="lang-ru">Команда</span><span class="lang-en">Team</span></a></li>
+                    <li><a href="../Str3/Str3.html"><span class="lang-ru">СМИ о нас</span><span class="lang-en">Media</span></a></li>
+                </ul>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="../Str2/Str2.html"><span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span></a>
+            </li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="tel:+79625552525" class="mobile-phone">+7 (962) 555-25-25</a>
+            <button class="mobile-callback-btn" id="mobileCallbackBtn">
+                <span class="lang-ru">Заказать звонок</span>
+                <span class="lang-en">Request a Call</span>
+            </button>
+            <div class="mobile-language">
+                <button class="lang-btn-mobile active" data-lang="ru">RU</button>
+                <button class="lang-btn-mobile" data-lang="en">EN</button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <script src="../auth.js"></script>
+    <script src="Str5.js"></script>
+</body>
+</html>

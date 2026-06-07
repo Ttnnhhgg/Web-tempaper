@@ -1,0 +1,2974 @@
+/* Reset и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    background-color: #f5f7fa;
+}
+
+.main-header {
+    width: 1680px;
+    height: 105px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #eaeef2;
+}
+
+.header-container {
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo { flex-shrink: 0; }
+.logo-house-img { width: 65px; height: 56px; object-fit: cover; }
+
+.header-nav { flex-shrink: 0; }
+.nav-menu { display: flex; list-style: none; gap: 32px; }
+.nav-item a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: #2c3e4e;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+.nav-item a:hover { color: #ff8c00; }
+.arrow { font-size: 10px; margin-left: 4px; color: #95a5a6; }
+
+.header-phone { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.phone-icon-img { width: 35px; height: 35px; object-fit: contain; }
+.phone-number {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a3a4a;
+}
+.phone-number:hover { color: #ff8c00; }
+
+.callback-btn {
+    width: 202px;
+    height: 53px;
+    background: transparent;
+    border: 1.5px solid #ff8c00;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.callback-btn:hover { background: #ff8c00; color: #ffffff; }
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 30px 32px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: fadeInUp 0.25s ease;
+}
+
+.modal-content h3 {
+    font-size: 26px;
+    margin-bottom: 12px;
+    color: #1e2a36;
+}
+
+.modal-content p {
+    color: #5a6874;
+    margin-bottom: 24px;
+    font-size: 15px;
+}
+
+#callbackForm {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#callbackForm input {
+    padding: 14px 18px;
+    font-size: 16px;
+    border: 1px solid #ccd7e4;
+    outline: none;
+    transition: border 0.2s;
+    font-family: inherit;
+}
+
+#callbackForm input:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+#callbackForm button {
+    background: #ffffff;
+    border: 2px solid #d4af37;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #1a2a3a;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#callbackForm button:hover {
+    background: #d4af37;
+    color: #ffffff;
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 20px;
+    margin-top: -8px;
+}
+
+.close-modal:hover {
+    color: #d4af37;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Блок НАША КОМАНДА */
+.team-block {
+    width: 1280px;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+.team-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Заголовок - выравнивание по левому краю */
+.team-title {
+    text-align: left;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 0;
+    padding: 60px 0 30px 0;
+}
+
+/* Чёрная часть "НАША" */
+.team-title-black {
+    color: #000000;
+}
+
+/* Оранжевая часть "КОМАНДА" */
+.team-title-orange {
+    color: #EFA359;
+}
+
+/* Нижний оранжевый блок 1280x85 */
+.team-orange-bar {
+    width: 1280px;
+    height: 85px;
+    background-color: #EFA359;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+/* Текст внутри оранжевого блока - выравнивание по левому краю */
+.orange-bar-text {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: left;
+    letter-spacing: 0.3px;
+    padding-left: 0;
+}
+
+/* Жирная часть WIN DOM */
+.win-dom-bold {
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+/* Обычная часть остального текста */
+.win-dom-light {
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+/* Отступ после оранжевого блока */
+.team-orange-bar {
+    margin-bottom: 60px;
+}
+
+/* Адаптивность для экранов меньше 1280px */
+@media (max-width: 1280px) {
+    .team-block {
+        width: 100%;
+        max-width: 1280px;
+    }
+    
+    .team-orange-bar {
+        width: 100%;
+        max-width: 1280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-title {
+        font-size: 32px;
+        padding: 40px 0 20px 0;
+    }
+    
+    .team-orange-bar {
+        height: auto;
+        min-height: 85px;
+        padding: 20px 0;
+    }
+    
+    .orange-bar-text,
+    .win-dom-bold,
+    .win-dom-light {
+        font-size: 16px;
+    }
+    
+    .team-orange-bar {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-title {
+        font-size: 24px;
+    }
+    
+    .orange-bar-text,
+    .win-dom-bold,
+    .win-dom-light {
+        font-size: 14px;
+    }
+    
+    .team-orange-bar {
+        margin-bottom: 30px;
+    }
+}
+
+/* ========== НИЖНИЙ БЛОК ========== */
+.footer-info {
+    width: 1680px;
+    margin: 0 auto;
+    background: #323232;
+    padding: 100px 40px 40px 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 8px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #b0b0b0;
+}
+
+.footer-menu a:hover {
+    color: #ff8c00;
+}
+
+.footer-policy {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    color: #b0b0b0;
+    margin-top: 15px;
+}
+
+.footer-policy:hover {
+    color: #ff8c00;
+}
+
+.footer-brand {
+    text-align: right;
+    width: 160px;
+    flex-shrink: 0;
+}
+
+.footer-logo-img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-slogan {
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer-social-img {
+    width: 100%;
+    max-width: 90px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-email-link {
+    text-decoration: none;
+    font-size: 11px;
+    color: #ffc107;
+}
+
+.footer-email-link:hover {
+    color: #fff;
+}
+
+/* Адаптивность */
+@media (max-width: 1280px) {
+    .main-header, .team-block, .team-orange-bar {
+        width: 100%;
+        max-width: 1280px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .footer-info {
+        width: 100%;
+        max-width: 1680px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .header-container {
+        padding: 0 20px;
+    }
+    .nav-list {
+        gap: 18px;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
+    .phone-number {
+        font-size: 16px;
+    }
+    .callback-btn {
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+    .team-title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 960px) {
+    .nav-list {
+        gap: 12px;
+    }
+    .nav-link {
+        font-size: 13px;
+    }
+    .team-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-title {
+        font-size: 28px;
+        padding: 40px 0 20px 0;
+    }
+    .team-orange-bar {
+        height: auto;
+        min-height: 85px;
+        padding: 20px 30px;
+    }
+    .orange-bar-text,
+    .win-dom-bold,
+    .win-dom-light {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-title {
+        font-size: 22px;
+    }
+    .orange-bar-text,
+    .win-dom-bold,
+    .win-dom-light {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .footer-container {
+        flex-wrap: wrap;
+    }
+    .footer-brand {
+        width: 100%;
+        text-align: left;
+    }
+    .footer-logo-img {
+        max-width: 100px;
+    }
+    .footer-social-img {
+        max-width: 70px;
+    }
+}
+
+/* ========== БЛОК С МЕНЕДЖЕРАМИ ========== */
+.managers-block {
+    width: 1280px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 0 0 80px 0;
+}
+
+/* Контейнер с flex: левая часть (текст + 2 карточки) и правая часть (фото) */
+.managers-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Левая часть */
+.managers-left {
+    flex: 1;
+}
+
+/* Текст-описание сверху - размер блока 826x84 */
+.managers-description {
+    width: 100%;
+    max-width: 826px;
+    height: 84px;
+    margin-bottom: 50px;
+}
+
+/* Текст внутри блока */
+.managers-text {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #333333;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    word-break: normal;
+    white-space: normal;
+}
+
+/* Карточки сотрудников */
+.managers-cards {
+    display: flex;
+    gap: 60px;
+    justify-content: flex-start;
+}
+
+/* Карточка менеджера - фото и контент без горизонтального пробела */
+.manager-card {
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+}
+
+/* Фото 184x311 */
+.manager-photo {
+    width: 184px;
+    height: 311px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Правая часть - приклеена к фото по горизонтали */
+.manager-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0;
+    padding-left: 0;
+    /* Отступ сверху, чтобы имя было ниже относительно фото */
+    margin-top: 100px;
+}
+
+/* Блок с именем и фамилией */
+.manager-name-block {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.name-first {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a2a3a;
+    line-height: 1.3;
+}
+
+.name-last {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a2a3a;
+    line-height: 1.3;
+}
+
+/* Оранжевый блок - приклеен к фото по горизонтали, с отступом от имени */
+.manager-orange-block {
+    width: 196px;
+    min-height: 75px;
+    background-color: #EFA359;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 0;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 25px;
+    padding: 12px 15px;
+}
+
+/* Текст внутри оранжевого блока - выравнивание по левому краю */
+.manager-position {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.4;
+    width: 100%;
+}
+
+.pos-line1 {
+    display: block;
+}
+
+.pos-line2 {
+    display: block;
+}
+
+/* Правая часть - фото 282x533 */
+.managers-right {
+    flex-shrink: 0;
+}
+
+.extra-photo {
+    width: 282px;
+    height: 533px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Адаптивность */
+@media (max-width: 1280px) {
+    .top-bar, .team-block, .team-orange-bar, .managers-block {
+        width: 100%;
+        max-width: 1280px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .top-bar {
+        max-width: 1160px;
+        margin: 0 auto;
+    }
+    
+    .team-orange-bar {
+        width: 100%;
+        max-width: 1280px;
+    }
+    
+    .managers-block {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .managers-description {
+        max-width: 100%;
+    }
+    
+    .content-wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .managers-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .managers-left {
+        width: 100%;
+    }
+    
+    .managers-right {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .managers-cards {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .manager-right {
+        margin-top: 70px;
+    }
+    
+    .managers-description {
+        height: auto;
+        min-height: 84px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-title {
+        font-size: 32px;
+        padding: 40px 0 20px 0;
+    }
+    
+    .team-orange-bar {
+        height: auto;
+        min-height: 85px;
+        padding: 20px 0;
+        margin-bottom: 40px;
+    }
+    
+    .orange-bar-text,
+    .win-dom-bold,
+    .win-dom-light {
+        font-size: 16px;
+    }
+    
+    .managers-text {
+        font-size: 16px;
+    }
+    
+    .manager-photo {
+        width: 150px;
+        height: auto;
+    }
+    
+    .name-first, .name-last {
+        font-size: 18px;
+    }
+    
+    .manager-orange-block {
+        width: 160px;
+        min-height: 65px;
+        margin-top: 20px;
+        padding: 10px 12px;
+    }
+    
+    .manager-position {
+        font-size: 14px;
+    }
+    
+    .manager-right {
+        margin-top: 60px;
+    }
+    
+    .extra-photo {
+        width: 250px;
+        height: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .manager-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .manager-right {
+        margin-top: 15px;
+        margin-left: 0;
+    }
+    
+    .manager-orange-block {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-title {
+        font-size: 24px;
+    }
+    
+    .orange-bar-text,
+    .win-dom-bold,
+    .win-dom-light {
+        font-size: 14px;
+    }
+    
+    .team-orange-bar {
+        margin-bottom: 30px;
+    }
+    
+    .manager-photo {
+        width: 140px;
+    }
+    
+    .manager-orange-block {
+        width: 140px;
+        min-height: 60px;
+        margin-top: 15px;
+        padding: 8px 10px;
+    }
+    
+    .manager-position {
+        font-size: 12px;
+    }
+    
+    .name-first, .name-last {
+        font-size: 16px;
+    }
+    
+    .extra-photo {
+        width: 220px;
+    }
+}
+
+/* ========== ОРАНЖЕВЫЙ ФОН С БЕЛЫМ БЛОКОМ (ВЫСТУПАЕТ) ========== */
+.orange-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.orange-background {
+    width: 1280px;
+    height: 1503px;
+    background-color: #EFA359;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Белый блок больше оранжевого по высоте, выступает сверху и снизу */
+.white-block {
+    width: 980px;
+    height: 1627px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 1280px) {
+    .top-bar, .content-wrapper, .orange-background {
+        width: 100%;
+        max-width: 1280px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .top-bar {
+        max-width: 1160px;
+        margin: 0 auto;
+    }
+    
+    .content-wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .orange-background {
+        height: auto;
+        min-height: 1503px;
+        padding: 20px;
+    }
+    
+    .white-block {
+        width: calc(100% - 40px);
+        max-width: 980px;
+        height: auto;
+        min-height: 1627px;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 20px auto;
+    }
+    
+    .managers-description {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .managers-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .managers-left {
+        width: 100%;
+    }
+    
+    .managers-right {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .managers-cards {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .manager-right {
+        margin-top: 70px;
+    }
+    
+    .managers-description {
+        height: auto;
+        min-height: 84px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-title {
+        font-size: 32px;
+        padding: 40px 0 20px 0;
+    }
+    
+    .team-orange-bar {
+        height: auto;
+        min-height: 85px;
+        padding: 20px 0;
+        margin-bottom: 40px;
+    }
+    
+    .orange-bar-text,
+    .win-dom-bold,
+    .win-dom-light {
+        font-size: 16px;
+    }
+    
+    .managers-text {
+        font-size: 16px;
+    }
+    
+    .manager-photo {
+        width: 150px;
+        height: auto;
+    }
+    
+    .name-first, .name-last {
+        font-size: 18px;
+    }
+    
+    .manager-orange-block {
+        width: 160px;
+        min-height: 65px;
+        margin-top: 20px;
+        padding: 10px 12px;
+    }
+    
+    .manager-position {
+        font-size: 14px;
+    }
+    
+    .manager-right {
+        margin-top: 60px;
+    }
+    
+    .extra-photo {
+        width: 250px;
+        height: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .manager-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .manager-right {
+        margin-top: 15px;
+        margin-left: 0;
+    }
+    
+    .manager-orange-block {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-title {
+        font-size: 24px;
+    }
+    
+    .orange-bar-text,
+    .win-dom-bold,
+    .win-dom-light {
+        font-size: 14px;
+    }
+    
+    .team-orange-bar {
+        margin-bottom: 30px;
+    }
+    
+    .manager-photo {
+        width: 140px;
+    }
+    
+    .manager-orange-block {
+        width: 140px;
+        min-height: 60px;
+        margin-top: 15px;
+        padding: 8px 10px;
+    }
+    
+    .manager-position {
+        font-size: 12px;
+    }
+    
+    .name-first, .name-last {
+        font-size: 16px;
+    }
+    
+    .extra-photo {
+        width: 220px;
+    }
+}
+
+/* ========== ТРИ КАРТОЧКИ ВНУТРИ БЕЛОГО БЛОКА ========== */
+.cards-section {
+    width: 100%;
+    padding: 40px 30px;
+}
+
+.cards-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Карточка общий размер 283x431 */
+.staff-card {
+    width: 283px;
+    text-align: center;
+}
+
+/* Обертка для фото и белого блока поверх */
+.staff-photo-wrapper {
+    position: relative;
+    width: 283px;
+    height: 388px;
+    margin-bottom: 0;
+}
+
+/* Фото 283x388 */
+.staff-photo {
+    width: 283px;
+    height: 388px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Белый блок поверх фото - выступает за пределы фотки снизу */
+.staff-name-block {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px;
+    height: 88px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.staff-name {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a2a3a;
+    margin-bottom: 4px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.staff-position {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #666666;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* Кнопки под карточкой */
+.staff-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.staff-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #EFA359;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    border-radius: 0;
+}
+
+.write-btn {
+    background-color: #EFA359;
+    color: #ffffff;
+}
+
+.write-btn:hover {
+    background-color: #d88f3e;
+    border-color: #d88f3e;
+}
+
+.review-btn {
+    background-color: transparent;
+    color: #1a2a3a;
+}
+
+.review-btn:hover {
+    background-color: #EFA359;
+    color: #ffffff;
+}
+
+/* Адаптивность */
+@media (max-width: 1000px) {
+    .cards-row {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .staff-card {
+        width: 260px;
+    }
+    
+    .staff-photo-wrapper {
+        width: 260px;
+        height: 356px;
+    }
+    
+    .staff-photo {
+        width: 260px;
+        height: 356px;
+    }
+    
+    .staff-name-block {
+        width: 210px;
+        height: 80px;
+        bottom: -15px;
+    }
+    
+    .staff-name {
+        font-size: 14px;
+    }
+    
+    .staff-position {
+        font-size: 11px;
+    }
+    
+    .staff-buttons {
+        margin-top: 30px;
+    }
+    
+    .staff-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 550px) {
+    .cards-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .staff-card {
+        width: 280px;
+    }
+    
+    .staff-photo-wrapper {
+        width: 280px;
+        height: 384px;
+    }
+    
+    .staff-photo {
+        width: 280px;
+        height: 384px;
+    }
+    
+    .staff-name-block {
+        bottom: -18px;
+    }
+    
+    .staff-buttons {
+        margin-top: 32px;
+    }
+}
+
+/* Добавить отступ между линиями карточек */
+.cards-section {
+    width: 100%;
+    padding: 20px 30px;
+}
+
+/* Первая линия - верхний отступ больше */
+.cards-section:first-of-type {
+    padding-top: 40px;
+}
+
+/* Последняя линия - нижний отступ */
+.cards-section:last-of-type {
+    padding-bottom: 40px;
+}
+
+/* Отступ перед новым блоком */
+.spacer {
+    height: 60px;
+    width: 100%;
+}
+
+/* Новый блок с руководителями */
+.new-managers-block {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: transparent;
+    padding: 20px 0 40px 0;
+}
+
+/* Новая компоновка */
+.new-layout {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Левая большая фотка */
+.new-photo-left {
+    flex-shrink: 0;
+}
+
+.new-photo-large {
+    width: 280px;
+    height: 540px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Правая часть */
+.new-right-part {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Текст сверху */
+.new-top-text {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.new-top-text-content {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333333;
+    text-align: left;
+    max-width: 100%;
+}
+
+/* Контейнер с двумя людьми */
+.new-people-container {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Карточка человека */
+.new-person-card {
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+}
+
+/* Фото человека */
+.new-person-photo {
+    width: 200px;
+    height: 338px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Информация справа от фото */
+.new-person-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 80px;
+}
+
+/* Имя и фамилия */
+.new-person-name {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.new-person-name .name-first {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2a3a;
+    line-height: 1.3;
+}
+
+.new-person-name .name-last {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2a3a;
+    line-height: 1.3;
+}
+
+/* Оранжевый блок */
+.new-person-orange {
+    width: 170px;
+    min-height: 70px;
+    background-color: #EFA359;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    margin-left: 0;
+    padding: 10px 12px;
+}
+
+.new-person-orange .pos-line1,
+.new-person-orange .pos-line2 {
+    display: block;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* Адаптивность */
+@media (max-width: 1000px) {
+    .new-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .new-photo-left {
+        margin-bottom: 30px;
+    }
+    
+    .new-top-text {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 700px) {
+    .new-people-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .new-person-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .new-person-info {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .new-photo-large {
+        width: 240px;
+        height: auto;
+    }
+    
+    .new-person-photo {
+        width: 170px;
+        height: auto;
+    }
+    
+    .new-person-orange {
+        width: 150px;
+        min-height: 60px;
+        padding: 8px 10px;
+    }
+    
+    .new-person-orange .pos-line1,
+    .new-person-orange .pos-line2 {
+        font-size: 12px;
+    }
+    
+    .new-person-name .name-first,
+    .new-person-name .name-last {
+        font-size: 16px;
+    }
+    
+    .new-top-text {
+        margin-bottom: 30px;
+    }
+}
+
+/* Ссылка "На главную" */
+.back-link {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.back-to-main {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #EFA359;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.back-to-main:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* Отступ перед новым блоком */
+.spacer {
+    height: 60px;
+    width: 100%;
+}
+
+/* Новый блок с руководителями - добавлен отступ слева */
+.new-managers-block {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: transparent;
+    padding: 20px 0 40px 30px;
+}
+
+/* Новая компоновка */
+.new-layout {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Левая большая фотка */
+.new-photo-left {
+    flex-shrink: 0;
+}
+
+.new-photo-large {
+    width: 280px;
+    height: 540px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Правая часть */
+.new-right-part {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Текст сверху */
+.new-top-text {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.new-top-text-content {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333333;
+    text-align: left;
+    max-width: 100%;
+}
+
+/* Контейнер с двумя людьми */
+.new-people-container {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Карточка человека */
+.new-person-card {
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+}
+
+/* Фото человека */
+.new-person-photo {
+    width: 200px;
+    height: 338px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Информация справа от фото */
+.new-person-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 80px;
+}
+
+/* Имя и фамилия */
+.new-person-name {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.new-person-name .name-first {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2a3a;
+    line-height: 1.3;
+}
+
+.new-person-name .name-last {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2a3a;
+    line-height: 1.3;
+}
+
+/* Оранжевый блок */
+.new-person-orange {
+    width: 170px;
+    min-height: 70px;
+    background-color: #EFA359;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    margin-left: 0;
+    padding: 10px 12px;
+}
+
+.new-person-orange .pos-line1,
+.new-person-orange .pos-line2 {
+    display: block;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* Ссылка "На главную" - добавлен отступ слева */
+.back-link {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.back-to-main {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #EFA359;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.back-to-main:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 1000px) {
+    .new-managers-block {
+        padding-left: 20px;
+    }
+    
+    .back-link {
+        padding-left: 20px;
+    }
+    
+    .new-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .new-photo-left {
+        margin-bottom: 30px;
+    }
+    
+    .new-top-text {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 700px) {
+    .new-people-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .new-person-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .new-person-info {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .new-managers-block {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .back-link {
+        padding-left: 15px;
+    }
+    
+    .new-photo-large {
+        width: 240px;
+        height: auto;
+    }
+    
+    .new-person-photo {
+        width: 170px;
+        height: auto;
+    }
+    
+    .new-person-orange {
+        width: 150px;
+        min-height: 60px;
+        padding: 8px 10px;
+    }
+    
+    .new-person-orange .pos-line1,
+    .new-person-orange .pos-line2 {
+        font-size: 12px;
+    }
+    
+    .new-person-name .name-first,
+    .new-person-name .name-last {
+        font-size: 16px;
+    }
+    
+    .new-top-text {
+        margin-bottom: 30px;
+    }
+}
+
+/* ===== ПЛАВАЮЩИЕ КНОПКИ ПЕРЕВОДА ===== */
+.lang-switch {
+    position: fixed;
+    top: 110px;
+    right: 20px;
+    z-index: 9999;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+    border: 1px solid #e5e7eb;
+}
+
+.lang-btn {
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.lang-btn.active {
+    background: #EFA359;
+    color: white;
+}
+
+.lang-btn:not(.active):hover {
+    background: #f3f4f6;
+}
+
+/* ===== СКРЫТИЕ/ПОКАЗ ЯЗЫКОВ ===== */
+[data-lang="ru"] .lang-en {
+    display: none;
+}
+
+[data-lang="en"] .lang-ru {
+    display: none;
+}
+
+.lang-ru, .lang-en {
+    transition: display 0.1s;
+}
+
+/* Кнопка возврата на главную - закреплена в левом верхнем углу */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: rgba(239, 163, 90, 0.95);
+    border-radius: 40px;
+    color: #1a2a3a;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.home-button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.home-button:hover {
+    background: #EFA35A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 163, 90, 0.4);
+    color: #ffffff;
+}
+
+.home-button:hover svg {
+    transform: translateX(-3px);
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .home-button {
+        top: 15px;
+        left: 15px;
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+    
+    .home-button svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .home-button span {
+        display: inline-block;
+    }
+}
+
+/* Для очень маленьких экранов - показываем только иконку */
+@media (max-width: 480px) {
+    .home-button span {
+        display: none;
+    }
+    
+    .home-button {
+        padding: 10px;
+        border-radius: 50%;
+    }
+}
+
+/* ========== СТИЛИ ДЛЯ ВЫПАДАЮЩИХ МЕНЮ ========== */
+.nav-item {
+    position: relative;
+}
+
+.nav-item.dropdown {
+    position: relative;
+}
+
+/* Создаем невидимую область-мостик для плавного перехода */
+.nav-item.dropdown {
+    padding-bottom: 15px;
+    margin-bottom: -15px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 220px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+    z-index: 9999;
+    
+    /* Плавное появление */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: visibility 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+/* Показываем при наведении на родителя */
+.nav-item.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Также показываем при наведении на само подменю */
+.dropdown-menu:hover {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-menu li {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 24px;
+    color: #2c3e4e;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    background: #ff8c00;
+    color: #ffffff;
+}
+
+/* Для правых меню (чтобы не вылезали за экран) */
+.nav-menu li:last-child .dropdown-menu,
+.nav-menu li:nth-last-child(2) .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+/* Стрелка при наведении */
+.nav-item.dropdown:hover > a .arrow-down {
+    transform: rotate(180deg);
+}
+
+/* Мобильная версия */
+@media (max-width: 1100px) {
+    .nav-item.dropdown {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        visibility: hidden;
+        opacity: 0;
+        transform: none;
+        box-shadow: none;
+        background: #f0f0f0;
+        padding-left: 20px;
+        margin-top: 5px;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+        pointer-events: none;
+        display: block !important;
+    }
+    
+    .nav-item.dropdown.active .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        max-height: 300px;
+        pointer-events: auto;
+    }
+    
+    .dropdown-menu li a {
+        white-space: normal;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Стили для переключения языка - ОЧЕНЬ ВАЖНО! */
+[data-lang="ru"] .lang-en {
+    display: none !important;
+}
+
+[data-lang="en"] .lang-ru {
+    display: none !important;
+}
+
+.lang-ru, .lang-en {
+    transition: display 0.1s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для форм в модальных окнах */
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.modal-content textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+.modal-content .rating {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.modal-content .rating span {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.modal-content .rating select {
+    width: auto;
+    margin-bottom: 0;
+    padding: 8px 12px;
+}
+
+.modal-content button[type="submit"] {
+    background: #EFA359;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-content button[type="submit"]:hover {
+    background: #e08e3a;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========== БУРГЕР-МЕНЮ СТИЛИ ========== */
+
+/* Бургер-кнопка - скрыта на десктопе */
+.burger-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1002;
+    margin-left: 15px;
+}
+
+.burger-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #1a2a3a;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.burger-menu-toggle.active span:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+
+.burger-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* Мобильное меню (выезжающее) */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 380px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+    z-index: 2000;
+    transition: right 0.35s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #eef2f5;
+    background: #ffffff;
+}
+
+.mobile-logo {
+    height: 40px;
+    width: auto;
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #1a2a3a;
+    line-height: 1;
+    padding: 0;
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.mobile-nav-item {
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a2a3a;
+    border-bottom: 1px solid #f0f3f6;
+    cursor: pointer;
+}
+
+.mobile-nav-item > span,
+.mobile-nav-item > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #1a2a3a;
+}
+
+.mobile-nav-item > a {
+    width: 100%;
+}
+
+.submenu-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    color: #efa35a;
+}
+
+.mobile-nav-item.active .submenu-arrow {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-nav-item.active .mobile-submenu {
+    max-height: 300px;
+}
+
+.mobile-submenu li {
+    padding: 10px 0;
+}
+
+.mobile-submenu li a {
+    text-decoration: none;
+    color: #5a6e7c;
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
+    transition: color 0.2s;
+}
+
+.mobile-submenu li a:hover,
+.mobile-submenu li a:active {
+    color: #efa35a;
+}
+
+.mobile-menu-footer {
+    padding: 24px;
+    border-top: 1px solid #eef2f5;
+    background: #fafcfd;
+    margin-top: auto;
+}
+
+.mobile-phone {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800;
+    color: #1a2a3a;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.mobile-callback-btn {
+    width: 100%;
+    padding: 14px;
+    background: #efa35a;
+    border: none;
+    font-weight: 700;
+    font-size: 15px;
+    color: #1a2a3a;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.mobile-callback-btn:hover {
+    background: #e08e3a;
+}
+
+.mobile-language {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.lang-btn-mobile {
+    background: transparent;
+    border: 1px solid #cfdfed;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.2s;
+}
+
+.lang-btn-mobile.active {
+    background: #efa35a;
+    border-color: #efa35a;
+    color: white;
+}
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Показываем бургер на мобильных, скрываем десктопную навигацию */
+@media (max-width: 1100px) {
+    .burger-menu-toggle {
+        display: flex;
+    }
+    
+    .header-nav {
+        display: none !important;
+    }
+    
+    .header-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .callback-btn {
+        width: 140px;
+        height: 40px;
+        font-size: 11px;
+    }
+    
+    .header-phone .phone-number {
+        font-size: 13px;
+    }
+    
+    .lang-switch {
+        top: 110px;
+    }
+}
+
+@media (max-width: 650px) {
+    .header-phone .phone-number {
+        display: none;
+    }
+    
+    .callback-btn {
+        width: 120px;
+        height: 38px;
+        font-size: 10px;
+    }
+    
+    .lang-switch {
+        top: 100px;
+        right: 10px;
+    }
+    
+    .lang-switch .lang-btn {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 1101px) {
+    .mobile-menu,
+    .mobile-overlay {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========== ПЕРЕМЕННЫЕ И СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ ========== */
+/* Эти стили добавляются в самый конец файла */
+
+:root {
+    --dark-bg-body: #121212;
+    --dark-bg-header: #1e1e2e;
+    --dark-bg-card: #1e1e2e;
+    --dark-bg-footer: #0a0a0f;
+    --dark-bg-white-block: #1e1e2e;
+    --dark-bg-orange: #EFA359;
+    --dark-text-primary: #e0e0e0;
+    --dark-text-secondary: #b0b0c0;
+    --dark-text-dark: #e0e0e0;
+    --dark-text-muted: #8a8a9a;
+    --dark-border: #2a2a3a;
+    --dark-border-light: #3a3a4a;
+    --dark-shadow: rgba(0, 0, 0, 0.3);
+}
+
+body.dark {
+    background-color: var(--dark-bg-body);
+    color: var(--dark-text-primary);
+}
+
+/* ===== ШАПКА ===== */
+body.dark .main-header {
+    background: var(--dark-bg-header);
+    border-bottom-color: var(--dark-border);
+}
+
+body.dark .nav-item a,
+body.dark .phone-number {
+    color: var(--dark-text-secondary);
+}
+
+body.dark .nav-item a:hover,
+body.dark .phone-number:hover {
+    color: #ff8c00;
+}
+
+body.dark .callback-btn {
+    color: var(--dark-text-primary);
+    border-color: #ff8c00;
+}
+
+body.dark .callback-btn:hover {
+    background: #ff8c00;
+    color: #ffffff;
+}
+
+/* ===== КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ===== */
+.theme-switch-btn {
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary, #1a2a3a);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+body.dark .theme-switch-btn {
+    border-color: var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.dark .theme-switch-btn:hover {
+    background: #EFA359;
+    border-color: #EFA359;
+    color: #ffffff;
+}
+
+/* ===== КНОПКИ ПЕРЕВОДА (ПЛАВАЮЩИЕ) ===== */
+body.dark .lang-switch {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+body.dark .lang-btn {
+    color: var(--dark-text-primary);
+}
+
+body.dark .lang-btn.active {
+    background: #EFA359;
+    color: white;
+}
+
+body.dark .lang-btn:not(.active):hover {
+    background: var(--dark-border-light);
+}
+
+/* ===== КНОПКА НА ГЛАВНУЮ ===== */
+body.dark .home-button {
+    background: rgba(239, 163, 90, 0.95);
+    color: #1a2a3a;
+}
+
+body.dark .home-button:hover {
+    background: #EFA359;
+    color: #ffffff;
+}
+
+/* ===== БЛОК НАША КОМАНДА ===== */
+body.dark .team-block {
+    background: var(--dark-bg-body);
+}
+
+body.dark .team-title-black {
+    color: var(--dark-text-primary);
+}
+
+body.dark .team-title-orange {
+    color: #EFA359;
+}
+
+body.dark .team-orange-bar {
+    background-color: #EFA359;
+}
+
+body.dark .orange-bar-text,
+body.dark .win-dom-bold,
+body.dark .win-dom-light {
+    color: #ffffff;
+}
+
+/* ===== БЛОК С МЕНЕДЖЕРАМИ ===== */
+body.dark .managers-block {
+    background: var(--dark-bg-body);
+}
+
+body.dark .managers-text {
+    color: var(--dark-text-secondary);
+}
+
+body.dark .name-first,
+body.dark .name-last {
+    color: var(--dark-text-primary);
+}
+
+body.dark .manager-orange-block {
+    background-color: #EFA359;
+}
+
+body.dark .manager-position {
+    color: #ffffff;
+}
+
+/* ===== ОРАНЖЕВЫЙ ФОН С БЕЛЫМ БЛОКОМ ===== */
+body.dark .orange-background {
+    background-color: #EFA359;
+}
+
+body.dark .white-block {
+    background-color: var(--dark-bg-white-block);
+    box-shadow: 0 4px 20px var(--dark-shadow);
+}
+
+/* ===== КАРТОЧКИ СОТРУДНИКОВ ===== */
+body.dark .staff-name-block {
+    background-color: var(--dark-bg-white-block);
+    box-shadow: 0 4px 12px var(--dark-shadow);
+}
+
+body.dark .staff-name {
+    color: var(--dark-text-primary);
+}
+
+body.dark .staff-position {
+    color: var(--dark-text-muted);
+}
+
+body.dark .write-btn {
+    background-color: #EFA359;
+    color: #ffffff;
+}
+
+body.dark .write-btn:hover {
+    background-color: #d88f3e;
+}
+
+body.dark .review-btn {
+    background-color: transparent;
+    color: var(--dark-text-primary);
+    border-color: #EFA359;
+}
+
+body.dark .review-btn:hover {
+    background-color: #EFA359;
+    color: #ffffff;
+}
+
+/* ===== НОВЫЙ БЛОК С РУКОВОДИТЕЛЯМИ ===== */
+body.dark .new-top-text-content {
+    color: var(--dark-text-secondary);
+}
+
+body.dark .new-person-name .name-first,
+body.dark .new-person-name .name-last {
+    color: var(--dark-text-primary);
+}
+
+body.dark .new-person-orange {
+    background-color: #EFA359;
+}
+
+body.dark .new-person-orange .pos-line1,
+body.dark .new-person-orange .pos-line2 {
+    color: #ffffff;
+}
+
+/* ===== ССЫЛКА НА ГЛАВНУЮ ===== */
+body.dark .back-to-main {
+    color: #EFA359;
+}
+
+/* ===== ФУТЕР ===== */
+body.dark .footer-info {
+    background: var(--dark-bg-footer);
+}
+
+body.dark .footer-menu a {
+    color: var(--dark-text-muted);
+}
+
+body.dark .footer-menu a:hover {
+    color: #ff8c00;
+}
+
+body.dark .footer-policy {
+    color: var(--dark-text-muted);
+}
+
+/* ===== МОДАЛЬНЫЕ ОКНА ===== */
+body.dark .modal-content {
+    background-color: var(--dark-bg-card);
+}
+
+body.dark .modal-content h3 {
+    color: var(--dark-text-primary);
+}
+
+body.dark .modal-content p {
+    color: var(--dark-text-muted);
+}
+
+body.dark .modal-content input,
+body.dark .modal-content textarea,
+body.dark .modal-content select {
+    background-color: var(--dark-bg-body);
+    border-color: var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.dark .modal-content input:focus,
+body.dark .modal-content textarea:focus {
+    border-color: #EFA359;
+    outline: none;
+}
+
+body.dark .modal-content button[type="submit"] {
+    background-color: #EFA359;
+    color: #ffffff;
+}
+
+body.dark .modal-content button[type="submit"]:hover {
+    background-color: #d88f3e;
+}
+
+body.dark .close-modal {
+    color: var(--dark-text-muted);
+}
+
+body.dark .close-modal:hover {
+    color: #EFA359;
+}
+
+/* ===== ВЫПАДАЮЩИЕ МЕНЮ ===== */
+body.dark .dropdown-menu {
+    background: var(--dark-bg-card);
+    box-shadow: 0 15px 30px var(--dark-shadow);
+}
+
+body.dark .dropdown-menu li a {
+    color: var(--dark-text-primary);
+}
+
+body.dark .dropdown-menu li a:hover {
+    background: #ff8c00;
+    color: #ffffff;
+}
+
+/* ===== БУРГЕР-МЕНЮ ===== */
+body.dark .burger-menu-toggle span {
+    background-color: var(--dark-text-primary);
+}
+
+body.dark .mobile-menu,
+body.dark .mobile-menu-header,
+body.dark .mobile-menu-footer {
+    background: var(--dark-bg-card);
+}
+
+body.dark .mobile-menu-header {
+    border-bottom-color: var(--dark-border);
+}
+
+body.dark .mobile-nav-item {
+    color: var(--dark-text-primary);
+    border-bottom-color: var(--dark-border);
+}
+
+body.dark .mobile-nav-item > span,
+body.dark .mobile-nav-item > a {
+    color: var(--dark-text-primary);
+}
+
+body.dark .mobile-menu-close {
+    color: var(--dark-text-primary);
+}
+
+body.dark .mobile-submenu li a {
+    color: var(--dark-text-secondary);
+}
+
+body.dark .mobile-submenu li a:hover {
+    color: #efa35a;
+}
+
+body.dark .mobile-callback-btn {
+    background: #efa35a;
+    color: #ffffff;
+}
+
+body.dark .mobile-callback-btn:hover {
+    background: #e08e3a;
+}
+
+body.dark .lang-btn-mobile {
+    border-color: var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.dark .lang-btn-mobile.active {
+    background: #efa35a;
+    color: white;
+}
+
+body.dark .mobile-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* ===== ОБЩИЕ ЭЛЕМЕНТЫ ===== */
+body.dark .spacer {
+    background: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ========== ПАНЕЛЬ УПРАВЛЕНИЯ ДЛЯ СЛАБОВИДЯЩИХ ========== */
+.accessibility-toolbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    display: flex;
+    gap: 10px;
+    background: var(--bg-primary, #ffffff);
+    padding: 8px 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-light, #eaeef2);
+}
+
+.accessibility-btn {
+    background: transparent;
+    border: 1px solid var(--accent, #EFA35A);
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary, #1a2a3a);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.accessibility-btn:hover {
+    background: var(--accent, #EFA35A);
+    color: #ffffff;
+}
+
+/* ========== РЕЖИМ ДЛЯ СЛАБОВИДЯЩИХ ========== */
+/* Версия для слабовидящих - убираем все фоновые изображения */
+body.vision-mode {
+    background-color: #000000 !important;
+    color: #FFFF00 !important;
+}
+
+body.vision-mode .main-header,
+body.vision-mode .hero,
+body.vision-mode .top-bar,
+body.vision-mode .container,
+body.vision-mode .under-menu-line,
+body.vision-mode .white-slide,
+body.vision-mode .about-company-section,
+body.vision-mode .architecture-section,
+body.vision-mode .slideshow-section,
+body.vision-mode .projects-section,
+body.vision-mode .mortgage-section,
+body.vision-mode .team-section,
+body.vision-mode .overlay-section,
+body.vision-mode .reviews-section,
+body.vision-mode .news-section,
+body.vision-mode .office-section,
+body.vision-mode .footer-info,
+body.vision-mode .mobile-menu,
+body.vision-mode .mobile-menu-header,
+body.vision-mode .mobile-menu-footer,
+body.vision-mode .dropdown-menu {
+    background-color: #000000 !important;
+    background-image: none !important;
+    border-color: #FFFF00 !important;
+}
+
+/* Убираем все фоновые изображения */
+body.vision-mode .hero {
+    background-image: none !important;
+    background-color: #000000 !important;
+}
+
+body.vision-mode .hero-overlay {
+    display: none !important;
+}
+
+body.vision-mode .booking-section {
+    background-image: none !important;
+    background-color: #000000 !important;
+}
+
+body.vision-mode .booking-overlay {
+    display: none !important;
+}
+
+/* Скрываем все изображения и иконки */
+body.vision-mode img:not(.visually-hidden-img),
+body.vision-mode .video-preview-card,
+body.vision-mode .play-icon,
+body.vision-mode .project-icon,
+body.vision-mode .feature-icon,
+body.vision-mode .office-icon,
+body.vision-mode .social-icons,
+body.vision-mode .social-img,
+body.vision-mode .footer-social-img,
+body.vision-mode .about-company-icons,
+body.vision-mode .team-arrow svg,
+body.vision-mode .review-photo,
+body.vision-mode .news-card-big img,
+body.vision-mode .news-card-small img,
+body.vision-mode .map-iframe,
+body.vision-mode iframe {
+    display: none !important;
+}
+
+/* Но оставляем важные изображения с альтернативным текстом */
+body.vision-mode .logo-img {
+    display: block !important;
+    filter: brightness(0) invert(1);
+}
+
+/* Увеличиваем размер шрифта */
+body.vision-mode * {
+    font-size: 18px !important;
+}
+
+body.vision-mode h1,
+body.vision-mode .hero-title {
+    font-size: 48px !important;
+}
+
+body.vision-mode h2 {
+    font-size: 36px !important;
+}
+
+body.vision-mode h3 {
+    font-size: 28px !important;
+}
+
+body.vision-mode p,
+body.vision-mode li,
+body.vision-mode span {
+    font-size: 18px !important;
+}
+
+/* Увеличиваем межстрочный интервал */
+body.vision-mode p,
+body.vision-mode li {
+    line-height: 1.8 !important;
+}
+
+/* Увеличиваем отступы */
+body.vision-mode .container,
+body.vision-mode .section {
+    padding: 30px !important;
+}
+
+/* Убираем градиенты и тени */
+body.vision-mode * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Белый текст на черном фоне */
+body.vision-mode * {
+    color: #FFFF00 !important;
+}
+
+body.vision-mode a {
+    color: #FFFF00 !important;
+    text-decoration: underline !important;
+}
+
+body.vision-mode a:hover {
+    color: #FFFFFF !important;
+}
+
+/* Кнопки в режиме слабовидящих */
+body.vision-mode button,
+body.vision-mode .btn,
+body.vision-mode .callback-btn,
+body.vision-mode .theme-switch-btn,
+body.vision-mode .vision-toggle-btn {
+    background: transparent !important;
+    border: 2px solid #FFFF00 !important;
+    color: #FFFF00 !important;
+}
+
+body.vision-mode button:hover,
+body.vision-mode .btn:hover {
+    background: #FFFF00 !important;
+    color: #000000 !important;
+}
+
+/* Оранжевые элементы становятся желтыми */
+body.vision-mode .win-color,
+body.vision-mode .orange-text,
+body.vision-mode .yellow-text,
+body.vision-mode .mortgage-title-highlight,
+body.vision-mode .team-title-highlight,
+body.vision-mode .reviews-title-highlight,
+body.vision-mode .office-title-orange,
+body.vision-mode .other-news-orange-italic,
+body.vision-mode .booking-subtitle,
+body.vision-mode .booking-count span {
+    color: #FFFF00 !important;
+}
+
+/* Убираем прозрачность */
+body.vision-mode .booking-overlay,
+body.vision-mode .hero-overlay {
+    display: none !important;
+}
+
+/* Увеличиваем указатель мыши */
+body.vision-mode * {
+    cursor: pointer !important;
+}
+
+/* Для видео - показываем текстовую ссылку */
+body.vision-mode .video-preview-card {
+    display: flex !important;
+    background: #000000 !important;
+    border: 2px solid #FFFF00 !important;
+    min-height: 60px;
+}
+
+body.vision-mode .video-text {
+    color: #FFFF00 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+}
+
+body.vision-mode .play-icon {
+    display: none !important;
+}
+
+/* Для модальных окон */
+body.vision-mode .modal-content {
+    background: #000000 !important;
+    border: 2px solid #FFFF00 !important;
+}
+
+body.vision-mode .modal-content input,
+body.vision-mode .modal-content textarea {
+    background: #000000 !important;
+    border: 1px solid #FFFF00 !important;
+    color: #FFFF00 !important;
+}
+
+body.vision-mode .close-modal {
+    color: #FFFF00 !important;
+}
+
+/* Карточки домов */
+body.vision-mode .house-card,
+body.vision-mode .project-card,
+body.vision-mode .mortgage-card,
+body.vision-mode .review-card {
+    background: #000000 !important;
+    border: 2px solid #FFFF00 !important;
+}
+
+/* Пагинация */
+body.vision-mode .pagination-prev,
+body.vision-mode .pagination-num,
+body.vision-mode .pagination-next {
+    background: #000000 !important;
+    border: 2px solid #FFFF00 !important;
+    color: #FFFF00 !important;
+}
+
+body.vision-mode .pagination-num.active {
+    background: #FFFF00 !important;
+    color: #000000 !important;
+}
