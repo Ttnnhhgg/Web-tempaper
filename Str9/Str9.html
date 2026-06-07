@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Двухэтажные дома | WIN DOM</title>
+    <link rel="stylesheet" href="Str9.css">
+    <link rel="stylesheet" href="../auth.css">
+    
+</head>
+<body data-lang="ru">
+
+<!-- Плавающие кнопки перевода -->
+<div class="lang-switch">
+    <button class="lang-btn active" data-lang="ru">РУС</button>
+    <button class="lang-btn" data-lang="en">ENG</button>
+</div>
+
+<div class="page-wrapper">
+
+    <!-- Шапка сайта -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="im1.png" alt="Фото дома" class="logo-house-img" width="65" height="56">
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">
+                            <span class="lang-ru">Наши проекты</span><span class="lang-en">Our Projects</span> ▼
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str7/Str7.html">Все проекты</a></li>
+                            <li><a href="../Str7/Str7.html">Изумрудный Village</a></li>
+                            <li><a href="../Str7/Str7.html">IQ CLUB</a></li>
+                            <li><a href="../Str7/Str7.html">Зимняя Горка</a></li>
+                            <li><a href="../Str7/Str7.html">Усады Village</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">
+                            <span class="lang-ru">Дома</span><span class="lang-en">Houses</span> ▼
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str8/Str8.html">Одноэтажные</a></li>
+                            <li><a href="../Str9/Str9.html">Двухэтажные</a></li>
+                            <li><a href="../Str7/Str7.html">Все дома</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../Str6/Str6.html">
+                            <span class="lang-ru">Ипотека</span><span class="lang-en">Mortgage</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0)">
+                            <span class="lang-ru">О компании</span><span class="lang-en">About Us</span> ▼
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Str5/Str5.html">Команда</a></li>
+                            <li><a href="../Str3/Str3.html">СМИ о нас</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../Str2/Str2.html">
+                            <span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-phone">
+                <a href="tel:+79625552525" class="phone-number">+7 (962) 555-25-25</a>
+            </div>
+            <!-- КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ -->
+<button class="theme-switch-btn" id="themeSwitchBtn" aria-label="Переключить тему">🌙 Тёмная</button>
+<div class="accessibility-toolbar">
+    
+    <button class="accessibility-btn vision-toggle-btn" id="visionBtn" aria-label="Версия для слабовидящих">👁️ Версия для слабовидящих</button>
+</div>
+            <button class="callback-btn" id="callbackBtn">
+                <span class="lang-ru">Заказать звонок</span>
+                <span class="lang-en">Request a Call</span>
+            </button>
+            <!-- БУРГЕР-КНОПКА -->
+            <div class="burger-menu-toggle" id="burgerToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Кнопка возврата на главную -->
+    <a href="../Str1.html" class="home-button" id="homeButton" title="На главную">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9L12 3L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="lang-ru">На главную</span>
+        <span class="lang-en">To Home</span>
+    </a>
+
+    <!-- Модальное окно для заказа звонка (form1) -->
+    <div id="modalForm1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-modal1">&times;</span>
+            <h3>
+                <span class="lang-ru">Заказать звонок</span>
+                <span class="lang-en">Request a Call</span>
+            </h3>
+            <p>
+                <span class="lang-ru">Оставьте ваш номер, и мы перезвоним в ближайшее время.</span>
+                <span class="lang-en">Leave your number and we will call you back soon.</span>
+            </p>
+            <form id="form1">
+                <input type="text" id="form1Name" placeholder="Ваше имя" required>
+                <input type="tel" id="form1Phone" placeholder="+7 (___) ___-__-__" required>
+                <button type="submit">
+                    <span class="lang-ru">Отправить</span>
+                    <span class="lang-en">Send</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для ОСТАВИТЬ ЗАЯВКУ (form5) -->
+    <div id="modalForm5" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-modal5">&times;</span>
+            <h3>
+                <span class="lang-ru">Оставить заявку</span>
+                <span class="lang-en">Leave a request</span>
+            </h3>
+            <p>
+                <span class="lang-ru">Заполните форму, и мы свяжемся с вами.</span>
+                <span class="lang-en">Fill out the form and we will contact you.</span>
+            </p>
+            <form id="form5">
+                <input type="text" id="form5Name" placeholder="Ваше имя" required>
+                <input type="tel" id="form5Phone" placeholder="Телефон" required>
+                <input type="text" id="form5Project" placeholder="Интересующий проект">
+                <button type="submit">
+                    <span class="lang-ru">Отправить заявку</span>
+                    <span class="lang-en">Send request</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для ДЕТАЛИ ПРОЕКТА -->
+    <div id="modalFormDetails" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-modalDetails">&times;</span>
+            <h3>
+                <span class="lang-ru">Детали проекта</span>
+                <span class="lang-en">Project details</span>
+            </h3>
+            <p>
+                <span class="lang-ru">Оставьте заявку, и мы предоставим полную информацию о проекте.</span>
+                <span class="lang-en">Leave a request and we will provide complete information about the project.</span>
+            </p>
+            <form id="formDetails">
+                <input type="text" id="detailsName" placeholder="Ваше имя" required>
+                <input type="tel" id="detailsPhone" placeholder="Телефон" required>
+                <input type="text" id="detailsProject" placeholder="Название проекта">
+                <button type="submit">
+                    <span class="lang-ru">Узнать детали</span>
+                    <span class="lang-en">Get details</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Блок с фото -->
+    <section class="hero-image">
+        <div class="hero-container">
+            <img src="im11.png" alt="Главное изображение" class="hero-img">
+        </div>
+    </section>
+
+    <!-- БЛОК: НАШИ ПРОЕКТЫ ДОМОВ -->
+    <section class="projects-section">
+        <div class="projects-container">
+            <div class="projects-left">
+                <div class="title-wrapper">
+                    <span class="title-black lang-ru">НАШИ</span>
+                    <span class="title-black lang-en">OUR</span>
+                    <span class="title-orange-italic lang-ru">ДВУХЭТАЖНЫЕ ДОМА</span>
+                    <span class="title-orange-italic lang-en">TWO-STORY HOUSES</span>
+                </div>
+                <div class="buttons-wrapper">
+                    <button class="btn-black"><span class="lang-ru">1-х этажные</span><span class="lang-en">1-story</span></button>
+                    <button class="btn-black"><span class="lang-ru">2-х этажные</span><span class="lang-en">2-story</span></button>
+                    <button class="btn-black"><span class="lang-ru">Таунхаусы</span><span class="lang-en">Townhouses</span></button>
+                    <button class="btn-black"><span class="lang-ru">На карте</span><span class="lang-en">On map</span></button>
+                    <button class="btn-orange"><span class="lang-ru">Все дома</span><span class="lang-en">All houses</span></button>
+                </div>
+            </div>
+            <div class="projects-right">
+                <div class="breadcrumbs-wrapper">
+                    <span class="breadcrumb-gray lang-ru">Главная</span>
+                    <span class="breadcrumb-gray lang-en">Home</span>
+                    <span class="breadcrumb-dot">●</span>
+                    <span class="breadcrumb-gray lang-ru">Дома</span>
+                    <span class="breadcrumb-gray lang-en">Houses</span>
+                    <span class="breadcrumb-dot">●</span>
+                    <span class="breadcrumb-gray lang-ru">Двухэтажные дома</span>
+                    <span class="breadcrumb-gray lang-en">Two-story houses</span>
+                </div>
+            </div>
+        </div>
+        <div class="orange-line"></div>
+    </section>
+
+    <!-- Первый ряд: Win-1, Win-2, Win-3 -->
+    <div class="houses-row">
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im12.png" alt="Win-1"></div>
+                <div class="house-header">
+                    <h3 class="house-title">Win-1</h3>
+                    <div class="house-price">13 800 000 ₽</div>
+                </div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im18.png" alt="Win-2"></div>
+                <div class="house-header"><h3 class="house-title">Win-2</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im19.png" alt="Win-3"></div>
+                <div class="house-header"><h3 class="house-title">Win-3</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Второй ряд: Win-4, Win-5, Win-6 -->
+    <div class="houses-row">
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im20.png" alt="Win-4"></div>
+                <div class="house-header"><h3 class="house-title">Win-4</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im21.png" alt="Win-5"></div>
+                <div class="house-header"><h3 class="house-title">Win-5</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im22.png" alt="Win-6"></div>
+                <div class="house-header"><h3 class="house-title">Win-6</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- БЛОК: НАШИ ПРОЕКТЫ с двумя карточками -->
+    <div class="projects-wrapper">
+        <div class="projects-heading">
+            <span class="heading-black lang-ru">НАШИ</span>
+            <span class="heading-black lang-en">OUR</span>
+            <span class="heading-orange lang-ru">ПРОЕКТЫ</span>
+            <span class="heading-orange lang-en">PROJECTS</span>
+        </div>
+        <div class="two-cards-row">
+            <div class="project-card">
+                <div class="project-card-image"><img src="im12.png" alt="Проект"></div>
+                <div class="project-card-info">
+                    <h3 class="project-card-name">WIN-1</h3>
+                    <div class="project-card-price">13 800 000 ₽</div>
+                    <button class="project-card-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-image"><img src="im22.png" alt="Проект"></div>
+                <div class="project-card-info">
+                    <h3 class="project-card-name">WIN-6</h3>
+                    <div class="project-card-price">15 500 000 ₽</div>
+                    <button class="project-card-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Третий ряд: Win-7, Win-8, Win-9 -->
+    <div class="houses-row">
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im23.png" alt="Win-7"></div>
+                <div class="house-header"><h3 class="house-title">Win-7</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im24.png" alt="Win-8"></div>
+                <div class="house-header"><h3 class="house-title">Win-8</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im25.png" alt="Win-9"></div>
+                <div class="house-header"><h3 class="house-title">Win-9</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Четвертый ряд: Win-10, Win-11, Win-12 -->
+    <div class="houses-row">
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im26.png" alt="Win-10"></div>
+                <div class="house-header"><h3 class="house-title">Win-10</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im27.png" alt="Win-11"></div>
+                <div class="house-header"><h3 class="house-title">Win-11</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+
+        <div class="house-card">
+            <div class="house-card-container">
+                <div class="house-image"><img src="im28.png" alt="Win-12"></div>
+                <div class="house-header"><h3 class="house-title">Win-12</h3><div class="house-price">13 800 000 ₽</div></div>
+                <div class="house-features">
+                    <div class="feature-item"><img src="im13.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь дома - 139,8 м²</span><span class="feature-text lang-en">House area - 139.8 m²</span></div>
+                    <div class="feature-item"><img src="im14.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Площадь участка - 5,1 сот.</span><span class="feature-text lang-en">Land area - 5.1 acres</span></div>
+                    <div class="feature-item"><img src="im15.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Тип участка - ИЖС</span><span class="feature-text lang-en">Land type - IHS</span></div>
+                    <div class="feature-item"><img src="im16.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество этажей - 2</span><span class="feature-text lang-en">Number of floors - 2</span></div>
+                    <div class="feature-item"><img src="im17.png" class="feature-icon" alt=""><span class="feature-text lang-ru">Количество комнат - 5</span><span class="feature-text lang-en">Number of rooms - 5</span></div>
+                </div>
+                <button class="house-details-btn details-btn"><span class="lang-ru">Детали проекта</span><span class="lang-en">Project details</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Пагинация -->
+    <div class="pagination-block">
+        <button class="pagination-prev"><span class="lang-ru">‹ Пред.</span><span class="lang-en">‹ Prev</span></button>
+        <button class="pagination-num active">1</button>
+        <button class="pagination-num">2</button>
+        <button class="pagination-num">3</button>
+        <button class="pagination-num">4</button>
+        <button class="pagination-next"><span class="lang-ru">След. ›</span><span class="lang-en">Next ›</span></button>
+    </div>
+
+    <!-- Блок: СПЕШИТЕ ЗАБРОНИРОВАТЬ ДОМ -->
+    <section class="booking-section">
+        <div class="booking-container">
+            <div class="booking-overlay"></div>
+            <div class="booking-content">
+                <h2 class="booking-title">
+                    <span class="lang-ru">СПЕШИТЕ ЗАБРОНИРОВАТЬ ДОМ</span>
+                    <span class="lang-en">HURRY TO BOOK A HOUSE</span><br>
+                    <span class="booking-subtitle lang-ru">В КОТТЕДЖНОМ ПОСЁЛКЕ ИЗУМРУДНЫЙ VILLAGE</span>
+                    <span class="booking-subtitle lang-en">IN THE COTTAGE VILLAGE EMERALD VILLAGE</span>
+                </h2>
+                <div class="booking-count">
+                    <span class="lang-ru">Количество свободных участков:</span>
+                    <span class="lang-en">Available plots:</span> <span>12</span>
+                </div>
+                <div class="booking-buttons">
+                    <button class="booking-btn booking-btn-orange" id="contactManagerBtn"><span class="lang-ru">СВЯЗАТЬСЯ С МЕНЕДЖЕРОМ</span><span class="lang-en">CONTACT MANAGER</span></button>
+                    <button class="booking-btn-gray" id="leaveRequestBtn"><span class="lang-ru">ОСТАВИТЬ ЗАЯВКУ</span><span class="lang-en">LEAVE REQUEST</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок: ОФИС ПРОДАЖ -->
+    <section class="office-section">
+        <div class="office-container">
+            <h2 class="office-title">
+                <span class="office-title-orange lang-ru">ОФИС</span>
+                <span class="office-title-orange lang-en">OFFICE</span>
+                <span class="office-title-black lang-ru">ПРОДАЖ</span>
+                <span class="office-title-black lang-en">SALES</span>
+            </h2>
+            <div class="office-map">
+                <iframe class="map-iframe" src="https://www.openstreetmap.org/export/embed.html?bbox=49.123456,55.123456,49.223456,55.223456&amp;layer=mapnik&amp;marker=55.173456,49.173456" title="Карта офиса продаж" allowfullscreen></iframe>
+                <div class="office-card">
+                    <h3 class="office-card-title"><span class="lang-ru">Центральный офис</span><span class="lang-en">Central office</span></h3>
+                    <p class="office-card-desc"><span class="lang-ru">вы можете обратиться к нашим менеджерам по любому вопросу</span><span class="lang-en">you can contact our managers with any question</span></p>
+                    <ul class="office-card-list">
+                        <li class="office-card-item"><img src="im30.png" class="office-icon" alt=""><span class="lang-ru">Г.Казань, ул.Яркая 31 Б</span><span class="lang-en">Kazan, Yarkaya str. 31 B</span></li>
+                        <li class="office-card-item"><img src="im31.png" class="office-icon" alt=""><span class="lang-ru">Пн-Сб: с 9:00 до 18:00</span><span class="lang-en">Mon-Sat: 9:00 AM - 6:00 PM</span></li>
+                        <li class="office-card-item"><img src="im32.png" class="office-icon" alt=""><span>+7 (962) 555-25-25</span></li>
+                    </ul>
+                    <div class="office-card-rating">
+                        <div class="rating-stars">Win Dom ★ 3,5</div>
+                        <div class="rating-text"><span class="lang-ru">Строительная компания</span><span class="lang-en">Construction company</span></div>
+                    </div>
+                    <button class="office-card-btn" id="routeBtn"><span class="lang-ru">Проложить маршрут</span><span class="lang-en">Get directions</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Нижний блок футер -->
+    <section class="footer-info">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title"><span class="lang-ru">О КОМПАНИИ</span><span class="lang-en">ABOUT US</span></h3>
+                <ul class="footer-menu">
+                    <li><a href="../Str1.html"><span class="lang-ru">Главная</span><span class="lang-en">Home</span></a></li>
+                    <li><a href="../Str5/Str5.html"><span class="lang-ru">Наша команда</span><span class="lang-en">Our team</span></a></li>
+                    <li><a href="../Str3/Str3.html"><span class="lang-ru">СМИ о нас</span><span class="lang-en">Media about us</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Отзывы</span><span class="lang-en">Reviews</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Новости</span><span class="lang-en">News</span></a></li>
+                    <li><a href="../Str2/Str2.html"><span class="lang-ru">Контакты</span><span class="lang-en">Contacts</span></a></li>
+                </ul>
+                <a href="#" class="footer-policy"><span class="lang-ru">Политика конфиденциальности</span><span class="lang-en">Privacy policy</span></a>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title"><span class="lang-ru">ПРОЕКТЫ</span><span class="lang-en">PROJECTS</span></h3>
+                <ul class="footer-menu">
+                    <li><a href="#"><span class="lang-ru">Изумрудный Village</span><span class="lang-en">Emerald Village</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Зимняя горка</span><span class="lang-en">Winter Hill</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Константиновка</span><span class="lang-en">Konstantinovka</span></a></li>
+                    <li><a href="#"><span class="lang-ru">Усады Village</span><span class="lang-en">Usady Village</span></a></li>
+                    <li><a href="#"><span class="lang-ru">IQ-CLUB</span><span class="lang-en">IQ-CLUB</span></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title"><span class="lang-ru">ИПОТЕКА</span><span class="lang-en">MORTGAGE</span></h3>
+                <ul class="footer-menu">
+                    <li><a href="../Str6/Str6.html"><span class="lang-ru">Ипотечные кредиты</span><span class="lang-en">Mortgage loans</span></a></li>
+                    <li><a href="../Str6/Str6.html"><span class="lang-ru">Для семей с детьми</span><span class="lang-en">For families with children</span></a></li>
+                    <li><a href="../Str6/Str6.html"><span class="lang-ru">Военная ипотека</span><span class="lang-en">Military mortgage</span></a></li>
+                    <li><a href="../Str6/Str6.html"><span class="lang-ru">Господдержка 2023</span><span class="lang-en">State support 2023</span></a></li>
+                </ul>
+            </div>
+            <div class="footer-brand">
+                <img src="im8.png" alt="Windom" class="footer-logo-img">
+                <div class="footer-slogan"><span class="lang-ru">ДОМА ДЛЯ ПОБЕДИТЕЛЕЙ</span><span class="lang-en">HOMES FOR WINNERS</span></div>
+                <img src="im9.png" alt="Социальные сети" class="footer-social-img">
+                <div><a href="mailto:window.kazan@gmail.com" class="footer-email-link">window.kazan@gmail.com</a></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+    <script src="../auth.js"></script>
+<script src="Str9.js"></script>
+</body>
+</html>

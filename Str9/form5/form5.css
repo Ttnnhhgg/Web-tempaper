@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eef2f5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    padding: 20px;
+}
+
+/* КОНТЕЙНЕР - размер 594×334 как на фото */
+.success-container {
+    width: 100%;
+    max-width: 594px;
+    margin: 0 auto;
+}
+
+.success-card {
+    background: #ffffff;
+    border-radius: 0px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 334px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+/* КРЕСТИК (кнопка закрытия) */
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    font-weight: 400;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #333;
+    transform: scale(1.1);
+}
+
+.close-btn:active {
+    transform: scale(0.95);
+}
+
+/* ИКОНКА ГАЛОЧКИ */
+.success-icon {
+    margin-bottom: 24px;
+}
+
+.check-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ЗАГОЛОВОК "ВАШ ЗАПРОС ПРИНЯТ" */
+.success-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a2c3e;
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+/* ПОДЗАГОЛОВОК */
+.success-subtitle {
+    font-size: 16px;
+    color: #6c7a8e;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* АДАПТАЦИЯ ПОД МАЛЕНЬКИЕ ЭКРАНЫ */
+@media (max-width: 594px) {
+    .success-container {
+        max-width: 100%;
+    }
+    
+    .success-card {
+        height: auto;
+        min-height: 334px;
+        padding: 40px 20px;
+    }
+    
+    .check-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .success-title {
+        font-size: 20px;
+    }
+    
+    .success-subtitle {
+        font-size: 14px;
+    }
+    
+    .close-btn {
+        top: 12px;
+        right: 14px;
+        width: 28px;
+        height: 28px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 400px) {
+    .check-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .success-title {
+        font-size: 18px;
+    }
+    
+    .success-subtitle {
+        font-size: 13px;
+    }
+}
